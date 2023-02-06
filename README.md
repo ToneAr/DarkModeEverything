@@ -1,19 +1,33 @@
 # MMDarkMode
 
-To change documantation to Dark mode the "Reference.nb" file 
-needs to be replaced manually. This can be usually found at: 
+## Documentation
 
-"C:\Program Files\Wolfram Research\Mathematica\13.2\SystemFiles\FrontEnd\StyleSheets\Wolfram"
+* To change documantation to Dark mode the default "Reference.nb" file needs to be replaced with the darkened one. 
 
-*BACKUP A CLEAN COPY OF "Reference.nb" ELSEWHERE* 
-
-(TODO:Automate backup and replace)
-
-Note that you might need to gain ownership of "Reference.nb" depending 
-on User Account privileges.
-
-
-To make the Messages window background Black by 
-adding the following to your init.m file:
+* This can be typically be found at:  
 	
-	`SetOptions[EvaluationNotebook[], Background->GrayLevel[0]];`
+		"C:\Program Files\Wolfram Research\Mathematica\13.2\SystemFiles\FrontEnd\StyleSheets\Wolfram\Reference.nb"
+
+* **(WIP)** This can be also automatically done through the DocumentationDarkModeGUI.
+	
+	Note:
+
+	*You might need to gain ownership of "Reference.nb" depending on User Account privileges.*
+
+## Portability
+
+* To make StyleDefinitions portable in a given Notebook , evaluate the following:
+
+		SetOptions[EvaluationNotebook[], StyleDefinitions -> Get["directory/to/StyleSheet"]]
+
+## Documentation
+
+* To make the Messages window background Dark by adding the following to your init.m file:
+	
+		SetOptions[EvaluationNotebook[], Background->GrayLevel[0]]
+
+# TO DO:
+	
+* `Attributes`, `Full Name` and Documentation Link inside of Symbol Information too dark.
+
+	
