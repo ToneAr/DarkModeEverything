@@ -1,0 +1,549 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     25870,        541]
+NotebookOptionsPosition[     21535,        472]
+NotebookOutlinePosition[     22782,        506]
+CellTagsIndexPosition[     22739,        503]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["dir", "ExternalLanguage",
+ CellLabel->
+  "In[198]:=",ExpressionUUID->"404ef9fe-3815-4410-896b-b78ffd901563"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"4c3528d7-7d60-4b38-ba2b-29d838f857c1"],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"66b58a7b-9e67-4997-bc1b-5b63359420db"],
+
+Cell[BoxData["\<\"    Directory: C:\\\\Users\\\\tonya\\\\Desktop\"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"8f8e6006-0c2c-4191-91bf-ce932fae7443"],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"1a986ea9-2daa-4ce2-9875-0a48608d2fa3"],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"74699d9e-af87-403c-8c40-e76cb4419ee5"],
+
+Cell[BoxData["\<\"Mode                 LastWriteTime         Length Name      \
+                                                           \"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"2318d6b8-56bd-4911-a2a8-09921c480647"],
+
+Cell[BoxData["\<\"----                 -------------         ------ ----      \
+                                                           \"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"5dd40a4a-06f7-42a0-97a5-3e1cc319a092"],
+
+Cell[BoxData["\<\"d-----        27/03/2023     12:51                CBM       \
+                                                           \"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"6a50b119-949a-4671-a83e-e4a225321c5b"],
+
+Cell[BoxData["\<\"d-----        15/06/2023     15:03                Downloads \
+                                                           \"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"02ddf986-74c9-4a61-b91b-54df45bb6e07"],
+
+Cell[BoxData["\<\"d-----        09/06/2023     12:21                HTMLLinks \
+                                                           \"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"7ed4d1b9-f1ff-4016-9fc9-31eeddeffd68"],
+
+Cell[BoxData["\<\"d-----        08/06/2023     10:04                Misc      \
+                                                           \"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"8ac46ac8-2a55-4b28-8af0-daae4f05ab8c"],
+
+Cell[BoxData["\<\"d-----        15/06/2023     14:42                testing   \
+                                                           \"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"b6584339-5db7-4a05-93c4-c7cfb1740aa7"],
+
+Cell[BoxData["\<\"d-----        30/05/2023     06:59                Weekly \
+Report Logs                                                   \"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"73d9adc8-2f75-4f3e-b00e-ba2489285171"],
+
+Cell[BoxData["\<\"d-----        08/06/2023     11:38                Working   \
+                                                           \"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"97e13e3f-7b40-4ad9-a072-e50b30712a17"],
+
+Cell[BoxData["\<\"-a----        07/10/2019     04:43          19654 \
+Breast_cancer_data.csv                                               \"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"aaa7c44e-3c26-427a-aeb2-0a05179f89be"],
+
+Cell[BoxData["\<\"-a----        10/05/2023     09:42         380414 \
+CustomisingMathematicaWithStyleSheets_Revised.zip                    \"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"722c1466-bbee-4a06-8e10-81caadfbfb1d"],
+
+Cell[BoxData["\<\"-a----        11/04/2023     11:36         481343 \
+FINAL-S-SOP-01-TMP-02+Software+Design+Specification (2) (1).docx     \"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"0950826c-d7d6-4612-b381-04da36ca9d83"],
+
+Cell[BoxData["\<\"-a----        09/12/2022     10:56           1849 FL Studio \
+20.lnk                                                     \"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"f463fd9c-e3e8-47b7-b26e-9778c227863d"],
+
+Cell[BoxData["\<\"-a----        08/06/2023     12:56          42040 \
+ImpalaStudios20230426.nb                                             \"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"9f5f9698-8c1a-4245-ba50-a2a2200ad8ce"],
+
+Cell[BoxData["\<\"-a----        07/11/2022     12:54            822 \
+LatencyMon.lnk                                                       \"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"4251b7e5-eb7c-4171-9270-d807a41f5dbc"],
+
+Cell[BoxData["\<\"-a----        07/11/2022     12:54            820 \
+MultiMon.lnk                                                         \"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"32297921-faec-4660-9c64-76d628d88cb0"],
+
+Cell[BoxData["\<\"-a----        08/06/2023     11:35          94592 \
+nearestWPGQuestion.nb                                                \"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"6b53b84e-ace4-4bda-9559-f55aeb393af4"],
+
+Cell[BoxData["\<\"-a----        18/01/2023     15:58         570327 \
+Reference.nb                                                         \"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"a043744f-2d0c-4349-a8f4-c3eee2fb632d"],
+
+Cell[BoxData["\<\"-a----        03/04/2023     09:59          66416 \
+S-SOP-01-TMP-02 Software design specification.docx                   \"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"6d9c74ba-dfc2-4e4a-a633-6852febbf5ff"],
+
+Cell[BoxData["\<\"-a----        31/03/2023     12:54          74849 \
+S-SOP-02-TMP-03 Off-the-shelf Software Specification.docx            \"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"0571cde0-214f-452c-b798-3f5713b51f8f"],
+
+Cell[BoxData["\<\"-a----        10/06/2023     21:54          74513 Test.html \
+                                                           \"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"75ae8e67-6c9d-4778-ac75-dbd84c8c4257"],
+
+Cell[BoxData["\<\"-a----        10/06/2023     18:27          94670 test.xml  \
+                                                           \"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"04ccaeff-e5ce-4eab-8262-d5994b0607c8"],
+
+Cell[BoxData["\<\"-a----        09/06/2023     12:34            118 \
+Test2.html                                                           \"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"9ff48259-5bdf-439e-a25b-b104101c441d"],
+
+Cell[BoxData["\<\"-a----        14/09/2022     14:31           1407 Visual \
+Studio Code.lnk                                               \"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"8137340e-df48-4fd7-9da2-25d3745745a3"],
+
+Cell[BoxData["\<\"-a----        11/12/2022     15:21           1107 \
+WinDirStat.lnk                                                       \"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"da1a323a-385d-49ca-bd2d-329c03811aa9"],
+
+Cell[BoxData["\<\"-a----        05/05/2023     12:08       13543519 \
+WL101-April2023Updates.zip                                           \"\>"], \
+"Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"0407de2d-7ce2-490c-a7be-8b4d8d68c2ca"],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ GeneratedCell->True,
+ CellLabel->
+  "During evaluation of \
+In[198]:=",ExpressionUUID->"834a9756-5108-4f9d-8add-011d4a52033d"]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["Success",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            FrameBox[
+             StyleBox["\"\[Checkmark]\"", 
+              Directive[
+               RGBColor[
+               0.3607843137254902, 0.596078431372549, 0.3803921568627451], 
+               25], StripOnInput -> False], ContentPadding -> False, 
+             FrameStyle -> None, FrameMargins -> {{0, 0}, {0, 0}}, 
+             StripOnInput -> False], 
+            GridBox[{{
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Command\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["\"dir\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"ExitCode\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["True", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            FrameBox[
+             StyleBox["\"\[Checkmark]\"", 
+              Directive[
+               RGBColor[
+               0.3607843137254902, 0.596078431372549, 0.3803921568627451], 
+               25], StripOnInput -> False], ContentPadding -> False, 
+             FrameStyle -> None, FrameMargins -> {{0, 0}, {0, 0}}, 
+             StripOnInput -> False], 
+            GridBox[{{
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Command\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["\"dir\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"ExitCode\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["True", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"StandardError\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["\"\"", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"StandardOutput\"", "\": \""}, "RowDefault"],
+                   "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"\\n\\n    Directory: \
+C:\\\\Users\\\\tonya\\\\Desktop\\n\\n\\nMode                 LastWriteTime    \
+     Length Name                                                              \
+   \\n----                 -------------         ------ ----                  \
+                                               \\nd-----        27/03/2023    \
+ 12:51                CBM                                                     \
+             \\nd-----        15/06/2023     15:03                Downloads   \
+                                                         \\nd-----        \
+09/06/2023     12:21                HTMLLinks                                 \
+                           \\nd-----        08/06/2023     10:04              \
+  Misc                                                                 \
+\\nd-----        15/06/2023     14:42                testing                  \
+                                            \\nd-----        30/05/2023     \
+06:59                Weekly Report Logs                                       \
+            \\nd-----        08/06/2023     11:38                Working      \
+                                                        \\n-a----        \
+07/10/2019     04:43          19654 Breast_cancer_data.csv                    \
+                           \\n-a----        10/05/2023     09:42         \
+380414 CustomisingMathematicaWithStyleSheets_Revised.zip                    \
+\\n-a----        11/04/2023     11:36         481343 \
+FINAL-S-SOP-01-TMP-02+Software+Design+Specification (2) (1).docx     \
+\\n-a----        09/12/2022     10:56           1849 FL Studio 20.lnk         \
+                                            \\n-a----        08/06/2023     \
+12:56          42040 ImpalaStudios20230426.nb                                 \
+            \\n-a----        07/11/2022     12:54            822 \
+LatencyMon.lnk                                                       \
+\\n-a----        07/11/2022     12:54            820 MultiMon.lnk             \
+                                            \\n-a----        08/06/2023     \
+11:35          94592 nearestWPGQuestion.nb                                    \
+            \\n-a----        18/01/2023     15:58         570327 Reference.nb \
+                                                        \\n-a----        \
+03/04/2023     09:59          66416 S-SOP-01-TMP-02 Software design \
+specification.docx                   \\n-a----        31/03/2023     12:54    \
+      74849 S-SOP-02-TMP-03 Off-the-shelf Software Specification.docx         \
+   \\n-a----        10/06/2023     21:54          74513 Test.html             \
+                                               \\n-a----        10/06/2023    \
+ 18:27          94670 test.xml                                                \
+             \\n-a----        09/06/2023     12:34            118 Test2.html  \
+                                                         \\n-a----        \
+14/09/2022     14:31           1407 Visual Studio Code.lnk                    \
+                           \\n-a----        11/12/2022     15:21           \
+1107 WinDirStat.lnk                                                       \
+\\n-a----        05/05/2023     12:08       13543519 \
+WL101-April2023Updates.zip                                           \\n\"", 
+                  "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                  TemplateBox[{"\"Tag\"", "\": \""}, "RowDefault"], 
+                  "SummaryItemAnnotation"], "\[InvisibleSpace]", 
+                 TagBox["\"ExecutionCompleted\"", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  Success[
+  "ExecutionCompleted", <|
+   "Command" -> "dir", "ExitCode" -> True, "StandardError" -> "", 
+    "StandardOutput" -> 
+    "\n\n    Directory: C:\\Users\\tonya\\Desktop\n\n\nMode                 \
+LastWriteTime         Length Name                                             \
+                    \n----                 -------------         ------ ----  \
+                                                               \nd-----       \
+ 27/03/2023     12:51                CBM                                      \
+                            \nd-----        15/06/2023     15:03              \
+  Downloads                                                            \n\
+d-----        09/06/2023     12:21                HTMLLinks                   \
+                                         \nd-----        08/06/2023     10:04 \
+               Misc                                                           \
+      \nd-----        15/06/2023     14:42                testing             \
+                                                 \nd-----        30/05/2023   \
+  06:59                Weekly Report Logs                                     \
+              \nd-----        08/06/2023     11:38                Working     \
+                                                         \n-a----        \
+07/10/2019     04:43          19654 Breast_cancer_data.csv                    \
+                           \n-a----        10/05/2023     09:42         \
+380414 CustomisingMathematicaWithStyleSheets_Revised.zip                    \n\
+-a----        11/04/2023     11:36         481343 \
+FINAL-S-SOP-01-TMP-02+Software+Design+Specification (2) (1).docx     \n-a---- \
+       09/12/2022     10:56           1849 FL Studio 20.lnk                   \
+                                  \n-a----        08/06/2023     12:56        \
+  42040 ImpalaStudios20230426.nb                                             \
+\n-a----        07/11/2022     12:54            822 LatencyMon.lnk            \
+                                           \n-a----        07/11/2022     \
+12:54            820 MultiMon.lnk                                             \
+            \n-a----        08/06/2023     11:35          94592 \
+nearestWPGQuestion.nb                                                \n-a---- \
+       18/01/2023     15:58         570327 Reference.nb                       \
+                                  \n-a----        03/04/2023     09:59        \
+  66416 S-SOP-01-TMP-02 Software design specification.docx                   \
+\n-a----        31/03/2023     12:54          74849 S-SOP-02-TMP-03 \
+Off-the-shelf Software Specification.docx            \n-a----        \
+10/06/2023     21:54          74513 Test.html                                 \
+                           \n-a----        10/06/2023     18:27          \
+94670 test.xml                                                             \n\
+-a----        09/06/2023     12:34            118 Test2.html                  \
+                                         \n-a----        14/09/2022     14:31 \
+          1407 Visual Studio Code.lnk                                         \
+      \n-a----        11/12/2022     15:21           1107 WinDirStat.lnk      \
+                                                 \n-a----        05/05/2023   \
+  12:08       13543519 WL101-April2023Updates.zip                             \
+              \n"|>],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellLabel->
+  "Out[198]=",ExpressionUUID->"dc3069b9-fcad-4d76-a4f7-ba8b5177a5f3"]
+}, Open  ]]
+},
+WindowSize->{912, 382.5},
+WindowMargins->{{Automatic, 108}, {13.5, Automatic}},
+WindowFrame->"ModlessDialog",
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (June 10, 2023)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{$RootDirectory, "L:", "StyleSheets", "Dark"}, 
+       "DarkModeEverything3.nb", CharacterEncoding -> "UTF-8"]]], 
+   Cell[
+    StyleData["Notebook"], WindowFrame -> "ThinFrame", 
+    WindowElements -> {"VerticalScrollBar"}, DockedCells -> {}, 
+    DefaultNewCellStyle -> "ExternalLanguage", Background -> 
+    RGBColor[0, 0, 0], WidnowFrameElements -> {}], 
+   Cell[
+    StyleData["ExternalLanguage"], StyleKeyMapping -> {}, 
+    CellEventActions -> {"ReturnKeyDown" :> FrontEndTokenExecute[
+        EvaluationNotebook[], "HandleShiftReturn"]}]}, 
+  WindowMargins -> {{274.5, Automatic}, {Automatic, 21.75}}, FrontEndVersion -> 
+  "13.3 for Microsoft Windows (64-bit) (June 10, 2023)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"e0f2bd9a-89ec-4ec4-8824-f2536594ac40"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 114, 2, 65, "ExternalLanguage",ExpressionUUID->"404ef9fe-3815-4410-896b-b78ffd901563"],
+Cell[CellGroupData[{
+Cell[719, 28, 162, 4, 12, "Print",ExpressionUUID->"4c3528d7-7d60-4b38-ba2b-29d838f857c1"],
+Cell[884, 34, 162, 4, 12, "Print",ExpressionUUID->"66b58a7b-9e67-4997-bc1b-5b63359420db"],
+Cell[1049, 40, 210, 5, 13, "Print",ExpressionUUID->"8f8e6006-0c2c-4191-91bf-ce932fae7443"],
+Cell[1262, 47, 162, 4, 12, "Print",ExpressionUUID->"1a986ea9-2daa-4ce2-9875-0a48608d2fa3"],
+Cell[1427, 53, 162, 4, 12, "Print",ExpressionUUID->"74699d9e-af87-403c-8c40-e76cb4419ee5"],
+Cell[1592, 59, 283, 5, 13, "Print",ExpressionUUID->"2318d6b8-56bd-4911-a2a8-09921c480647"],
+Cell[1878, 66, 283, 5, 12, "Print",ExpressionUUID->"5dd40a4a-06f7-42a0-97a5-3e1cc319a092"],
+Cell[2164, 73, 283, 5, 12, "Print",ExpressionUUID->"6a50b119-949a-4671-a83e-e4a225321c5b"],
+Cell[2450, 80, 283, 5, 12, "Print",ExpressionUUID->"02ddf986-74c9-4a61-b91b-54df45bb6e07"],
+Cell[2736, 87, 283, 5, 12, "Print",ExpressionUUID->"7ed4d1b9-f1ff-4016-9fc9-31eeddeffd68"],
+Cell[3022, 94, 283, 5, 12, "Print",ExpressionUUID->"8ac46ac8-2a55-4b28-8af0-daae4f05ab8c"],
+Cell[3308, 101, 283, 5, 13, "Print",ExpressionUUID->"b6584339-5db7-4a05-93c4-c7cfb1740aa7"],
+Cell[3594, 108, 283, 5, 13, "Print",ExpressionUUID->"73d9adc8-2f75-4f3e-b00e-ba2489285171"],
+Cell[3880, 115, 283, 5, 13, "Print",ExpressionUUID->"97e13e3f-7b40-4ad9-a072-e50b30712a17"],
+Cell[4166, 122, 285, 6, 12, "Print",ExpressionUUID->"aaa7c44e-3c26-427a-aeb2-0a05179f89be"],
+Cell[4454, 130, 285, 6, 13, "Print",ExpressionUUID->"722c1466-bbee-4a06-8e10-81caadfbfb1d"],
+Cell[4742, 138, 285, 6, 13, "Print",ExpressionUUID->"0950826c-d7d6-4612-b381-04da36ca9d83"],
+Cell[5030, 146, 283, 5, 12, "Print",ExpressionUUID->"f463fd9c-e3e8-47b7-b26e-9778c227863d"],
+Cell[5316, 153, 285, 6, 12, "Print",ExpressionUUID->"9f5f9698-8c1a-4245-ba50-a2a2200ad8ce"],
+Cell[5604, 161, 285, 6, 13, "Print",ExpressionUUID->"4251b7e5-eb7c-4171-9270-d807a41f5dbc"],
+Cell[5892, 169, 285, 6, 12, "Print",ExpressionUUID->"32297921-faec-4660-9c64-76d628d88cb0"],
+Cell[6180, 177, 285, 6, 12, "Print",ExpressionUUID->"6b53b84e-ace4-4bda-9559-f55aeb393af4"],
+Cell[6468, 185, 285, 6, 12, "Print",ExpressionUUID->"a043744f-2d0c-4349-a8f4-c3eee2fb632d"],
+Cell[6756, 193, 285, 6, 13, "Print",ExpressionUUID->"6d9c74ba-dfc2-4e4a-a633-6852febbf5ff"],
+Cell[7044, 201, 285, 6, 12, "Print",ExpressionUUID->"0571cde0-214f-452c-b798-3f5713b51f8f"],
+Cell[7332, 209, 283, 5, 12, "Print",ExpressionUUID->"75ae8e67-6c9d-4778-ac75-dbd84c8c4257"],
+Cell[7618, 216, 283, 5, 12, "Print",ExpressionUUID->"04ccaeff-e5ce-4eab-8262-d5994b0607c8"],
+Cell[7904, 223, 285, 6, 12, "Print",ExpressionUUID->"9ff48259-5bdf-439e-a25b-b104101c441d"],
+Cell[8192, 231, 283, 5, 12, "Print",ExpressionUUID->"8137340e-df48-4fd7-9da2-25d3745745a3"],
+Cell[8478, 238, 285, 6, 12, "Print",ExpressionUUID->"da1a323a-385d-49ca-bd2d-329c03811aa9"],
+Cell[8766, 246, 285, 6, 12, "Print",ExpressionUUID->"0407de2d-7ce2-490c-a7be-8b4d8d68c2ca"],
+Cell[9054, 254, 162, 4, 12, "Print",ExpressionUUID->"834a9756-5108-4f9d-8add-011d4a52033d"]
+}, Open  ]],
+Cell[9231, 261, 12288, 208, 45, "Output",ExpressionUUID->"dc3069b9-fcad-4d76-a4f7-ba8b5177a5f3"]
+}, Open  ]]
+}
+]
+*)
+
