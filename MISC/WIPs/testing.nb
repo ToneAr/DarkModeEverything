@@ -1,5 +1,4 @@
-In[208]:= SetOptions[EvaluationNotebook[],DockedCells->{dockedCell}]
-In[206]:= dockedCell = 
+dockedCell = 
    Cell[
     BoxData[
      DynamicModuleBox[{
@@ -63,11 +62,7 @@ In[206]:= dockedCell =
     "DockedCell"];
     
     dockedCell//DisplayForm
-Out[207]//DisplayForm= 	LLMSyntesize:		Embed StyleDefinitions	Quit	
-					
-
-
-In[199]:= dockedCell = 
+In[106]:= dockedCell = 
    Cell[
     BoxData[
      DynamicModuleBox[{
@@ -137,6 +132,11 @@ In[199]:= dockedCell =
     "DockedCell"];
     
     dockedCell//DisplayForm
-Out[200]//DisplayForm= 	LLMSyntesize:		Embed StyleDefinitions	Quit	
+Out[107]//DisplayForm= 	LLMSyntesize:		Embed StyleDefinitions	Quit	
 					
 
+
+ButtonBox["\"Quit\"", ButtonFunction :> FrontEndExecute[
+		             FrontEndToken["EvaluatorQuit"]], Background -> 
+		           GrayLevel[0.5], Appearance -> Automatic, Evaluator -> 
+		           Automatic, Method -> "Preemptive"]
