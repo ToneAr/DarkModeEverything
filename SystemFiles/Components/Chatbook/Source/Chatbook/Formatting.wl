@@ -453,7 +453,7 @@ insertCodeBelow[ cell_Cell, evaluate_ ] :=
     ];
 
 insertCodeBelow[ string_String, evaluate_ ] :=
-    insertCodeBelow[ Cell[ BoxData @ string, "Input" ], evaluate ];
+    insertCodeBelow[ reparseCodeBoxes @ Cell[ BoxData @ string, "Input" ], evaluate ];
 
 insertCodeBelow // endDefinition;
 
@@ -470,10 +470,10 @@ copyCode // endDefinition;
 (*stripMarkdownBoxes*)
 stripMarkdownBoxes // beginDefinition;
 
-stripMarkdownBoxes[ Cell[ BoxData @ TagBox[ TooltipBox[ boxes_, _String ], "MarkdownImage", ___ ], a___ ] ] :=
+stripMarkdownBoxes[ Cell[ BoxData[ TagBox[ TooltipBox[ boxes_, _String ], "MarkdownImage", ___ ], ___ ], a___ ] ] :=
     Cell[ BoxData @ boxes, a ];
 
-stripMarkdownBoxes[ Cell[ BoxData @ TagBox[ boxes_, "MarkdownImage", ___ ], a___ ] ] :=
+stripMarkdownBoxes[ Cell[ BoxData[ TagBox[ boxes_, "MarkdownImage", ___ ], a___ ], ___ ] ] :=
     Cell[ BoxData @ boxes, a ];
 
 stripMarkdownBoxes[ expr: _Cell|_String ] :=
@@ -486,12 +486,12 @@ stripMarkdownBoxes // endDefinition;
 (*getCodeBlockContent*)
 getCodeBlockContent // beginDefinition;
 getCodeBlockContent[ cell_CellObject ] := getCodeBlockContent @ NotebookRead @ cell;
-getCodeBlockContent[ Cell[ BoxData[ boxes_ ], ___, "ChatCodeBlock", ___ ] ] := getCodeBlockContent @ boxes;
+getCodeBlockContent[ Cell[ BoxData[ boxes_, ___ ], ___, "ChatCodeBlock", ___ ] ] := getCodeBlockContent @ boxes;
 getCodeBlockContent[ TemplateBox[ { boxes_ }, "ChatCodeBlockTemplate", ___ ] ] := getCodeBlockContent @ boxes;
-getCodeBlockContent[ Cell[ BoxData[ boxes_ ] ] ] := getCodeBlockContent @ boxes;
+getCodeBlockContent[ Cell[ BoxData[ boxes_, ___ ] ] ] := getCodeBlockContent @ boxes;
 getCodeBlockContent[ DynamicModuleBox[ _, boxes_, ___ ] ] := getCodeBlockContent @ boxes;
 getCodeBlockContent[ TagBox[ boxes_, _EventHandlerTag, ___ ] ] := getCodeBlockContent @ boxes;
-getCodeBlockContent[ Cell[ boxes_, "ChatCode", "Input", ___ ] ] := Cell[ boxes, "Input" ];
+getCodeBlockContent[ Cell[ boxes_, "ChatCode", "Input", ___ ] ] := reparseCodeBoxes @ Cell[ boxes, "Input" ];
 
 getCodeBlockContent[ Cell[ boxes_, "ExternalLanguage", ___, CellEvaluationLanguage -> lang_, ___ ] ] :=
     Cell[ boxes, "ExternalLanguage", CellEvaluationLanguage -> lang ];
@@ -499,6 +499,19 @@ getCodeBlockContent[ Cell[ boxes_, "ExternalLanguage", ___, CellEvaluationLangua
 getCodeBlockContent[ cell: Cell[ _, _String, ___ ] ] := cell;
 
 getCodeBlockContent // endDefinition;
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*reparseCodeBoxes*)
+reparseCodeBoxes // beginDefinition;
+
+reparseCodeBoxes[ Cell[ BoxData[ s_String ], a___ ] ] /; $cloudNotebooks :=
+    Cell[ BoxData @ UsingFrontEnd @ stringToBoxes @ s, a ];
+
+reparseCodeBoxes[ cell_Cell ] :=
+    cell;
+
+reparseCodeBoxes // endDefinition;
 
 (* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -912,13 +925,13 @@ makeToolCallRawView[ KeyValuePattern[ "ToolCall" -> raw_String ] ] :=
                 FontSize   -> 11,
                 Background -> None
             ],
-            Background   -> White,
+            Background   -> GrayLevel[ 0 ] (*  *),
             FrameMargins -> 5,
             FrameStyle   -> None,
             ImageSize    -> { Scaled[ 1 ], Automatic },
             BaseStyle    -> "Text"
         ],
-        Background   -> White,
+        Background   -> GrayLevel[ 0 ] (* White *),
         FrameStyle   -> None,
         FrameMargins -> 10
     ];
@@ -941,7 +954,7 @@ makeToolCallInterpretedView[ as_Association ] :=
                 ],
                 Framed[
                     makeToolCallInputSection @ as,
-                    Background   -> White,
+                    Background   -> GrayLevel[ 0 ] (* White *),
                     FrameMargins -> 5,
                     FrameStyle   -> None,
                     ImageSize    -> { Scaled[ 1 ], Automatic }
@@ -953,7 +966,7 @@ makeToolCallInterpretedView[ as_Association ] :=
                 ],
                 Framed[
                     makeToolCallOutputSection @ as,
-                    Background   -> White,
+                    Background   -> GrayLevel[ 0 ] (* White *),
                     FrameMargins -> 5,
                     FrameStyle   -> None,
                     ImageSize    -> { Scaled[ 1 ], Automatic }
@@ -961,7 +974,7 @@ makeToolCallInterpretedView[ as_Association ] :=
             },
             Alignment -> Left
         ],
-        Background   -> White,
+        Background   -> GrayLevel[ 0 ] (* White *),
         BaseStyle    -> { Editable -> False },
         FrameStyle   -> None,
         FrameMargins -> 10
@@ -1086,7 +1099,7 @@ makeInteractiveCodeCell[ lang_String? wolframLanguageQ, code_ ] :=
             BoxData @ If[ StringQ @ code, stringToBoxes @ code, code ],
             "ChatCode",
             "Input",
-            Background -> GrayLevel[ 0 ]
+            Background -> None(* GrayLevel[ 1 ] *)
         ];
         handler = inlineInteractiveCodeCell[ display, code ];
         codeBlockFrame[ Cell @ BoxData @ ToBoxes @ handler, code ]
@@ -1114,7 +1127,7 @@ makeInteractiveCodeCell[ language_String, code_String ] :=
         Cell[
             code,
             "ChatPreformatted",
-            Background   -> GrayLevel[ 0 ],
+             Background   -> GrayLevel[ 0 ](* GrayLevel[ 1 ], *),
             TaggingRules -> <| "CellToStringType" -> "InlineCodeCell", "CodeLanguage" -> language |>
         ],
         code,
@@ -1137,11 +1150,12 @@ inlineInteractiveCodeCell // beginDefinition;
 
 inlineInteractiveCodeCell[ display_, string_ ] /; $dynamicText := display;
 
+(* TODO: make this switch dynamically depending on $cloudNotebooks (likely as a TemplateBox)*)
 inlineInteractiveCodeCell[ display_, string_ ] :=
     inlineInteractiveCodeCell[ display, string, contentLanguage @ string ];
 
 inlineInteractiveCodeCell[ display_, string_, lang_ ] /; $cloudNotebooks :=
-    Mouseover[ display, Column @ { display, floatingButtonGrid[ string, lang ] } ];
+    cloudInlineInteractiveCodeCell[ display, string, lang ];
 
 inlineInteractiveCodeCell[ display_, string_, lang_ ] :=
     DynamicModule[ { $CellContext`attached, $CellContext`cell },
@@ -1162,10 +1176,58 @@ inlineInteractiveCodeCell[ display_, string_, lang_ ] :=
         ],
         TaggingRules     -> <| "CellToStringType" -> "InlineInteractiveCodeCell", "CodeLanguage" -> lang |>,
         UnsavedVariables :> { $CellContext`attached, $CellContext`cell },
-        Initialization   :> { $CellContext`cell = EvaluationCell[ ] }
+        Initialization   :> { $CellContext`cell = (FinishDynamic[ ]; EvaluationCell[ ]) }
     ];
 
 inlineInteractiveCodeCell // endDefinition;
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*cloudInlineInteractiveCodeCell*)
+cloudInlineInteractiveCodeCell // beginDefinition;
+
+cloudInlineInteractiveCodeCell[ display_, string_, lang_ ] :=
+    Module[ { padded, buttons },
+
+        padded = Pane[ display, ImageSize -> { { 100, Automatic }, { 30, Automatic } } ];
+
+        buttons = Framed[
+            floatingButtonGrid[ string, lang ],
+            Background     -> GrayLevel[ 0 ] (* White *),
+            FrameMargins   -> { { 1, 0 }, { 0, 1 } },
+            FrameStyle     -> GrayLevel[ 0 ] (* White *),
+            ImageMargins   -> 1,
+            RoundingRadius -> 3
+        ];
+
+        Mouseover[
+            buttonOverlay[ padded, Invisible @ buttons ],
+            buttonOverlay[ padded, buttons ],
+            ContentPadding -> False,
+            FrameMargins   -> 0,
+            ImageMargins   -> 0,
+            ImageSize      -> All
+        ]
+    ];
+
+cloudInlineInteractiveCodeCell // endDefinition;
+
+(* ::**************************************************************************************************************:: *)
+(* ::Subsubsection::Closed:: *)
+(*buttonOverlay*)
+buttonOverlay // beginDefinition;
+
+buttonOverlay[ a_, b_ ] := Overlay[
+    { a, b },
+    All,
+    2,
+    Alignment      -> { Left, Bottom },
+    ContentPadding -> False,
+    FrameMargins   -> 0,
+    ImageMargins   -> 0
+];
+
+buttonOverlay // endDefinition;
 
 (* ::**************************************************************************************************************:: *)
 (* ::Subsection::Closed:: *)
@@ -1277,11 +1339,11 @@ attachment[ alt_String, key_String, expr_ ] :=
             BoxData @ boxes,
             "ChatCode",
             "Input",
-            Background -> GrayLevel[ 0 ]
+            Background -> None (* GrayLevel[ 1 ] *)
         ];
         handler = inlineInteractiveCodeCell[ display, Cell[ BoxData @ cachedBoxes @ expr, "Input" ] ];
         codeBlockFrame[ Cell @ BoxData @ ToBoxes @ handler, expr ]
-    ];
+    ]; 
 
 attachment // endDefinition;
 
