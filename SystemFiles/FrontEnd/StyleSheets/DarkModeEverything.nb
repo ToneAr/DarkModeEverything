@@ -101,6 +101,33 @@ Cell[StyleData["Notebook"],
  "Margins"->{0, 5},
  "Thickness"->1.2,
  "Widths"->{0, 6}},
+ Initialization:>(
+  resetDatasetOptions[] := 
+   SetOptions[
+    Dataset, HeaderStyle -> Hue[0., 0., 0.7], HeaderBackground -> 
+     Hue[0., 0., 0.15], Background -> Hue[0., 0., 0.05], 
+     HeaderAlignment -> {Center, Baseline}, Alignment -> {Center, Baseline}, 
+     MaxItems -> {30, 6}, DatasetTheme -> {"FullDividers", 
+       Hue[0, 0, 0.2]}, 
+     HeaderDisplayFunction -> (Style[#, FontWeight -> "DemiBold"]& )]; 
+  resetDatasetOptions[Automatic] := 
+   SetOptions[
+    Dataset, HeaderStyle -> Automatic, HeaderBackground -> Automatic, 
+     Background -> Automatic, HeaderAlignment -> Automatic, Alignment -> 
+     Automatic, MaxItems -> Automatic, DatasetTheme -> Automatic, 
+     HeaderDisplayFunction -> Automatic]; resetDatasetOptions[]; 
+  MakeExpression[
+     RowBox[{
+       Pattern[func, 
+        Blank[]], 
+       SubscriptBox["/@", 
+        Pattern[level, 
+         Blank[]]], 
+       Pattern[list, 
+        Blank[]]}], StandardForm] := MakeExpression[
+     RowBox[{"Map", "[", 
+       RowBox[{func, ",", list, ",", 
+         RowBox[{"{", level, "}"}]}], "]"}], StandardForm]; Null),
  CellLabelTemplate-><|
   "In" -> "`1` \[RightAngleBracket]", "InExpired" -> 
    "\:f759 \[RightAngleBracket]", "Out" -> "\[LeftAngleBracket] `1`", 
