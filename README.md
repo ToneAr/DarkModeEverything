@@ -12,4 +12,3 @@ Copy & Paste the `SystemFiles/` folder inside your Mathematica `$InstallationDir
 ## To Do
 * Unified UI for both instal and uninstal.
 * Package and Script stylesheets
-* Documentation theming updates
