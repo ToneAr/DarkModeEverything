@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     62909,       1419]
-NotebookOptionsPosition[     46891,       1236]
-NotebookOutlinePosition[     47321,       1252]
-CellTagsIndexPosition[     47278,       1249]
+NotebookDataLength[     62891,       1419]
+NotebookOptionsPosition[     46874,       1236]
+NotebookOutlinePosition[     47303,       1252]
+CellTagsIndexPosition[     47260,       1249]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -168,7 +168,7 @@ Cell[StyleData["Notebook"],
 Cell[StyleData["DockedCell"],
  Background->GrayLevel[
   0.1],ExpressionUUID->"053834bc-9102-45e3-8169-65d14edbdecc"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -1158,7 +1158,7 @@ Cell[StyleData["EntityClass"],
             FEPrivate`ImportImage[
              FrontEnd`ToFileName[{"Typeset", "Entity"}, "EntityClass.png"]], 
             ImageSizeCache -> {8., {2., 6.}}], BaselinePosition -> Baseline], 
-          StyleBox[#, FontColor -> RGBColor[0.395437, 0.20595, 0.061158]]}}, 
+          StyleBox[#, FontColor -> Hue[0.08, 0.4, 0.99]]}}, 
         GridBoxItemSize -> {"Columns" -> {{All}}, "Rows" -> {{All}}}, 
         GridBoxSpacings -> {"Columns" -> {{0.5}}, "Rows" -> {{0}}}, 
         BaselinePosition -> {1, 2}]}, 
@@ -1235,10 +1235,10 @@ Cell[StyleData["SummaryPanel"],
 }, Open  ]]
 },
 WindowSize->{856.5, 727.5},
-WindowMargins->{{Automatic, 204}, {Automatic, 68.25}},
+WindowMargins->{{Automatic, 15.75}, {Automatic, 96}},
 FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (February 23, 2024)",
 StyleDefinitions->"PrivateStylesheetFormatting.nb",
-ExpressionUUID->"4d024f35-5b57-9442-97db-76c1ca284c65"
+ExpressionUUID->"5888a994-b2fa-3a42-bdf1-28d8f48122a2"
 ]
 (* End of Notebook Content *)
 
@@ -1258,7 +1258,7 @@ Cell[CellGroupData[{
 Cell[810, 28, 82, 0, 34, "Section",ExpressionUUID->"44b903c3-0085-4281-8a73-eacb104b73e6"],
 Cell[895, 30, 5922, 135, 56, 27, 0, "StyleData", "Notebook", "All",ExpressionUUID->"6eed95bd-945e-4e72-a2fc-1e637f51ddd9"],
 Cell[6820, 167, 116, 2, 44, 29, 0, "StyleData", "DockedCell", "All",ExpressionUUID->"053834bc-9102-45e3-8169-65d14edbdecc"]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
 Cell[6973, 174, 78, 0, 34, "Section",ExpressionUUID->"689d5128-0c0f-40ec-995d-4d6671056f3e"],
 Cell[7054, 176, 365, 11, 106, 24, 0, "StyleData", "Title", "All",ExpressionUUID->"eb5bc5f4-9287-4b1a-8c92-df7eb57bcf1a"],
@@ -1412,13 +1412,13 @@ Cell[39958, 1078, 552, 9, 40, 29, 0, "StyleData", "DateObject", "All",Expression
 Cell[40513, 1089, 624, 10, 40, 29, 0, "StyleData", "TimeObject", "All",ExpressionUUID->"a007cbb4-1fd8-460b-8db7-e9b05bc3d5c6"],
 Cell[41140, 1101, 1300, 26, 40, 25, 0, "StyleData", "Entity", "All",ExpressionUUID->"8f3aa11a-9079-4e1d-aced-5cb64a72bc6f"],
 Cell[42443, 1129, 350, 8, 40, 30, 0, "StyleData", "EntityFrame", "All",ExpressionUUID->"33505a18-4bd9-49d5-96e1-da084c565303"],
-Cell[42796, 1139, 1930, 38, 40, 30, 0, "StyleData", "EntityClass", "All",ExpressionUUID->"cd38cef7-de26-4cee-bdc6-b175d806a196"],
-Cell[44729, 1179, 815, 17, 40, 33, 0, "StyleData", "EntityProperty", "All",ExpressionUUID->"234834a7-33cc-441b-8ce5-9a8bfcfb1792"]
+Cell[42796, 1139, 1913, 38, 40, 30, 0, "StyleData", "EntityClass", "All",ExpressionUUID->"cd38cef7-de26-4cee-bdc6-b175d806a196"],
+Cell[44712, 1179, 815, 17, 40, 33, 0, "StyleData", "EntityProperty", "All",ExpressionUUID->"234834a7-33cc-441b-8ce5-9a8bfcfb1792"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[45581, 1201, 81, 0, 34, "Section",ExpressionUUID->"bd47fb4f-69db-4328-a249-3158c94ddf81"],
-Cell[45665, 1203, 126, 2, 40, 40, 0, "StyleData", "SummaryItemAnnotation", "All",ExpressionUUID->"25eea89e-0af2-466e-8a40-3dee8573362a"],
-Cell[45794, 1207, 1069, 25, 37, 31, 0, "StyleData", "SummaryPanel", "All",ExpressionUUID->"c49498d7-4b80-4ac4-8891-7aa5789737c9"]
+Cell[45564, 1201, 81, 0, 34, "Section",ExpressionUUID->"bd47fb4f-69db-4328-a249-3158c94ddf81"],
+Cell[45648, 1203, 126, 2, 40, 40, 0, "StyleData", "SummaryItemAnnotation", "All",ExpressionUUID->"25eea89e-0af2-466e-8a40-3dee8573362a"],
+Cell[45777, 1207, 1069, 25, 37, 31, 0, "StyleData", "SummaryPanel", "All",ExpressionUUID->"c49498d7-4b80-4ac4-8891-7aa5789737c9"]
 }, Closed]]
 }, Open  ]]
 }
