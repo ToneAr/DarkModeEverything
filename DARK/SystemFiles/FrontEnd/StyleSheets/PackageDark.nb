@@ -1,0 +1,387 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15212,        379]
+NotebookOptionsPosition[     11067,        325]
+NotebookOutlinePosition[     11494,        341]
+CellTagsIndexPosition[     11451,        338]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["Style definitions for the package editor", "Text",ExpressionUUID->"66056bd2-aa18-914a-b1a3-0d2414d2773d"],
+
+Cell[StyleData[StyleDefinitions -> "DarkModeEverything.nb"],ExpressionUUID->"c2b0139e-acad-2441-a9d3-e8eb4543a27e"],
+
+Cell[CellGroupData[{
+
+Cell["Notebook Options Settings", "Section",ExpressionUUID->"deaf54d1-71d6-be41-b8f0-7b65ec1c366e"],
+
+Cell["\<\
+The options defined for the style below will be used at the Notebook level.\
+\>", "Text",ExpressionUUID->"ff4ca5a5-68d6-1742-983b-7e39727832a6"],
+
+Cell[StyleData["Notebook"],
+ WindowToolbars->{},
+ CellBracketOptions->{"Color"->GrayLevel[0.65]},
+ CodeAssistOptions->{"AutoConvertEnable"->False},
+ TranslationOptions->{
+ "Language"->None},ExpressionUUID->"4c24e71b-cc88-7544-a76d-f03d4dfae3a9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Style Environment Names", "Section",ExpressionUUID->"348378ef-d85f-2f4b-9f51-f3d531695051"],
+
+Cell[StyleData[All, "Working"],
+ CellInsertionPointCell->None,
+ InitializationCellEvaluation->False,
+ DockedCells->FEPrivate`FrontEndResource[
+  "NotebookToolbarExpressions", "PackageToolbar"],
+ DefaultNewCellStyle->"Code",
+ ShowPredictiveInterface->
+  False,ExpressionUUID->"69f015ac-0543-774b-a046-adac05651f68"],
+
+Cell[StyleData[All, "NoLineNumbers"],
+ CellInsertionPointCell->None,
+ InitializationCellEvaluation->False,
+ DockedCells->FEPrivate`FrontEndResource[
+  "NotebookToolbarExpressions", "PackageToolbar"],
+ DefaultNewCellStyle->"Code",
+ ShowPredictiveInterface->False,
+ ShowPackageLineNumbers->
+  False,ExpressionUUID->"0624ae34-d501-a44b-9c8a-fea24eb3cf02"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Styles for Title and Section Cells", "Section",ExpressionUUID->"406ba4df-5ebc-1540-93db-2129dec95448"],
+
+Cell[StyleData["Title"],
+ ShowGroupOpener->False,
+ FontColor->GrayLevel[
+  0.3],ExpressionUUID->"4a27f86a-391c-af46-93d3-29fd2b3be10e"],
+
+Cell[StyleData["Section"],
+ ShowGroupOpener->True,
+ FontColor->RGBColor[
+  0.1399099717708095, 0.5224231326771954, 
+   0.6501869230182346],ExpressionUUID->"7e4dca1c-a723-5444-a3e0-738dc5d7059c"],
+
+Cell[StyleData["Subsection"],
+ CellDingbat->None,
+ ShowGroupOpener->True,ExpressionUUID->"35320fad-2ef3-4948-85e1-cc85f020e742"],
+
+Cell[StyleData["Subsubsection"],
+ CellDingbat->None,
+ ShowGroupOpener->True,ExpressionUUID->"c85374dc-c210-864f-8142-5835f526999a"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Styles for Input and Output Cells", "Section",ExpressionUUID->"5ab5917f-64c4-c34f-bbb5-c898c1ee210e"],
+
+Cell["\<\
+The cells in this section define styles used for input and output to the \
+kernel.  Be careful when modifying, renaming, or removing these styles, \
+because the front end associates special meanings with these style names. \
+Some attributes for these styles are actually set in FormatType Styles (in \
+the last section of this stylesheet). \
+\>", "Text",ExpressionUUID->"db422d26-b853-1d4c-bf58-fbd3cc50fcba"],
+
+Cell[StyleData["Code"],
+ CellMargins->{{66, Inherited}, {Inherited, Inherited}},
+ CellFrameLabelMargins->{{17, Inherited}, {Inherited, Inherited}},
+ FontSize->13,
+ FontWeight->Plain,ExpressionUUID->"26b0519e-b3db-1446-9340-c2ffe7b4fe1c"],
+
+Cell[StyleData["Input"],
+ CellMargins->{{66, Inherited}, {Inherited, Inherited}},
+ CellFrameLabelMargins->{{17, Inherited}, {Inherited, Inherited}},
+ FontSize->13,ExpressionUUID->"fec57de0-f23f-2d4e-9726-d0e7c885af1c"],
+
+Cell[StyleData["Output"],
+ CellFrame->True,
+ CellMargins->{{55, Inherited}, {Inherited, Inherited}},
+ CellLabelStyle->{
+   Directive[
+   "CellLabel", Background -> None, FontColor -> Hue[0.57, 0.192, 0.792]], 
+   Directive[
+   "CellLabelExpired", Background -> None, FontColor -> GrayLevel[0.803]]},
+ CellFrameMargins->{{10, 0}, {0, 0}},
+ CellFrameStyle->{
+   Directive[
+    GrayLevel[1, 0]], 
+   Directive[
+    GrayLevel[1, 0]], 
+   Directive[
+    GrayLevel[1, 0]], 
+   Directive[
+    GrayLevel[0.85], 
+    Thickness[5], 
+    Dashing[{2, 7}]]},
+ CellFrameLabelMargins->-5,
+ FontSize->13,
+ FontColor->GrayLevel[
+  0.3],ExpressionUUID->"24b28d7e-797d-0748-b4de-cd61823d3fbb"],
+
+Cell[StyleData["Message"],
+ CellFrame->True,
+ CellMargins->{{55, Inherited}, {Inherited, Inherited}},
+ CellLabelStyle->Directive["CellLabel", FontColor -> GrayLevel[0.78]],
+ CellFrameMargins->{{10, 0}, {0, 0}},
+ CellFrameStyle->{
+   Directive[
+    GrayLevel[1, 0]], 
+   Directive[
+    GrayLevel[1, 0]], 
+   Directive[
+    GrayLevel[1, 0]], 
+   Directive[
+    GrayLevel[0.85], 
+    Thickness[5], 
+    Dashing[{2, 7}]]},
+ CellFrameLabelMargins->-5,ExpressionUUID->"90538f99-2b20-6547-88ee-\
+d6846c785dd7"],
+
+Cell[StyleData["MessageTemplate"],
+ TemplateBoxOptions->{DisplayFunction->(RowBox[{
+    TooltipBox[
+     RowBox[{
+       DynamicBox[
+        FEPrivate`If[
+         FEPrivate`And[
+          FEPrivate`SameQ[True, 
+           FrontEnd`CurrentValue[
+           FrontEnd`$FrontEnd, {
+            PrivateFrontEndOptions, "InterfaceSettings", "MessageMenu", 
+             "Enabled"}, True]], 
+          FEPrivate`SameQ[
+           FEPrivate`EvaluatorStatus[#8], "Running"]], 
+         DynamicBox[
+          ToBoxes[
+           Refresh[
+            Internal`MessageMenu[#, #2, #4, #5, #6, #7, #8], None]], 
+          Evaluator -> #8, SingleEvaluation -> True], 
+         DynamicBox[
+          FEPrivate`FrontEndResource[
+          "FEExpressions", "MessageMenuDisabledIcon"]]], Evaluator -> None, 
+        ImageSizeCache -> {18., {0., 0.}}], #, "\[InvisibleSpace]", 
+       PaneBox[
+        RowBox[{"::", #2}], BaselinePosition -> Baseline]}], 
+     RowBox[{#, "::", #2}], BaseStyle -> "MessageMenuLabel"], 
+    "\[InvisibleSpace]", ":", " ", 
+    StyleBox[#3, "MessageText"], "\[NoBreak]", 
+    DynamicBox[
+     FEPrivate`If[
+      FEPrivate`And[
+       FEPrivate`SameQ[True, 
+        FrontEnd`CurrentValue[
+        FrontEnd`$FrontEnd, {
+         PrivateFrontEndOptions, "InterfaceSettings", "MessageMenu", 
+          "Enabled"}, True]], 
+       FEPrivate`SameQ[
+        FEPrivate`EvaluatorStatus["System"], "Running"]], 
+      DynamicBox[
+       FrontEnd`Private`messageDocsLink["System`", #, #2], Evaluator -> 
+       "System", CachedValue -> "", SynchronousUpdating -> False], ""], 
+     Evaluator -> None, ImageSizeCache -> {4., {0., 0.}}]}]& ),
+ InterpretationFunction->(
+  RowBox[{#, 
+    "::", #2}]& )},ExpressionUUID->"967289cb-ee83-334e-8278-567893f9f0a7"],
+
+Cell[StyleData["MessageTemplate2"],
+ TemplateBoxOptions->{DisplayFunction->(RowBox[{
+    TooltipBox[
+     RowBox[{
+       DynamicBox[
+        FEPrivate`If[
+         FEPrivate`And[
+          FEPrivate`SameQ[True, 
+           FrontEnd`CurrentValue[
+           FrontEnd`$FrontEnd, {
+            PrivateFrontEndOptions, "InterfaceSettings", "MessageMenu", 
+             "Enabled"}, True]], 
+          FEPrivate`SameQ[
+           FEPrivate`EvaluatorStatus[#8], "Running"]], 
+         DynamicBox[
+          ToBoxes[
+           Refresh[
+            Internal`MessageMenu[#9, #2, #4, #5, #6, #7, #8], None]], 
+          Evaluator -> #8, SingleEvaluation -> True], 
+         DynamicBox[
+          FEPrivate`FrontEndResource[
+          "FEExpressions", "MessageMenuDisabledIcon"]]], Evaluator -> None, 
+        ImageSizeCache -> {18., {0., 0.}}], #, "\[InvisibleSpace]", 
+       PaneBox[
+        RowBox[{"::", #2}], BaselinePosition -> Baseline]}], 
+     RowBox[{#, "::", #2}], BaseStyle -> "MessageMenuLabel"], 
+    "\[InvisibleSpace]", ":", " ", 
+    StyleBox[#3, "MessageText"], "\[NoBreak]", 
+    DynamicBox[
+     FEPrivate`If[
+      FEPrivate`And[
+       FEPrivate`SameQ[True, 
+        FrontEnd`CurrentValue[
+        FrontEnd`$FrontEnd, {
+         PrivateFrontEndOptions, "InterfaceSettings", "MessageMenu", 
+          "Enabled"}, True]], 
+       FEPrivate`SameQ[
+        FEPrivate`EvaluatorStatus[#8], "Running"]], 
+      DynamicBox[
+       FrontEnd`Private`messageDocsLink[#9, #2], Evaluator -> #8, CachedValue -> 
+       "", SynchronousUpdating -> False], ""], Evaluator -> None, 
+     ImageSizeCache -> {4., {0., 0.}}]}]& ),
+ InterpretationFunction->(
+  RowBox[{#9, 
+    "::", #2}]& )},ExpressionUUID->"8817f684-0a7f-ce48-a265-b438e14c07bc"],
+
+Cell[StyleData["Print"],
+ CellFrame->True,
+ CellMargins->{{55, Inherited}, {Inherited, Inherited}},
+ CellLabelStyle->Directive["CellLabel", FontColor -> GrayLevel[0.78]],
+ CellFrameMargins->{{10, 0}, {0, 0}},
+ CellFrameStyle->{
+   Directive[
+    GrayLevel[1, 0]], 
+   Directive[
+    GrayLevel[1, 0]], 
+   Directive[
+    GrayLevel[1, 0]], 
+   Directive[
+    GrayLevel[0.85], 
+    Thickness[5], 
+    Dashing[{2, 7}]]},
+ CellFrameLabelMargins->-5,
+ FontColor->GrayLevel[
+  0.3],ExpressionUUID->"bf9cf1b8-dc9b-4d4b-be44-a6587d1d4897"],
+
+Cell[StyleData["InformationCell"],
+ CellBracketOptions->{"Color"->RGBColor[0.760174, 0.600641, 0.675288]},
+ FontColor->GrayLevel[
+  0.3],ExpressionUUID->"db97affc-262b-554a-9e06-66323bdcad0d"],
+
+Cell[StyleData["InformationLink"],
+ FontColor->RGBColor[
+  0.4525, 0.48138, 
+   0.7],ExpressionUUID->"60c048c7-9675-b749-8ab6-9c4ac70a3277"],
+
+Cell[StyleData["InformationLinkLF"],
+ FontColor->RGBColor[
+  0.4525, 0.48138, 
+   0.7],ExpressionUUID->"fe971548-f981-6445-b991-b6fa6936f112"],
+
+Cell[StyleData["CellLabel"],
+ CellLabelMargins->{{12, Inherited}, {Inherited, Inherited}},
+ FontFamily->"Helvetica",
+ FontSize->9,ExpressionUUID->"6b4dfb65-c75a-9c48-8c5d-53f3a4fac6ab"],
+
+Cell[StyleData["CellLabelExpired"],
+ CellLabelMargins->{{12, Inherited}, {Inherited, Inherited}},
+ FontFamily->"Helvetica",
+ FontSize->9,ExpressionUUID->"b43bac70-a2c8-8044-abe1-375063c6294a"],
+
+Cell[CellGroupData[{
+
+Cell[StyleData["InitializationCell"],
+ CellFrame->{{0, 1}, {1, 1}},
+ CellMargins->{{55, Inherited}, {Inherited, Inherited}},
+ CellFrameMargins->{{10, 10}, {5, 5}},
+ CellFrameColor->RGBColor[{0.85, 0.85, 0.86}],
+ CellFrameLabelMargins->-5,
+ Background->GrayLevel[
+  1],ExpressionUUID->"09dae5fc-492a-e748-88b0-7de3d640a39b"],
+
+Cell[StyleData["InitializationCell", "NoLineNumbers"],
+ CellFrame->1,ExpressionUUID->"f3441d08-befd-d64a-ae6b-e96f876dd15a"]
+}, Closed]],
+
+Cell[StyleData["LineNumber", StyleDefinitions -> StyleData["Code"]],
+ Selectable->False,
+ Deployed->True,
+ AutoNumberFormatting->False,
+ LineColor->GrayLevel[0.6],
+ FrontFaceColor->GrayLevel[0.6],
+ BackFaceColor->GrayLevel[0.6],
+ GraphicsColor->GrayLevel[0.6],
+ FontFamily->"Helvetica",
+ FontSize->-3 + Inherited,
+ FontColor->GrayLevel[0.6],
+ Background->None,ExpressionUUID->"3ae6f350-80a8-d649-aa4e-ce19c90c7001"],
+
+Cell[StyleData["UnsynchronizedLineNumber", StyleDefinitions -> 
+ StyleData["LineNumber"]],
+ FontOpacity->0.4,ExpressionUUID->"18a6d2ec-1f9d-ff45-8dd5-da0c87ebaa97"]
+}, Open  ]]
+},
+WindowSize->{809.25, 735},
+WindowMargins->{{Automatic, -5.25}, {Automatic, 0}},
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (February 23, 2024)",
+StyleDefinitions->"PrivateStylesheetFormatting.nb",
+ExpressionUUID->"cd49b704-6427-664f-a17e-ca5b81abff00"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 111, 0, 29, "Text",ExpressionUUID->"66056bd2-aa18-914a-b1a3-0d2414d2773d"],
+Cell[672, 22, 115, 0, 30, 60, 0, "StyleData", "StyleDefinitions", "",ExpressionUUID->"c2b0139e-acad-2441-a9d3-e8eb4543a27e"],
+Cell[CellGroupData[{
+Cell[812, 26, 99, 0, 34, "Section",ExpressionUUID->"deaf54d1-71d6-be41-b8f0-7b65ec1c366e"],
+Cell[914, 28, 154, 2, 29, "Text",ExpressionUUID->"ff4ca5a5-68d6-1742-983b-7e39727832a6"],
+Cell[1071, 32, 245, 5, 56, 27, 0, "StyleData", "Notebook", "All",ExpressionUUID->"4c24e71b-cc88-7544-a76d-f03d4dfae3a9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1353, 42, 97, 0, 34, "Section",ExpressionUUID->"348378ef-d85f-2f4b-9f51-f3d531695051"],
+Cell[1453, 44, 314, 7, 40, 31, 0, "StyleData", "All", "Working",ExpressionUUID->"69f015ac-0543-774b-a046-adac05651f68"],
+Cell[1770, 53, 352, 8, 40, 37, 0, "StyleData", "All", "NoLineNumbers",ExpressionUUID->"0624ae34-d501-a44b-9c8a-fea24eb3cf02"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2159, 66, 108, 0, 34, "Section",ExpressionUUID->"406ba4df-5ebc-1540-93db-2129dec95448"],
+Cell[2270, 68, 135, 3, 106, 24, 0, "StyleData", "Title", "All",ExpressionUUID->"4a27f86a-391c-af46-93d3-29fd2b3be10e"],
+Cell[2408, 73, 194, 4, 84, 26, 0, "StyleData", "Section", "All",ExpressionUUID->"7e4dca1c-a723-5444-a3e0-738dc5d7059c"],
+Cell[2605, 79, 128, 2, 73, 29, 0, "StyleData", "Subsection", "All",ExpressionUUID->"35320fad-2ef3-4948-85e1-cc85f020e742"],
+Cell[2736, 83, 131, 2, 66, 32, 0, "StyleData", "Subsubsection", "All",ExpressionUUID->"c85374dc-c210-864f-8142-5835f526999a"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2904, 90, 107, 0, 34, "Section",ExpressionUUID->"5ab5917f-64c4-c34f-bbb5-c898c1ee210e"],
+Cell[3014, 92, 419, 6, 62, "Text",ExpressionUUID->"db422d26-b853-1d4c-bf58-fbd3cc50fcba"],
+Cell[3436, 100, 237, 4, 63, 23, 0, "StyleData", "Code", "All",ExpressionUUID->"26b0519e-b3db-1446-9340-c2ffe7b4fe1c"],
+Cell[3676, 106, 218, 3, 63, 24, 0, "StyleData", "Input", "All",ExpressionUUID->"fec57de0-f23f-2d4e-9726-d0e7c885af1c"],
+Cell[3897, 111, 674, 23, 42, 25, 0, "StyleData", "Output", "All",ExpressionUUID->"24b28d7e-797d-0748-b4de-cd61823d3fbb"],
+Cell[4574, 136, 503, 17, 42, 26, 0, "StyleData", "Message", "All",ExpressionUUID->"90538f99-2b20-6547-88ee-d6846c785dd7"],
+Cell[5080, 155, 1758, 44, 40, 34, 0, "StyleData", "MessageTemplate", "All",ExpressionUUID->"967289cb-ee83-334e-8278-567893f9f0a7"],
+Cell[6841, 201, 1739, 44, 40, 35, 0, "StyleData", "MessageTemplate2", "All",ExpressionUUID->"8817f684-0a7f-ce48-a265-b438e14c07bc"],
+Cell[8583, 247, 530, 18, 41, 24, 0, "StyleData", "Print", "All",ExpressionUUID->"bf9cf1b8-dc9b-4d4b-be44-a6587d1d4897"],
+Cell[9116, 267, 192, 3, 68, 34, 0, "StyleData", "InformationCell", "All",ExpressionUUID->"db97affc-262b-554a-9e06-66323bdcad0d"],
+Cell[9311, 272, 140, 3, 42, 34, 0, "StyleData", "InformationLink", "All",ExpressionUUID->"60c048c7-9675-b749-8ab6-9c4ac70a3277"],
+Cell[9454, 277, 142, 3, 42, 36, 0, "StyleData", "InformationLinkLF", "All",ExpressionUUID->"fe971548-f981-6445-b991-b6fa6936f112"],
+Cell[9599, 282, 185, 3, 37, 28, 0, "StyleData", "CellLabel", "All",ExpressionUUID->"6b4dfb65-c75a-9c48-8c5d-53f3a4fac6ab"],
+Cell[9787, 287, 192, 3, 37, 35, 0, "StyleData", "CellLabelExpired", "All",ExpressionUUID->"b43bac70-a2c8-8044-abe1-375063c6294a"],
+Cell[CellGroupData[{
+Cell[10004, 294, 323, 7, 52, 37, 0, "StyleData", "InitializationCell", "All",ExpressionUUID->"09dae5fc-492a-e748-88b0-7de3d640a39b"],
+Cell[10330, 303, 124, 1, 70, 54, 0, "StyleData", "InitializationCell", "NoLineNumbers",ExpressionUUID->"f3441d08-befd-d64a-ae6b-e96f876dd15a"]
+}, Closed]],
+Cell[10469, 307, 415, 11, 47, 68, 0, "StyleData", "LineNumber", "All",ExpressionUUID->"3ae6f350-80a8-d649-aa4e-ce19c90c7001"],
+Cell[10887, 320, 164, 2, 50, 90, 1, "StyleData", "UnsynchronizedLineNumber", "All",ExpressionUUID->"18a6d2ec-1f9d-ff45-8dd5-da0c87ebaa97"]
+}, Open  ]]
+}
+]
+*)
+
