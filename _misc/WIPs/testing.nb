@@ -1,0 +1,142 @@
+dockedCell = 
+   Cell[
+    BoxData[
+     DynamicModuleBox[{
+      spacer$$ = Spacer[1], quitButton$$ = Button["Quit Kernel", 
+         FrontEndExecute[
+          FrontEndToken["EvaluatorQuit"]], Background -> GrayLevel[0.5]], 
+       embedStyleDef$$ = Button["Embed StyleDefinitions", 
+         SetOptions[
+          ButtonNotebook[], StyleDefinitions -> Import[
+            CurrentValue[
+             ButtonNotebook[], DefaultStyleDefinitions], "NB"]], 
+         Background -> GrayLevel[0.3]]}, 
+      TagBox[
+       GridBox[
+		{
+			{
+				TemplateBox[{1}, "Spacer1"],
+				
+				 DynamicModuleBox[{$CellContext`str$$=""},TagBox[TemplateBox[{StyleBox["\"LLMSyntesize:\"",FontColor->GrayLevel[1],StripOnInput->False],InputFieldBox[Dynamic[$CellContext`str$$],String, FieldSize->{20,1}]},"RowDefault"],EventHandlerTag[{"ReturnKeyDown":>Print[LLMSynthesize[$CellContext`str$$]],Method->"Queued",PassEventsDown->Automatic,PassEventsUp->True}]],DynamicModuleValues:>{}],
+
+				TemplateBox[{1}, "Spacer1"],
+				
+				 ButtonBox[
+          "\"Embed StyleDefinitions\"", ButtonFunction :> SetOptions[
+             ButtonNotebook[], StyleDefinitions -> Import[
+               CurrentValue[
+                ButtonNotebook[], DefaultStyleDefinitions], "NB"]], 
+           Background -> GrayLevel[0.3], Appearance -> Automatic, 
+           Evaluator -> Automatic, Method -> "Preemptive"], 
+           
+          ButtonBox["\"Quit\"", ButtonFunction :> FrontEndExecute[
+             FrontEndToken["EvaluatorQuit"]], Background -> 
+           GrayLevel[0.5], Appearance -> Automatic, Evaluator -> 
+           Automatic, Method -> "Preemptive"], 
+           
+          TemplateBox[{1}, "Spacer1"]
+         },
+         {
+			TemplateBox[{1}, "Spacer1"],
+			TemplateBox[{1}, "Spacer1"], 
+			TemplateBox[{1}, "Spacer1"],
+			TemplateBox[{1}, "Spacer1"],
+			TemplateBox[{1}, "Spacer1"],
+			TemplateBox[{1}, "Spacer1"]
+		}
+	}, AutoDelete -> False, 
+        GridBoxItemSize -> {"Columns" -> {
+            Scaled[0.], 
+            Scaled[0.4],
+            Scaled[0.4], 
+            Scaled[0.1], 
+            Scaled[0.1], 
+            Scaled[0.]},
+            {
+            Scaled[0.1], 
+            Scaled[0.8], 
+            Scaled[0.2], 
+            Scaled[0.], 
+            Scaled[0.]
+            }}], "Grid"], DynamicModuleValues :> {}]], 
+    "DockedCell"];
+    
+    dockedCell//DisplayForm
+In[106]:= dockedCell = 
+   Cell[
+    BoxData[
+     DynamicModuleBox[{
+      spacer$$ = Spacer[1], quitButton$$ = Button["Quit Kernel", 
+         FrontEndExecute[
+          FrontEndToken["EvaluatorQuit"]], Background -> GrayLevel[0.5]], 
+       embedStyleDef$$ = Button["Embed StyleDefinitions", 
+         SetOptions[
+          ButtonNotebook[], StyleDefinitions -> Import[
+            CurrentValue[
+             ButtonNotebook[], DefaultStyleDefinitions], "NB"]], 
+         Background -> GrayLevel[0.3]]}, 
+      TagBox[
+       GridBox[
+		{
+			{
+				TemplateBox[{1}, "Spacer1"],
+				
+				 StyleBox["\"LLMSyntesize:\"",FontColor->GrayLevel[1],StripOnInput->False],
+
+				TemplateBox[{1}, "Spacer1"],
+				
+				 ButtonBox[
+		          "\"Embed StyleDefinitions\"", ButtonFunction :> SetOptions[
+		             ButtonNotebook[], StyleDefinitions -> Import[
+		               CurrentValue[
+		                ButtonNotebook[], DefaultStyleDefinitions], "NB"]], 
+		           Background -> GrayLevel[0.3], Appearance -> Automatic, 
+		           Evaluator -> Automatic, Method -> "Preemptive"], 
+           
+		          ButtonBox["\"Quit\"", ButtonFunction :> FrontEndExecute[
+		             FrontEndToken["EvaluatorQuit"]], Background -> 
+		           GrayLevel[0.5], Appearance -> Automatic, Evaluator -> 
+		           Automatic, Method -> "Preemptive"], 
+           
+				TemplateBox[{1}, "Spacer1"]
+         },
+         {
+			TemplateBox[{1}, "Spacer1"],
+			
+			DynamicModuleBox[{$CellContext`str$$=""},
+				TagBox[TemplateBox[{
+				InputFieldBox[Dynamic[$CellContext`str$$],String, FieldSize->{20,1}]},"RowDefault"],
+				EventHandlerTag[{"ReturnKeyDown":>Print[LLMSynthesize[$CellContext`str$$]],Method->"Queued",
+				PassEventsDown->Automatic,PassEventsUp->True}]],DynamicModuleValues:>{}], 
+				
+			TemplateBox[{1}, "Spacer1"],
+			TemplateBox[{1}, "Spacer1"],
+			TemplateBox[{1}, "Spacer1"],
+			TemplateBox[{1}, "Spacer1"]
+		}
+	}, AutoDelete -> False, 
+        GridBoxItemSize -> {"Columns" -> {
+            Scaled[0.], 
+            Scaled[0.4],
+            Scaled[0.3], 
+            Scaled[0.15], 
+            Scaled[0.15], 
+            Scaled[0.]},
+            {
+            Scaled[0.1], 
+            Scaled[0.8], 
+            Scaled[0.2], 
+            Scaled[0.], 
+            Scaled[0.]
+            }}], "Grid"], DynamicModuleValues :> {}]], 
+    "DockedCell"];
+    
+    dockedCell//DisplayForm
+Out[107]//DisplayForm= 	LLMSyntesize:		Embed StyleDefinitions	Quit	
+					
+
+
+ButtonBox["\"Quit\"", ButtonFunction :> FrontEndExecute[
+		             FrontEndToken["EvaluatorQuit"]], Background -> 
+		           GrayLevel[0.5], Appearance -> Automatic, Evaluator -> 
+		           Automatic, Method -> "Preemptive"]

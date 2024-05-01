@@ -6,12 +6,12 @@
 (* DME Package *)
 BeginPackage["DME`"];
 SetAccentColor::usage = "Sets the main accent color of the UI"; 
-OptionsSet::usage = "Sets all default options required by the DarkModeEverything theme.";
+ResetOptions::usage = "Sets all default options required by the DarkModeEverything theme.";
 Begin["`Private`"];
 
 $AccentColor = Hue[0.47, 0.6, 0.75];
 
-GetColor[h_, s_, b_] := With[{
+GetColor[h_, s_, b_] := Module[{
         clip = Clip[#,{0,1}]&,
         mod = Mod[#,1]&
     },
@@ -28,8 +28,8 @@ SetAccentColor[Automatic|Default]:= (
     $AccentColor = Hue[0.47, 0.6, 0.75]
 );
 
-OptionsSet[] := 
-    With[{enclose =
+ResetOptions[] := 
+    Module[{enclose =
         Enclose[
             Confirm @ SetOptions[ Dataset,
                 HeaderStyle -> Hue[0., 0., 0.7],
@@ -41,12 +41,13 @@ OptionsSet[] :=
                 DatasetTheme -> {"FullDividers", Hue[0, 0, 0.2]},
                 HeaderDisplayFunction -> (Style[#, FontWeight -> "DemiBold"]& )
             ];
-            Confirm @ SetOptions[Rasterize, Background -> Black ]; 
-            Confirm @ SetOptions[SlideView, Background -> Black ];
-            Confirm @ SetOptions[MenuView,  Background -> Black ];
-            Confirm @ SetOptions[TableView, Background -> Black, ItemStyle->{FontColor->GrayLevel[0.8]}];
-            Confirm @ SetOptions[SetterBar, BaseStyle -> {FontColor -> White}]; 
+            Confirm @ SetOptions[TableView, Background-> Black,ItemStyle->{FontColor->GrayLevel[0.8]}];
+            Confirm @ SetOptions[InputField,BaseStyle -> {FontColor->White} ];
+            Confirm @ SetOptions[SetterBar, BaseStyle -> {FontColor -> White}];
             Confirm @ SetOptions[MenuView,  BaseStyle -> {FontColor -> White}];
+            Confirm @ SetOptions[Rasterize, Background-> Black ];
+            Confirm @ SetOptions[SlideView, Background-> Black ];
+            Confirm @ SetOptions[MenuView,  Background-> Black ];
         ]
         } ,
         If[Not@*FailureQ@enclose,
@@ -56,7 +57,7 @@ OptionsSet[] :=
             False
         ]
     ];
-OptionsSet[Automatic|Default] := With[{
+ResetOptions[Automatic|Default] := Module[{
         enclose =
             Enclose[
                 Confirm @ SetOptions[ Dataset,
@@ -69,12 +70,13 @@ OptionsSet[Automatic|Default] := With[{
                     DatasetTheme -> Automatic,
                     HeaderDisplayFunction -> Automatic
                 ];
-                Confirm @ SetOptions[Rasterize, Background -> Automatic ]; 
-                Confirm @ SetOptions[SlideView, Background -> Automatic ];
-                Confirm @ SetOptions[MenuView,  Background -> Automatic ];
-                Confirm @ SetOptions[TableView, Background -> Automatic, ItemStyle->Automatic];
-                Confirm @ SetOptions[SetterBar, BaseStyle -> Automatic];
-                Confirm @ SetOptions[MenuView,  BaseStyle -> Automatic];
+                Confirm @ SetOptions[TableView, Background-> Automatic,ItemStyle->{FontColor->Automatic}];
+                Confirm @ SetOptions[InputField,BaseStyle -> {FontColor->Automatic} ];
+                Confirm @ SetOptions[SetterBar, BaseStyle -> {FontColor -> Automatic}];
+                Confirm @ SetOptions[MenuView,  BaseStyle -> {FontColor -> Automatic}];
+                Confirm @ SetOptions[Rasterize, Background-> Automatic ];
+                Confirm @ SetOptions[SlideView, Background-> Automatic ];
+                Confirm @ SetOptions[MenuView,  Background-> Automatic ];
             ]
         },
         If[Not@*FailureQ@enclose,
@@ -101,4 +103,4 @@ MakeExpression[RowBox[{func_, SubscriptBox["/@", level_], list_}], StandardForm]
 
 (* ::Subsection:: *)
 (* Operations *)
-OptionsSet[];
+ResetOptions[];

@@ -1,0 +1,163 @@
+@@resource KeyEventTranslations
+(* Modifiers can be "Shift", "Control", "Command", "Option" 
+	For Macintosh: "Command" = Command Key, "Option" = Option Key
+	For X11: "Command" = Mod1, "Option" = Mod2
+	For Windows: "Command" = Alt, "Option" = Alt
+*)
+
+EventTranslations[{
+
+(*Custom Add-ons*)
+	Item[KeyEvent["i", Modifiers -> {Shift, Control}], "EvaluateInitialization"],
+
+(* Evaluation *)
+	Item[KeyEvent["Enter"], "EvaluateCells"],
+	Item[KeyEvent["KeypadEnter"], "EvaluateCells"], 
+	Item[KeyEvent["Return", Modifiers -> {Shift}], "HandleShiftReturn"],
+	Item[KeyEvent["KeypadEnter", Modifiers -> {Shift}], "EvaluateNextCell"], 
+	Item[KeyEvent["Enter", Modifiers -> {Shift}], "EvaluateNextCell"], 
+	Item[KeyEvent["Return", Modifiers -> {Shift, Control}], Evaluate[All]],
+	Item[KeyEvent["Return", Modifiers -> {Option}], "SimilarCellBelow"], 
+	Item[KeyEvent[",", Modifiers->{Command}], FrontEnd`EvaluatorInterrupt[Automatic]], 
+	Item[KeyEvent["Escape"], "ShortNameDelimiter"], 
+
+(* Cursor control *)
+	Item[KeyEvent["Up"], "MovePreviousLine"], 
+	Item[KeyEvent["Down"], "MoveNextLine"], 
+	Item[KeyEvent["Left"], "MovePrevious"], 
+	Item[KeyEvent["Right"], "MoveNext"], 
+	Item[KeyEvent["Right", Modifiers -> {Control}], "MoveNextNaturalWord"], 
+	Item[KeyEvent["Left", Modifiers -> {Control}], "MovePreviousNaturalWord"], 
+	Item[KeyEvent["End"], "MoveLineEnd"], 
+	Item[KeyEvent["Home"], "MoveLineBeginning"], 
+
+(* Selection *)
+	Item[KeyEvent["Right", Modifiers -> {Shift}], "SelectNext"], 
+	Item[KeyEvent["Left", Modifiers -> {Shift}], "SelectPrevious"], 
+	Item[KeyEvent["Right", Modifiers -> {Control, Shift}], "SelectNextNaturalWord"], 
+	Item[KeyEvent["Left", Modifiers -> {Control, Shift}], "SelectPreviousNaturalWord"], 
+	Item[KeyEvent["Down", Modifiers -> {Shift}], "SelectNextLine"], 
+	Item[KeyEvent["Up", Modifiers -> {Shift}], "SelectPreviousLine"], 
+	Item[KeyEvent["Home", Modifiers -> {Shift}], "SelectLineBeginning"], 
+	Item[KeyEvent["End", Modifiers -> {Shift}], "SelectLineEnd"], 
+	Item[KeyEvent[".", Modifiers -> {Control}], "ExpandSelection"], 
+	Item[KeyEvent["KeypadDecimal", Modifiers -> {Control}], "ExpandSelection"], 
+
+(* Notebook window control *)
+	Item[KeyEvent["Up", Modifiers -> {Control}], "ScrollLineUp"], 
+	Item[KeyEvent["Down", Modifiers -> {Control}], "ScrollLineDown"], 
+	Item[KeyEvent["PageUp"], "ScrollPageUp"],
+	Item[KeyEvent["PageDown"], "ScrollPageDown"],
+	Item[KeyEvent["Prior"], "ScrollPageUp"],
+	Item[KeyEvent["Next"], "ScrollPageDown"],
+	Item[KeyEvent["Home", Modifiers -> {Control}],
+		FrontEndExecute[{
+			FrontEnd`SelectionMove[FrontEnd`InputNotebook[], Before, Notebook],
+			FrontEnd`FrontEndToken[FrontEnd`InputNotebook[], "ScrollNotebookStart"]
+		}]],
+	Item[KeyEvent["End", Modifiers -> {Control}],
+		FrontEndExecute[{
+			FrontEnd`SelectionMove[FrontEnd`InputNotebook[], After, Notebook],
+			FrontEnd`FrontEndToken[FrontEnd`InputNotebook[], "ScrollNotebookEnd"]
+		}]],
+	Item[KeyEvent["Left", Modifiers->{Command}], "HyperlinkGoBack"],
+	Item[KeyEvent["Right", Modifiers->{Command}], "HyperlinkGoForward"],
+
+(* Input *)
+	Item[KeyEvent["Return"], "Linebreak"], 
+	Item[KeyEvent["Tab"], "Tab"], 
+	Item[KeyEvent["Tab", Modifiers -> {Shift}], "ShiftTab"], 
+	Item[KeyEvent["Backspace"], "DeletePrevious"], 
+	Item[KeyEvent["Delete"], "DeleteNext"], 
+	Item[KeyEvent["Backspace", Modifiers->{Control}], "DeletePreviousNaturalWord"],
+	Item[KeyEvent["Delete", Modifiers->{Control}], "DeleteNextNaturalWord"],
+
+(* Typesetting input *)
+	Item[KeyEvent["6", Modifiers -> {Control}], "Superscript"], 
+	Item[KeyEvent["Keypad6", Modifiers -> {Control}], "Superscript"], 
+	Item[KeyEvent["^", Modifiers -> {Control}], "Superscript"], 
+	Item[KeyEvent["-", Modifiers -> {Control}], "Subscript"], 
+	Item[KeyEvent["KeypadSubtract", Modifiers -> {Control}], "Subscript"], 
+	Item[KeyEvent["_", Modifiers ->{Control}],  "Subscript"],
+	Item[KeyEvent["/", Modifiers -> {Control}], "Fraction"], 
+	Item[KeyEvent["KeypadDivide", Modifiers -> {Control}], "Fraction"],
+	Item[KeyEvent["2", Modifiers -> {Control}], "Radical"], 
+	Item[KeyEvent["Keypad2", Modifiers -> {Control}], "Radical"], 
+	Item[KeyEvent["@", Modifiers -> {Control}], "Radical"], 
+	Item[KeyEvent["7", Modifiers -> {Control}], "Above"], 
+	Item[KeyEvent["&", Modifiers -> {Control}], "Above"], 
+	Item[KeyEvent["Keypad7", Modifiers -> {Control}], "Above"], 
+	Item[KeyEvent[",", Modifiers -> {Control, Shift}], "Below"],
+	Item[KeyEvent["$", Modifiers -> {Control}],
+		KernelExecute[InputAssistant`TeXAssistant[InputNotebook[]]], MenuEvaluator -> "System"],
+	Item[KeyEvent["4", Modifiers -> {Control}],
+		KernelExecute[InputAssistant`TeXAssistant[InputNotebook[]]], MenuEvaluator -> "System"],
+	Item[KeyEvent["Keypad4", Modifiers -> {Control}],
+		KernelExecute[InputAssistant`TeXAssistant[InputNotebook[]]], MenuEvaluator -> "System"],
+	Item[KeyEvent[",", Modifiers -> {Control}], "NewColumn"], 
+	Item[KeyEvent["Return", Modifiers -> {Control}], "NewRow"], 
+	Item[KeyEvent["9", Modifiers -> {Control}], "CreateInlineCell"], 
+	Item[KeyEvent["(", Modifiers -> {Control}], "CreateInlineCell"], 
+	Item[KeyEvent["Keypad9", Modifiers -> {Control}], "CreateInlineCell"], 
+	Item[KeyEvent[")", Modifiers -> {Control}], "MoveNextCell"], 
+	Item[KeyEvent["0", Modifiers -> {Control}], "MoveNextCell"], 
+	Item[KeyEvent["Keypad0", Modifiers -> {Control}], "MoveNextCell"], 
+	Item[KeyEvent["5", Modifiers -> {Control}, CellClass -> BoxFormData], "Otherscript"], 
+	Item[KeyEvent["Keypad5", Modifiers -> {Control}, CellClass -> BoxFormData], "Otherscript"], 
+	Item[KeyEvent["%", Modifiers -> {Control}, CellClass -> BoxFormData], "Otherscript"], 
+	Item[KeyEvent["Left", Modifiers->{Command}, CellClass -> BoxFormData], "NudgeLeft"],
+	Item[KeyEvent["Right", Modifiers->{Command}, CellClass -> BoxFormData], "NudgeRight"],
+	Item[KeyEvent["PageUp", Modifiers-> {Control}, CellClass -> BoxFormData], "PreviousFunctionTemplate"],
+	Item[KeyEvent["PageDown", Modifiers-> {Control}, CellClass -> BoxFormData], "NextFunctionTemplate"],
+
+(* Typesetting motion commands *)
+	Item[KeyEvent[" ", Modifiers -> {Control}], "MoveDelimiterEnd"], 
+	Item[KeyEvent["Tab", Modifiers -> {Control}, CellClass -> BoxFormData], "MoveNextExpression"], 
+	Item[KeyEvent["Tab", Modifiers -> {Control, Shift}, CellClass -> BoxFormData], "MovePreviousExpression"], 
+	
+(* Drawing tool commands *)
+	Item[KeyEvent["o", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["Select"]]],
+	(* Reassigned to Rectangle in v8; I doubt anyone knows "r" does anything.  Double-click is easier. *)
+	(* Item[KeyEvent["r", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["Reshape"]]],*)
+	Item[KeyEvent["p", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["DrawPoint"]]],
+	Item[KeyEvent["c", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["DrawCircle"]]],
+	Item[KeyEvent["d", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["DrawDisk"]]],
+	Item[KeyEvent["f", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["DrawFreehand"]]],
+	Item[KeyEvent["a", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["DrawArrow"]]],
+	Item[KeyEvent["l", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["DrawLine"]]],
+	Item[KeyEvent["b", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["DrawBox"]]],
+	(* "q" for Rectangle deprecated in v8 but preserved for "backward compatibilty" for one version *)
+	Item[KeyEvent["q", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["DrawRectangle"]]],
+	Item[KeyEvent["r", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["DrawRectangle"]]],
+	Item[KeyEvent["s", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["DrawPolyline"]]],
+	Item[KeyEvent["g", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["DrawPolygon"]]],
+	Item[KeyEvent["t", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["PlaceText"]]],
+	Item[KeyEvent["m", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["PlaceMath"]]],
+	Item[KeyEvent["i", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["SampleColor"]]],
+	Item[KeyEvent[".", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["GetCoordinates"]]],
+	Item[KeyEvent["e", CellClass->BoxFormData, BoxClass->GraphEdit2D], FrontEndExecute[Select2DTool["SampleStyle"]]],
+	Item[KeyEvent["o", CellClass->BoxFormData, BoxClass->GraphEdit3D], FrontEndExecute[Select3DTool["Select"]]],
+	Item[KeyEvent["i", CellClass->BoxFormData, BoxClass->GraphEdit3D], FrontEndExecute[Select3DTool["SampleColor"]]],
+	Item[KeyEvent["v", CellClass->BoxFormData, BoxClass->GraphEdit3D], FrontEndExecute[Select3DTool["AdjustView"]]],
+	Item[KeyEvent["m", CellClass->BoxFormData, BoxClass->GraphEdit3D], FrontEndExecute[Select3DTool["AdjustLights"]]],
+
+(* Grouping commands *)
+	Item[KeyEvent["g", Modifiers -> {Control, Shift}], "CellGroup"],
+	Item[KeyEvent["u", Modifiers -> {Control, Shift}], "CellUngroup"],
+	Item[KeyEvent["g", Modifiers -> {Control, Shift}, CellClass->BoxFormData, BoxClass->GraphEdit2D], "Group"],
+	Item[KeyEvent["u", Modifiers -> {Control, Shift}, CellClass->BoxFormData, BoxClass->GraphEdit2D], "Ungroup"],
+
+(* Miscellaneous menu commands *)
+	Item[KeyEvent["Cut"], "Cut"], 
+	Item[KeyEvent["Copy"], "Copy"], 
+	Item[KeyEvent["Paste"], Paste[After]], 
+	Item[KeyEvent["Undo"], "Undo"], 
+	Item[KeyEvent["Redo"], "Redo"],
+	Item[KeyEvent["z", Modifiers -> {Control, Shift}], "Redo"],
+	Item[KeyEvent["Help"], "SelectionHelpDialog"], 
+	Item[KeyEvent["Insert", Modifiers -> {Shift}], Paste[After]],
+	Item[KeyEvent["Insert", Modifiers -> {Control}], "Copy"],
+	Item[KeyEvent["Delete", Modifiers -> {Shift}], "Cut"],
+	Item[KeyEvent["F1", Modifiers->{Shift}], SelectionHelpDialog[False]],
+	Item[KeyEvent["F2"], FrontEnd`CompleteSelection[True]]
+}]

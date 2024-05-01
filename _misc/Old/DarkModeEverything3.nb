@@ -1,0 +1,103 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     53838,       1220]
+NotebookOptionsPosition[     39785,       1058]
+NotebookOutlinePosition[     40207,       1074]
+CellTagsIndexPosition[     40164,       1071]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[StyleData[StyleDefinitions -> "ReverseColor.nb"],ExpressionUUID->"fb3ebbd1-6442-442c-a476-6729b3a20e68"],
+
+Cell[CellGroupData[{
+
+Cell["ReverseColorCustom", "Subtitle",ExpressionUUID->"8929a9e8-1705-43e6-9365-f91d3b7a8fc1"],
+
+Cell[CellGroupData[{
+
+Cell["Notebook", "Section",ExpressionUUID->"44b903c3-0085-4281-8a73-eacb104b73e6"],
+
+Cell[StyleData["Notebook"],
+ NotebookAutoSave->True,
+ InitializationCellEvaluation->True,
+ InitializationCellWarning->False,
+ WindowElements->{"VerticalScrollBar", "HorizontalScrollBar", "MenuBar"},
+ DockedCells->{
+   Cell[
+    BoxData[
+     DynamicModuleBox[{
+      spacer$$ = Spacer[1], quitButton$$ = Button["Quit Kernel", 
+         FrontEndExecute[
+          FrontEndToken["EvaluatorQuit"]], Background -> GrayLevel[0.5]], 
+       embedStyleDef$$ = Button["Embed StyleDefinitions", 
+         SetOptions[
+          ButtonNotebook[], StyleDefinitions -> Import[
+            CurrentValue[
+             ButtonNotebook[], DefaultStyleDefinitions], "NB"]], Background -> 
+         GrayLevel[0.3]]}, 
+      TagBox[
+       GridBox[{{
+          TemplateBox[{1}, "Spacer1"], 
+          ButtonBox["\"Embed StyleDefinitions\"", ButtonFunction :> SetOptions[
+             ButtonNotebook[], StyleDefinitions -> Import[
+               CurrentValue[
+                ButtonNotebook[], DefaultStyleDefinitions], "NB"]], 
+           Background -> GrayLevel[0.3], Appearance -> Automatic, Evaluator -> 
+           Automatic, Method -> "Preemptive"], 
+          TemplateBox[{1}, "Spacer1"], 
+          ButtonBox["\"Quit\"", ButtonFunction :> FrontEndExecute[
+             FrontEndToken["EvaluatorQuit"]], Background -> GrayLevel[0.5], 
+           Appearance -> Automatic, Evaluator -> Automatic, Method -> 
+           "Preemptive"], 
+          TemplateBox[{1}, "Spacer1"]}}, AutoDelete -> False, 
+        GridBoxItemSize -> {"Columns" -> {
+            Scaled[0.], 
+            Scaled[0.1], 
+            Scaled[0.8], 
+            Scaled[0.1], 
+            Scaled[0.]}}], "Grid"], DynamicModuleValues :> {}]], 
+    "DockedCell"]},
+ CellBracketOptions->{"Color"->RGBColor[0.2, 0.2, 0.2],
+ "HoverColor"->RGBColor[0.14, 0.74, 0.82],
+ "Margins"->{0, 5},
+ "Thickness"->1.2,
+ "Widths"->{0, 6}},
+ CellLabelTemplate-><|
+  "In" -> "`1` \[RightAngleBracket]", "InExpired" -> 
+   "\:f759 \[RightAngleBracket]", "Out" -> "\[LeftAngleBracket] `1`", 
+   "OutExpired" -> "\[LeftAngleBracket] \:f759"|>,
+ AutoStyleOptions->{
+ "CommentStyle"->{
+  FontColor -> Hue[0.72, 0.5, 1], ShowAutoStyles -> False, ShowSyntaxStyles -> 
+   False, AutoNumberFormatting -> False, FontWeight -> None},
+ "ExcessArgumentStyle"->{
+  FontColor -> 
+   RGBColor[0.8627450980392157, 0.19607843137254902`, 0.1843137254901961]},
+ "FunctionLocalVariableStyle"->{FontColor -> RGBColor[0.5, 0.84, 0.45]},
+ "GraphicsCompatibilityProblemStyle"->{
+  FontColor -> 
+   RGBColor[0.8627450980392157, 0.19607843137254902`, 0.1843137254901961]},
+ "LocalScopeConflictStyle"->{
+  FontColor -> 
+   RGBColor[0.8274509803921568, 0.21176470588235294`, 0.5098039215686274]},
+ "LocalVariableStyle"->{FontColor -> RGBColor[0.52549, 0.843137, 0.5]},
+ "MissingArgumentStyle"->{
+  FontColor -> 
+   RGBColor[0.8627450980392157, 0.19607843137254902`, 0.1843137254901961]},
+ "MisspelledWordStyle"->{
+  FontColor -> 
+   RGBColor[0.8274509803921568, 0.21176470588235294`, 0.5098039215686274]},
+ "NoKernelPresentStyle"->{FontColor -> RGBColor[0.6, 0.1, 0.1]},
+ "PatternVariableStyle"->{
+  

@@ -1,0 +1,555 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     22259,        547]
+NotebookOptionsPosition[     19954,        501]
+NotebookOutlinePosition[     20373,        517]
+CellTagsIndexPosition[     20330,        514]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"FileNameJoin", "[", 
+   RowBox[{"{", 
+    RowBox[{
+    "$InstallationDirectory", ",", "\"\<SystemFiles\>\"", ",", 
+     "\"\<Components\>\"", ",", " ", "\"\<DarkModeEverything\>\"", ",", 
+     "\"\<Mode.mx\>\""}], "}"}], "]"}], " "}]], "Input",
+ CellChangeTimes->{{3.918587110616892*^9, 3.918587112079767*^9}, {
+  3.92080871984054*^9, 3.920808738989376*^9}, {3.9208087780922146`*^9, 
+  3.9208087862366905`*^9}, {3.9208088213559704`*^9, 3.920808913710823*^9}, {
+  3.9208090251871834`*^9, 
+  3.9208090271274967`*^9}},ExpressionUUID->"5e9be1ac-0b0d-1b4d-b0c2-\
+50c3ca008ca9"],
+
+Cell[BoxData["\<\"C:\\\\Program Files\\\\Wolfram \
+Research\\\\Mathematica\\\\14.1\\\\SystemFiles\"\>"], "Output",
+ CellChangeTimes->{{3.920808722446863*^9, 3.920808739439022*^9}},
+ CellLabel->"Out[14]=",ExpressionUUID->"72d4a96c-95b0-4842-bcaf-e5c1d796390b"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "tmpDir", "=", 
+   "\"\<L:\\\\StyleSheets\\\\Dark\\\\SystemFiles\\\\Components\\\\\
+DarkModeEverything\>\""}], ";"}]], "Input",
+ CellChangeTimes->{{3.918587110616892*^9, 3.918587112079767*^9}, {
+  3.9208095003066444`*^9, 3.9208095177786865`*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"fb9de843-e22c-c440-95e9-63c9c8b0db75"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{"tmpDir", ",", " ", "\"\<Mode.mx\>\""}], "}"}], "]"}], ",", "\n",
+    "\t", "False"}], "\n", "]"}]], "Input",
+ CellChangeTimes->{{3.918587110616892*^9, 3.918587112079767*^9}, {
+  3.920809042778681*^9, 3.9208091441863766`*^9}, {3.92080949135038*^9, 
+  3.920809499911665*^9}, {3.920809599963398*^9, 3.920809657099783*^9}, {
+  3.920809687393614*^9, 3.920809710904455*^9}, {3.920809754611887*^9, 
+  3.920809775731655*^9}, {3.920809856636881*^9, 3.9208098866292477`*^9}, {
+  3.9208099439266624`*^9, 3.9208099509195786`*^9}, {3.9208100452422714`*^9, 
+  3.920810068407709*^9}, {3.9208101799658127`*^9, 3.920810198086916*^9}},
+ CellLabel->
+  "In[106]:=",ExpressionUUID->"fe3db910-2aa7-ad44-b513-2541881ad903"],
+
+Cell[BoxData["\<\"L:\\\\StyleSheets\\\\Dark\\\\SystemFiles\\\\Components\\\\\
+DarkModeEverything\\\\Mode.mx\"\>"], "Output",
+ CellChangeTimes->{
+  3.9208090903898163`*^9, {3.9208091206969185`*^9, 3.920809145237276*^9}, {
+   3.9208096245059967`*^9, 3.9208097112263145`*^9}, {3.920809755446892*^9, 
+   3.9208097759538555`*^9}, {3.9208098574923058`*^9, 3.9208098868996925`*^9}, 
+   3.920809944758293*^9, {3.9208100459490147`*^9, 3.920810068772684*^9}, {
+   3.920810180864666*^9, 3.9208101993479786`*^9}},
+ CellLabel->
+  "Out[106]=",ExpressionUUID->"9a6f37d8-785b-4d4b-9bf1-cf9236496783"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", "\n", "\t\t", 
+    RowBox[{"tmp", "=", 
+     RowBox[{"Import", "[", 
+      RowBox[{"FileNameJoin", "[", 
+       RowBox[{"{", 
+        RowBox[{"compDir", ",", " ", "\"\<Mode.mx\>\""}], "}"}], "]"}], 
+      "]"}]}], "\n", "\t", "}"}], ",", "\n", "\t", 
+   RowBox[{"Panel", "[", "\n", "\t\t", 
+    RowBox[{
+     RowBox[{"style", " ", "@", " ", 
+      RowBox[{"If", "[", 
+       RowBox[{"tmp", ",", " ", "\"\<ON\>\"", ",", " ", "\"\<OFF\>\""}], 
+       "]"}]}], ",", "\n", "\t\t", 
+     RowBox[{"Background", " ", "->", " ", 
+      RowBox[{"If", "[", 
+       RowBox[{"tmp", ",", " ", "Green", ",", " ", "Red"}], "]"}]}]}], "\n", 
+    "\t", "]"}]}], "\n", "]"}]], "Code",
+ CellChangeTimes->{{3.920809976477545*^9, 
+  3.920809989785433*^9}},ExpressionUUID->"25017774-c2b3-6645-8e73-\
+adccf1589f01"],
+
+Cell[BoxData[
+ RowBox[{"FileNames", "[", " ", 
+  RowBox[{"\"\<*.*\>\"", ",", "\n", "\t\t", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", " ", 
+     RowBox[{"ParentDirectory", "@", 
+      RowBox[{"ParentDirectory", "@", "tmpDir"}]}], "}"}], "]"}], ",", "\n", 
+   "\t\t", "Infinity"}], "\n", "\t", "]"}]], "Input",
+ CellChangeTimes->{{3.918587110616892*^9, 3.918587112079767*^9}, {
+  3.9208196255072575`*^9, 3.9208196511907444`*^9}, {3.9208197087600536`*^9, 
+  3.920819723199381*^9}},
+ CellLabel->
+  "In[151]:=",ExpressionUUID->"0731bb68-187c-d940-aaa7-64f1bebe46f7"],
+
+Cell[BoxData["Spli"], "Input",
+ CellChangeTimes->{{3.918587110616892*^9, 3.918587112079767*^9}, {
+  3.9208205548126183`*^9, 
+  3.9208205653027306`*^9}},ExpressionUUID->"e078e43b-05ac-c840-9c3c-\
+c2583d644bde"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SequenceCases", "[", "\n", "\t", 
+   RowBox[{
+    RowBox[{"FileNameSplit", "[", "tmpDir", " ", "]"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<SystemFiles\>\"", ",", "__"}], "}"}]}], "\n", "]"}], "//", 
+  "RepeatedTiming"}]], "Input",
+ CellChangeTimes->{{3.918587110616892*^9, 3.918587112079767*^9}, {
+   3.920820693572424*^9, 3.920820742352602*^9}, 3.920820851826393*^9},
+ CellLabel->
+  "In[198]:=",ExpressionUUID->"5716ecf5-2941-7b45-babd-6b69338a7ae8"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.0000847708984375`", ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\<\"SystemFiles\"\>", ",", "\<\"Components\"\>", 
+      ",", "\<\"DarkModeEverything\"\>"}], "}"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.92082070941189*^9, 3.9208207264367256`*^9}, {
+  3.920820853571825*^9, 3.920820857502514*^9}},
+ CellLabel->
+  "Out[198]=",ExpressionUUID->"c81430ba-18de-a44d-93ae-9763049c02e8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Reap", "[", "\n", "\t", 
+     RowBox[{
+      RowBox[{"i", "=", "False"}], ";", "\n", "\t", 
+      RowBox[{"Do", "[", "\n", "\t\t", 
+       RowBox[{
+        RowBox[{"Which", "[", "\n", "\t\t\t", 
+         RowBox[{
+          RowBox[{"dirPart", " ", "==", " ", "\"\<SystemFiles\>\""}], " ", 
+          ",", "\n", "\t\t\t\t", 
+          RowBox[{
+           RowBox[{"i", "=", "True"}], ";", "\n", "\t\t\t\t", 
+           RowBox[{"Sow", "[", "dirPart", "]"}]}], ",", "\n", "\t\t\t", "i", 
+          ",", "\n", "\t\t\t\t", 
+          RowBox[{"Sow", "[", "dirPart", "]"}]}], "\n", "\t\t", "]"}], "\n", 
+        "\t\t", ",", "\n", "\t\t", 
+        RowBox[{"{", 
+         RowBox[{"dirPart", ",", 
+          RowBox[{"FileNameSplit", "[", "tmpDir", " ", "]"}]}], "}"}]}], "\n",
+        "\t", "]"}]}], "\n", "]"}], "//", "Last"}], "//", "Flatten"}], "//", 
+  "RepeatedTiming"}]], "Input",
+ CellChangeTimes->{{3.918587110616892*^9, 3.918587112079767*^9}, {
+   3.9208199861078568`*^9, 3.9208199998433723`*^9}, {3.9208200314888535`*^9, 
+   3.920820110789049*^9}, {3.920820141645872*^9, 3.92082024631448*^9}, {
+   3.9208202875008736`*^9, 3.9208202897361965`*^9}, {3.9208203999620075`*^9, 
+   3.920820412535654*^9}, {3.920820452236149*^9, 3.9208204959424667`*^9}, 
+   3.920820833210396*^9},
+ CellLabel->
+  "In[199]:=",ExpressionUUID->"525cc99a-dda1-5041-b055-09aef537c77a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"7.758515930175782`*^-6", ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SystemFiles\"\>", ",", "\<\"Components\"\>", 
+     ",", "\<\"DarkModeEverything\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.92082022085178*^9, 3.9208202465886345`*^9}, {
+  3.9208202858049393`*^9, 3.9208202910148296`*^9}, {3.9208204590907784`*^9, 
+  3.920820482054949*^9}, {3.920820730004402*^9, 3.9208207483692837`*^9}, {
+  3.9208208355386944`*^9, 3.9208208646670055`*^9}},
+ CellLabel->
+  "Out[199]=",ExpressionUUID->"3b9980d0-3bbb-ab47-8266-eb5678a5770e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"i", "=", "False"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Map", "[", "\n", "\t", 
+   RowBox[{
+    RowBox[{"dirPart", "|->", "\n", "\t", 
+     RowBox[{"Which", "[", "\n", "\t\t\t", 
+      RowBox[{
+       RowBox[{"dirPart", " ", "==", " ", "\"\<SystemFiles\>\""}], " ", ",", 
+       "\n", "\t\t\t\t", 
+       RowBox[{
+        RowBox[{"i", "=", "True"}], ";", "\n", "\t\t\t\t", 
+        RowBox[{"Sow", "[", "dirPart", "]"}]}], ",", "\n", "\t\t\t", "i", ",",
+        "\n", "\t\t\t\t", 
+       RowBox[{"Sow", "[", "dirPart", "]"}], ",", "\n", "\t\t\t", "True", ",",
+        "\n", "\t\t\t\t", "Nothing"}], "\n", "\t\t", "]"}]}], ",", "\n", "\t", 
+    RowBox[{"FileNameSplit", "[", "tmpDir", " ", "]"}]}], "\n", "]"}], "//", 
+  "RepeatedTiming"}]}], "Input",
+ CellChangeTimes->{{3.918587110616892*^9, 3.918587112079767*^9}, {
+  3.9208198195697536`*^9, 3.9208199646141853`*^9}, {3.9208208684907074`*^9, 
+  3.9208209229081535`*^9}},
+ CellLabel->
+  "In[208]:=",ExpressionUUID->"ad9b931a-5560-694c-ad7a-edd8601a2630"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.000020128512573242186`", ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"L:\"\>", ",", "\<\"StyleSheets\"\>", ",", "\<\"Dark\"\>", 
+     ",", "\<\"SystemFiles\"\>", ",", "\<\"Components\"\>", 
+     ",", "\<\"DarkModeEverything\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.920819823301031*^9, 3.9208198520698967`*^9}, {
+  3.920820897727104*^9, 3.9208209323077545`*^9}},
+ CellLabel->
+  "Out[209]=",ExpressionUUID->"9e32bd45-847d-6f4a-a2f0-ec0a38678180"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Map", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{"dir", "|->", 
+    RowBox[{"(", "\n", "\t\t", 
+     RowBox[{"FileNameSplit", "[", "]"}], "\n", "\t", ")"}]}], ",", "\n", 
+   "\t", 
+   RowBox[{"FileNames", "[", " ", 
+    RowBox[{"\"\<*.*\>\"", ",", "\n", "\t\t", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", " ", 
+       RowBox[{"ParentDirectory", "@", 
+        RowBox[{"ParentDirectory", "@", "tmpDir"}]}], " ", "}"}], "]"}], ",", 
+     "\n", "\t\t", "Infinity"}], "\n", "\t", "]"}]}], "\n", "]"}]], "Input",
+ CellChangeTimes->{{3.918587110616892*^9, 3.918587112079767*^9}, {
+  3.9208189594981384`*^9, 3.920819003448017*^9}, {3.9208191139665356`*^9, 
+  3.9208191471557903`*^9}, {3.920819188196989*^9, 3.9208192034505596`*^9}, {
+  3.9208195517839317`*^9, 3.920819553719919*^9}, {3.920819621237547*^9, 
+  3.920819621930212*^9}, {3.920819759912319*^9, 
+  3.920819813307575*^9}},ExpressionUUID->"26ce62cd-e845-d54a-9721-\
+258d6bad5a6c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\n", "\t", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"compDir", " ", "=", " ", "tmpDir"}], " ", ";"}], "\n", "\n", 
+   "\t", 
+   RowBox[{"DynamicModule", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"statusPanel", ",", "\n", "\t\t\t", 
+       RowBox[{"style", " ", "=", " ", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"#", ",", " ", 
+           RowBox[{"FontFamily", "->", "\"\<Source Sans Pro\>\""}]}], "]"}], 
+         "&"}]}], ",", "\n", "\t\t\t", 
+       RowBox[{"isInstalled", " ", "=", " ", 
+        RowBox[{"Import", "[", 
+         RowBox[{"FileNameJoin", "[", 
+          RowBox[{"{", 
+           RowBox[{"compDir", ",", " ", "\"\<Mode.mx\>\""}], "}"}], "]"}], 
+         "]"}]}]}], "\n", "\t\t", "}"}], ",", "\n", "\t\t", "\n", "\t\t", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"--", 
+        RowBox[{"-", " ", 
+         RowBox[{"Utilities", " ", "--"}]}]}], "-"}], " ", "*)"}], "\n", 
+     "\t\t", 
+     RowBox[{
+      RowBox[{"statusPanel", " ", "=", " ", 
+       RowBox[{"Function", " ", "@", " ", 
+        RowBox[{"With", "[", 
+         RowBox[{
+          RowBox[{"{", "\n", "\t\t\t\t", 
+           RowBox[{"tmp", "=", 
+            RowBox[{"Import", "[", 
+             RowBox[{"FileNameJoin", "[", 
+              RowBox[{"{", 
+               RowBox[{"compDir", ",", " ", "\"\<Mode.mx\>\""}], "}"}], "]"}],
+              "]"}]}], "\n", "\t\t\t", "}"}], ",", "\n", "\t\t\t", 
+          RowBox[{"Panel", "[", "\n", "\t\t\t\t", 
+           RowBox[{
+            RowBox[{"style", " ", "@", " ", 
+             RowBox[{"If", "[", 
+              RowBox[{
+              "tmp", ",", " ", "\"\<ON\>\"", ",", " ", "\"\<OFF\>\""}], 
+              "]"}]}], ",", "\n", "\t\t\t\t", 
+            RowBox[{"Background", " ", "->", " ", 
+             RowBox[{"If", "[", 
+              RowBox[{"tmp", ",", " ", "Green", ",", " ", "Red"}], "]"}]}], 
+            ",", "\n", "\t\t\t\t", 
+            RowBox[{"ImageSize", "->", 
+             RowBox[{"{", 
+              RowBox[{"35", ",", "1"}], "}"}]}]}], "\n", "\t\t\t", "]"}]}], 
+         "\n", "\t\t", "]"}]}]}], ";", "\n", "\t\t", "\n", "\t\t", 
+      RowBox[{"backup", " ", "=", " ", 
+       RowBox[{"Function", " ", "@", " ", 
+        RowBox[{"With", "[", 
+         RowBox[{
+          RowBox[{"{", "\n", "\t\t\t\t", 
+           RowBox[{"filesToBackup", " ", "=", " ", "\n", "\t\t\t\t\t", 
+            RowBox[{"FileSystemMap", "[", " ", 
+             RowBox[{"FileNameTake", ",", "\n", "\t\t\t\t\t\t", 
+              RowBox[{"FileNameJoin", "[", 
+               RowBox[{"{", " ", 
+                RowBox[{"tmpDir", ",", " ", "\"\<SystemFiles\>\""}], "}"}], 
+               "]"}]}], "\n", "\t\t\t\t\t", "]"}]}], "\n", "\t\t\t", "}"}], 
+          ","}], "\n", "\t\t\t", "\n", "\t\t", "]"}]}]}], ";", "\n", "\t\t", 
+      "\n", "\t\t", 
+      RowBox[{"installDME", " ", "=", " ", 
+       RowBox[{"Function", " ", "@", " ", 
+        RowBox[{"With", "[", 
+         RowBox[{
+          RowBox[{"{", "\n", "\t\t\t\t", "\n", "\t\t\t", "}"}], ","}], "\n", 
+         "\t\t\t", "\n", "\t\t", "]"}]}]}], ";", "\n", "\t\t", "\n", "\t\t", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{"--", 
+         RowBox[{"-", " ", 
+          RowBox[{"Main", " ", "--"}]}]}], "-"}], "*)"}], "\n", "\t\t", 
+      RowBox[{"Grid", "[", 
+       RowBox[{"{", "\n", "\t\t\t", 
+        RowBox[{
+         RowBox[{"{", "\n", "\t\t\t\t", 
+          RowBox[{
+           RowBox[{"style", "@", "\"\<Status:\>\""}], ",", " ", 
+           RowBox[{"Dynamic", "[", 
+            RowBox[{"statusPanel", "[", "]"}], "]"}]}], "\n", "\t\t\t", "}"}],
+          ",", "\n", "\t\t\t", 
+         RowBox[{"{", "\n", "\t\t\t\t", 
+          RowBox[{"Button", "[", 
+           RowBox[{"\"\<Install DME\>\"", ",", " ", 
+            RowBox[{"installDME", "[", "]"}]}], "]"}], "\n", "\t\t\t", 
+          "}"}]}], "\n", "\t\t", "}"}], "\n", "\t\t", "]"}]}]}], "\n", "\t", 
+    "]"}], "\n"}]}]], "Code",
+ CellChangeTimes->{{3.918587110616892*^9, 3.918587112079767*^9}, {
+   3.9208086572938576`*^9, 3.9208086586121826`*^9}, {3.920808694167219*^9, 
+   3.9208087136514874`*^9}, {3.920809162998369*^9, 3.920809606475231*^9}, {
+   3.920809651022665*^9, 3.9208099407804127`*^9}, {3.92080997209795*^9, 
+   3.920810288750025*^9}, {3.9208103268579445`*^9, 3.9208104549575977`*^9}, {
+   3.920810497279152*^9, 3.9208105068888454`*^9}, 3.920810646269699*^9, {
+   3.920815123784216*^9, 3.9208151864660225`*^9}, {3.9208153189330635`*^9, 
+   3.9208153250966473`*^9}, {3.9208188196567593`*^9, 3.920818827461357*^9}, {
+   3.9208188622561684`*^9, 3.9208188816198807`*^9}, {3.920818912582405*^9, 
+   3.9208189213863163`*^9}},ExpressionUUID->"d06e597e-8f61-c84a-8fa2-\
+6b88ebf391eb"],
+
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`statusPanel$$ = 
+  With[{$CellContext`tmp$ = Import[
+      FileNameJoin[{$CellContext`compDir, "Mode.mx"}]]}, 
+   Panel[
+    $CellContext`style$$[
+     If[$CellContext`tmp$, "ON", "OFF"]], Background -> 
+    If[$CellContext`tmp$, Green, Red], 
+    ImageSize -> {35, 1}]]& , $CellContext`style$$ = 
+  Style[#, FontFamily -> "Source Sans Pro"]& , $CellContext`isInstalled$$ = 
+  False}, 
+  TagBox[GridBox[{
+     {
+      StyleBox["\<\"Status:\"\>",
+       StripOnInput->False,
+       FontFamily->"Source Sans Pro"], 
+      DynamicBox[ToBoxes[
+        $CellContext`statusPanel$$[], StandardForm],
+       ImageSizeCache->{35., {9.183593688416295, 13.316406311583705`}}]},
+     {
+      ButtonBox["\<\"Install DME\"\>",
+       Appearance->Automatic,
+       ButtonFunction:>{},
+       Evaluator->None,
+       Method->"Preemptive"], ""}
+    },
+    AutoDelete->False,
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Grid"],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{
+  3.920809472491291*^9, {3.920809508424885*^9, 3.9208095886303196`*^9}, {
+   3.920809636010479*^9, 3.920809811165682*^9}, {3.920809850328554*^9, 
+   3.9208098936983833`*^9}, 3.9208099414138317`*^9, {3.920810042622423*^9, 
+   3.9208100626132355`*^9}, {3.920810122520693*^9, 3.9208101881331787`*^9}, 
+   3.9208102579217625`*^9},
+ CellLabel->
+  "Out[108]=",ExpressionUUID->"feb71ec4-e287-e64c-9d99-503ece158cfb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PaletteNotebook", "[", "\n", "\t", 
+  RowBox[{
+   RowBox[{"{", "\n", "\t\t", 
+    RowBox[{"Grid", "[", 
+     RowBox[{"{", "\n", "\t\t\t", 
+      RowBox[{"{", " ", "}"}], "\n", "\t\t", "}"}], "]"}], "\n", "\t", "}"}], 
+   ",", "\n", "\t", 
+   RowBox[{"WindowFrame", "->", "\"\<Generic\>\""}], ",", "\n", "\t", 
+   RowBox[{"WindowTitle", "->", "\"\<DarkModeEverything\>\""}], ",", "\n", 
+   "\t", 
+   RowBox[{"Background", " ", "->", " ", 
+    RowBox[{"GrayLevel", "[", "0.07", "]"}]}]}], "\n", "]"}]], "Input",
+ CellChangeTimes->{{3.918587110616892*^9, 3.918587112079767*^9}, {
+   3.9208080224369164`*^9, 3.9208080239999084`*^9}, {3.9208080828922825`*^9, 
+   3.9208080861777*^9}, {3.920808339896515*^9, 3.9208084830578537`*^9}, 
+   3.920808524372305*^9, {3.9208085556488037`*^9, 
+   3.920808655183161*^9}},ExpressionUUID->"f5c55c98-ed16-7b47-ad0e-\
+1adb9eff7202"],
+
+Cell[BoxData[
+ InterpretationBox[
+  PanelBox[GridBox[{
+     {
+      TooltipBox[
+       ButtonBox[
+        StyleBox[
+         DynamicBox[FEPrivate`FrontEndResource[
+          "FEBitmaps", "ManipulatePasteIcon"],
+          ImageSizeCache->{13., {4.433593688416295, 8.566406311583705}}],
+         DynamicUpdating->True],
+        Appearance->{Automatic, None, "Normal", Automatic},
+        ButtonFunction:>FrontEndExecute[{
+           FrontEnd`NotebookPut[
+            Notebook[{
+              Cell[
+               BoxData[
+                TagBox[
+                 
+                 GridBox[{{"\"123\""}}, AutoDelete -> False, 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Grid"]]]}, WindowFrame -> "Generic", WindowTitle -> 
+             "DarkModeEverything", Background -> GrayLevel[0.07], 
+             WindowElements -> {}, 
+             WindowMargins -> {{Automatic, 0}, {Automatic, 0}}, WindowSize -> 
+             All, StyleDefinitions -> "Palette.nb"]]}],
+        DefaultBaseStyle->{},
+        Evaluator->None,
+        Method->"Queued"],
+       DynamicBox[
+        ToBoxes[
+         FEPrivate`FrontEndResource["FEStrings", "NotebookInNewWindow"]]]]},
+     {
+      ItemBox[GridBox[{
+         {Cell[BoxData[
+           TagBox[GridBox[{
+              {"\<\"123\"\>"}
+             },
+             AutoDelete->False,
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Grid"]],ExpressionUUID->"1b53651b-4f82-f147-8e64-b7142f667b3c"]}
+        },
+        GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
+       Background->GrayLevel[1],
+       Frame->True,
+       FrameStyle->GrayLevel[0, 0.2]]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}],
+   BaseStyle->{FontFamily -> "Times"},
+   DefaultBaseStyle->{},
+   FrameMargins->5],
+  PaletteNotebook[{
+    Grid[{{"123"}}]}, WindowFrame -> "Generic", WindowTitle -> 
+   "DarkModeEverything", Background -> GrayLevel[0.07]]]], "Output",
+ CellChangeTimes->{{3.920808435630102*^9, 3.920808483453102*^9}, {
+   3.920808525007025*^9, 3.9208085609849224`*^9}, 3.920808594375807*^9, 
+   3.920808629227236*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"74fc1681-64aa-5743-bdd3-93177396dbf9"]
+}, Open  ]]
+},
+WindowSize->{720.75, 897},
+WindowMargins->{{Automatic, 65.25}, {Automatic, 33}},
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (February 23, 2024)",
+StyleDefinitions->"DarkModeEverything.nb",
+ExpressionUUID->"f1b1a7d1-e8b2-4b44-9c69-27e24b564037"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 607, 13, 54, "Input",ExpressionUUID->"5e9be1ac-0b0d-1b4d-b0c2-50c3ca008ca9"],
+Cell[1190, 37, 259, 3, 36, "Output",ExpressionUUID->"72d4a96c-95b0-4842-bcaf-e5c1d796390b"]
+}, Open  ]],
+Cell[1464, 43, 362, 8, 36, "Input",ExpressionUUID->"fb9de843-e22c-c440-95e9-63c9c8b0db75"],
+Cell[CellGroupData[{
+Cell[1851, 55, 827, 15, 90, "Input",ExpressionUUID->"fe3db910-2aa7-ad44-b513-2541881ad903"],
+Cell[2681, 72, 584, 9, 36, "Output",ExpressionUUID->"9a6f37d8-785b-4d4b-9bf1-cf9236496783"]
+}, Open  ]],
+Cell[3280, 84, 856, 22, 153, "Code",ExpressionUUID->"25017774-c2b3-6645-8e73-adccf1589f01"],
+Cell[4139, 108, 570, 12, 90, "Input",ExpressionUUID->"0731bb68-187c-d940-aaa7-64f1bebe46f7"],
+Cell[4712, 122, 209, 4, 36, "Input",ExpressionUUID->"e078e43b-05ac-c840-9c3c-c2583d644bde"],
+Cell[CellGroupData[{
+Cell[4946, 130, 496, 11, 72, "Input",ExpressionUUID->"5716ecf5-2941-7b45-babd-6b69338a7ae8"],
+Cell[5445, 143, 442, 10, 36, "Output",ExpressionUUID->"c81430ba-18de-a44d-93ae-9763049c02e8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5924, 158, 1415, 31, 270, "Input",ExpressionUUID->"525cc99a-dda1-5041-b055-09aef537c77a"],
+Cell[7342, 191, 574, 11, 40, "Output",ExpressionUUID->"3b9980d0-3bbb-ab47-8266-eb5678a5770e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7953, 207, 1039, 23, 270, "Input",ExpressionUUID->"ad9b931a-5560-694c-ad7a-edd8601a2630"],
+Cell[8995, 232, 497, 10, 36, "Output",ExpressionUUID->"9e32bd45-847d-6f4a-a2f0-ec0a38678180"]
+}, Open  ]],
+Cell[9507, 245, 963, 20, 180, "Input",ExpressionUUID->"26ce62cd-e845-d54a-9721-258d6bad5a6c"],
+Cell[CellGroupData[{
+Cell[10495, 269, 4717, 105, 801, "Code",ExpressionUUID->"d06e597e-8f61-c84a-8fa2-6b88ebf391eb"],
+Cell[15215, 376, 1461, 37, 73, "Output",ExpressionUUID->"feb71ec4-e287-e64c-9d99-503ece158cfb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16713, 418, 886, 18, 198, "Input",ExpressionUUID->"f5c55c98-ed16-7b47-ad0e-1adb9eff7202"],
+Cell[17602, 438, 2336, 60, 77, "Output",ExpressionUUID->"74fc1681-64aa-5743-bdd3-93177396dbf9"]
+}, Open  ]]
+}
+]
+*)
+

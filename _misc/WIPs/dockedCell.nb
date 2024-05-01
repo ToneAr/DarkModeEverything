@@ -1,0 +1,628 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28521,        620]
+NotebookOptionsPosition[     25082,        536]
+NotebookOutlinePosition[     28242,        617]
+CellTagsIndexPosition[     28199,        614]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"dockedCell", " ", "=", " ", "\n", "   ", 
+    RowBox[{"Cell", "[", "\n", "    ", 
+     RowBox[{
+      RowBox[{"BoxData", "[", "\n", "     ", 
+       RowBox[{"DynamicModuleBox", "[", 
+        RowBox[{
+         RowBox[{"{", "\n", "      ", 
+          RowBox[{
+           RowBox[{"spacer$$", " ", "=", " ", 
+            RowBox[{"Spacer", "[", "1", "]"}]}], ",", " ", 
+           RowBox[{"quitButton$$", " ", "=", " ", 
+            RowBox[{"Button", "[", 
+             RowBox[{"\"\<Quit Kernel\>\"", ",", " ", "\n", "         ", 
+              RowBox[{"FrontEndExecute", "[", "\n", "          ", 
+               RowBox[{"FrontEndToken", "[", "\"\<EvaluatorQuit\>\"", "]"}], 
+               "]"}], ",", " ", 
+              RowBox[{"Background", " ", "->", " ", 
+               RowBox[{"GrayLevel", "[", "0.5", "]"}]}]}], "]"}]}], ",", " ", 
+           "\n", "       ", 
+           RowBox[{"embedStyleDef$$", " ", "=", " ", 
+            RowBox[{"Button", "[", 
+             RowBox[{
+             "\"\<Embed StyleDefinitions\>\"", ",", " ", "\n", "         ", 
+              RowBox[{"SetOptions", "[", "\n", "          ", 
+               RowBox[{
+                RowBox[{"ButtonNotebook", "[", "]"}], ",", " ", 
+                RowBox[{"StyleDefinitions", " ", "->", " ", 
+                 RowBox[{"Import", "[", "\n", "            ", 
+                  RowBox[{
+                   RowBox[{"CurrentValue", "[", "\n", "             ", 
+                    RowBox[{
+                    RowBox[{"ButtonNotebook", "[", "]"}], ",", " ", 
+                    "DefaultStyleDefinitions"}], "]"}], ",", " ", 
+                   "\"\<NB\>\""}], "]"}]}]}], "]"}], ",", " ", "\n", 
+              "         ", 
+              RowBox[{"Background", " ", "->", " ", 
+               RowBox[{"GrayLevel", "[", "0.3", "]"}]}]}], "]"}]}]}], "}"}], 
+         ",", " ", "\n", "      ", 
+         RowBox[{"TagBox", "[", "\n", "       ", 
+          RowBox[{
+           RowBox[{"GridBox", "[", "\n", "\t\t", 
+            RowBox[{
+             RowBox[{"{", "\n", "\t\t\t", 
+              RowBox[{
+               RowBox[{"{", "\n", "\t\t\t\t", 
+                RowBox[{
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t\t", "\n", "\t\t\t\t ", 
+                 RowBox[{"DynamicModuleBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{"$CellContext`str$$", "=", "\"\<\>\""}], "}"}], 
+                   ",", 
+                   RowBox[{"TagBox", "[", 
+                    RowBox[{
+                    RowBox[{"TemplateBox", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"StyleBox", "[", 
+                    RowBox[{"\"\<\\\"LLMSyntesize:\\\"\>\"", ",", 
+                    RowBox[{"FontColor", "->", 
+                    RowBox[{"GrayLevel", "[", "1", "]"}]}], ",", 
+                    RowBox[{"StripOnInput", "->", "False"}]}], "]"}], ",", 
+                    RowBox[{"InputFieldBox", "[", 
+                    RowBox[{
+                    RowBox[{"Dynamic", "[", "$CellContext`str$$", "]"}], ",", 
+                    "String", ",", " ", 
+                    RowBox[{"FieldSize", "->", 
+                    RowBox[{"{", 
+                    RowBox[{"20", ",", "1"}], "}"}]}]}], "]"}]}], "}"}], ",", 
+                    "\"\<RowDefault\>\""}], "]"}], ",", 
+                    RowBox[{"EventHandlerTag", "[", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\"\<ReturnKeyDown\>\"", ":>", 
+                    RowBox[{"Print", "[", 
+                    RowBox[{"LLMSynthesize", "[", "$CellContext`str$$", "]"}],
+                     "]"}]}], ",", 
+                    RowBox[{"Method", "->", "\"\<Queued\>\""}], ",", 
+                    RowBox[{"PassEventsDown", "->", "Automatic"}], ",", 
+                    RowBox[{"PassEventsUp", "->", "True"}]}], "}"}], "]"}]}], 
+                    "]"}], ",", 
+                   RowBox[{"DynamicModuleValues", ":>", 
+                    RowBox[{"{", "}"}]}]}], "]"}], ",", "\n", "\n", 
+                 "\t\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t\t", "\n", "\t\t\t\t ", 
+                 RowBox[{"ButtonBox", "[", "\n", "          ", 
+                  RowBox[{"\"\<\\\"Embed StyleDefinitions\\\"\>\"", ",", " ", 
+                   RowBox[{"ButtonFunction", " ", ":>", " ", 
+                    RowBox[{"SetOptions", "[", "\n", "             ", 
+                    RowBox[{
+                    RowBox[{"ButtonNotebook", "[", "]"}], ",", " ", 
+                    RowBox[{"StyleDefinitions", " ", "->", " ", 
+                    RowBox[{"Import", "[", "\n", "               ", 
+                    RowBox[{
+                    RowBox[{"CurrentValue", "[", "\n", "                ", 
+                    RowBox[{
+                    RowBox[{"ButtonNotebook", "[", "]"}], ",", " ", 
+                    "DefaultStyleDefinitions"}], "]"}], ",", " ", 
+                    "\"\<NB\>\""}], "]"}]}]}], "]"}]}], ",", " ", "\n", 
+                   "           ", 
+                   RowBox[{"Background", " ", "->", " ", 
+                    RowBox[{"GrayLevel", "[", "0.3", "]"}]}], ",", " ", 
+                   RowBox[{"Appearance", " ", "->", " ", "Automatic"}], ",", 
+                   " ", "\n", "           ", 
+                   RowBox[{"Evaluator", " ", "->", " ", "Automatic"}], ",", 
+                   " ", 
+                   RowBox[{"Method", " ", "->", " ", "\"\<Preemptive\>\""}]}],
+                   "]"}], ",", " ", "\n", "           ", "\n", "          ", 
+                 RowBox[{"ButtonBox", "[", 
+                  RowBox[{"\"\<\\\"Quit\\\"\>\"", ",", " ", 
+                   RowBox[{"ButtonFunction", " ", ":>", " ", 
+                    RowBox[{"FrontEndExecute", "[", "\n", "             ", 
+                    RowBox[{
+                    "FrontEndToken", "[", "\"\<EvaluatorQuit\>\"", "]"}], 
+                    "]"}]}], ",", " ", 
+                   RowBox[{"Background", " ", "->", " ", "\n", "           ", 
+                    RowBox[{"GrayLevel", "[", "0.5", "]"}]}], ",", " ", 
+                   RowBox[{"Appearance", " ", "->", " ", "Automatic"}], ",", 
+                   " ", 
+                   RowBox[{
+                   "Evaluator", " ", "->", " ", "\n", "           ", 
+                    "Automatic"}], ",", " ", 
+                   RowBox[{"Method", " ", "->", " ", "\"\<Preemptive\>\""}]}],
+                   "]"}], ",", " ", "\n", "           ", "\n", "          ", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}]}], "\n", "         ", "}"}], ",", "\n", "         ", 
+               RowBox[{"{", "\n", "\t\t\t", 
+                RowBox[{
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", " ", "\n", "\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}]}], "\n", "\t\t", "}"}]}], "\n", "\t", "}"}], ",", " ", 
+             RowBox[{"AutoDelete", " ", "->", " ", "False"}], ",", " ", "\n", 
+             "        ", 
+             RowBox[{"GridBoxItemSize", " ", "->", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"\"\<Columns\>\"", " ", "->", " ", 
+                 RowBox[{"{", "\n", "            ", 
+                  RowBox[{
+                   RowBox[{"Scaled", "[", "0.", "]"}], ",", " ", "\n", 
+                   "            ", 
+                   RowBox[{"Scaled", "[", "0.4", "]"}], ",", "\n", 
+                   "            ", 
+                   RowBox[{"Scaled", "[", "0.4", "]"}], ",", " ", "\n", 
+                   "            ", 
+                   RowBox[{"Scaled", "[", "0.1", "]"}], ",", " ", "\n", 
+                   "            ", 
+                   RowBox[{"Scaled", "[", "0.1", "]"}], ",", " ", "\n", 
+                   "            ", 
+                   RowBox[{"Scaled", "[", "0.", "]"}]}], "}"}]}], ",", "\n", 
+                "            ", 
+                RowBox[{"{", "\n", "            ", 
+                 RowBox[{
+                  RowBox[{"Scaled", "[", "0.1", "]"}], ",", " ", "\n", 
+                  "            ", 
+                  RowBox[{"Scaled", "[", "0.8", "]"}], ",", " ", "\n", 
+                  "            ", 
+                  RowBox[{"Scaled", "[", "0.2", "]"}], ",", " ", "\n", 
+                  "            ", 
+                  RowBox[{"Scaled", "[", "0.", "]"}], ",", " ", "\n", 
+                  "            ", 
+                  RowBox[{"Scaled", "[", "0.", "]"}]}], "\n", "            ", 
+                 "}"}]}], "}"}]}]}], "]"}], ",", " ", "\"\<Grid\>\""}], "]"}],
+          ",", " ", 
+         RowBox[{"DynamicModuleValues", " ", ":>", " ", 
+          RowBox[{"{", "}"}]}]}], "]"}], "]"}], ",", " ", "\n", "    ", 
+      "\"\<DockedCell\>\""}], "]"}]}], ";"}], "\n", "    "}], "\n", 
+ RowBox[{"    ", 
+  RowBox[{"dockedCell", "//", "DisplayForm"}]}]}], "Input",ExpressionUUID->\
+"7113203f-5503-ab42-aace-b41b307ec4f1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"dockedCell", " ", "=", " ", "\n", "   ", 
+    RowBox[{"Cell", "[", "\n", "    ", 
+     RowBox[{
+      RowBox[{"BoxData", "[", "\n", "     ", 
+       RowBox[{"DynamicModuleBox", "[", 
+        RowBox[{
+         RowBox[{"{", "\n", "      ", 
+          RowBox[{
+           RowBox[{"spacer$$", " ", "=", " ", 
+            RowBox[{"Spacer", "[", "1", "]"}]}], ",", " ", 
+           RowBox[{"quitButton$$", " ", "=", " ", 
+            RowBox[{"Button", "[", 
+             RowBox[{"\"\<Quit Kernel\>\"", ",", " ", "\n", "         ", 
+              RowBox[{"FrontEndExecute", "[", "\n", "          ", 
+               RowBox[{"FrontEndToken", "[", "\"\<EvaluatorQuit\>\"", "]"}], 
+               "]"}], ",", " ", 
+              RowBox[{"Background", " ", "->", " ", 
+               RowBox[{"GrayLevel", "[", "0.5", "]"}]}]}], "]"}]}], ",", " ", 
+           "\n", "       ", 
+           RowBox[{"embedStyleDef$$", " ", "=", " ", 
+            RowBox[{"Button", "[", 
+             RowBox[{
+             "\"\<Embed StyleDefinitions\>\"", ",", " ", "\n", "         ", 
+              RowBox[{"SetOptions", "[", "\n", "          ", 
+               RowBox[{
+                RowBox[{"ButtonNotebook", "[", "]"}], ",", " ", 
+                RowBox[{"StyleDefinitions", " ", "->", " ", 
+                 RowBox[{"Import", "[", "\n", "            ", 
+                  RowBox[{
+                   RowBox[{"CurrentValue", "[", "\n", "             ", 
+                    RowBox[{
+                    RowBox[{"ButtonNotebook", "[", "]"}], ",", " ", 
+                    "DefaultStyleDefinitions"}], "]"}], ",", " ", 
+                   "\"\<NB\>\""}], "]"}]}]}], "]"}], ",", " ", "\n", 
+              "         ", 
+              RowBox[{"Background", " ", "->", " ", 
+               RowBox[{"GrayLevel", "[", "0.3", "]"}]}]}], "]"}]}]}], "}"}], 
+         ",", " ", "\n", "      ", 
+         RowBox[{"TagBox", "[", "\n", "       ", 
+          RowBox[{
+           RowBox[{"GridBox", "[", "\n", "\t\t", 
+            RowBox[{
+             RowBox[{"{", "\n", "\t\t\t", 
+              RowBox[{
+               RowBox[{"{", "\n", "\t\t\t\t", 
+                RowBox[{
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t\t", "\n", "\t\t\t\t ", 
+                 RowBox[{"ButtonBox", "[", 
+                  RowBox[{
+                  "\"\<\\\"New Chat-Driven NB\\\"\>\"", ",", "\n", 
+                   "\t\t\t\t\t", 
+                   RowBox[{"ButtonFunction", " ", ":>", " ", 
+                    RowBox[{
+                    "CreateNotebook", "[", "\"\<ChatDriven\>\"", "]"}]}], ",",
+                    "\n", "\t\t\t\t\t", 
+                   RowBox[{"Background", " ", "->", " ", 
+                    RowBox[{"GrayLevel", "[", "0.5", "]"}]}], ",", " ", 
+                   RowBox[{"Appearance", " ", "->", " ", "Automatic"}], ",", 
+                   " ", "\n", "\t\t           ", 
+                   RowBox[{"Evaluator", " ", "->", " ", "Automatic"}], ",", 
+                   " ", 
+                   RowBox[{"Method", " ", "->", " ", "\"\<Preemptive\>\""}]}],
+                   "\n", "\t\t\t\t ", "]"}], ",", "\n", "\n", "\t\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t\t", "\n", "\t\t\t\t ", 
+                 RowBox[{"ButtonBox", "[", "\n", "\t\t          ", 
+                  RowBox[{"\"\<\\\"Embed StyleDefinitions\\\"\>\"", ",", " ", 
+                   RowBox[{"ButtonFunction", " ", ":>", " ", 
+                    RowBox[{"SetOptions", "[", "\n", "\t\t             ", 
+                    RowBox[{
+                    RowBox[{"ButtonNotebook", "[", "]"}], ",", " ", 
+                    RowBox[{"StyleDefinitions", " ", "->", " ", 
+                    RowBox[{"Import", "[", "\n", "\t\t               ", 
+                    RowBox[{
+                    RowBox[{"CurrentValue", "[", "\n", "\t\t                ", 
+                    RowBox[{
+                    RowBox[{"ButtonNotebook", "[", "]"}], ",", " ", 
+                    "DefaultStyleDefinitions"}], "]"}], ",", " ", 
+                    "\"\<NB\>\""}], "]"}]}]}], "]"}]}], ",", " ", "\n", 
+                   "\t\t           ", 
+                   RowBox[{"Background", " ", "->", " ", 
+                    RowBox[{"GrayLevel", "[", "0.3", "]"}]}], ",", " ", 
+                   RowBox[{"Appearance", " ", "->", " ", "Automatic"}], ",", 
+                   " ", "\n", "\t\t           ", 
+                   RowBox[{"Evaluator", " ", "->", " ", "Automatic"}], ",", 
+                   " ", 
+                   RowBox[{"Method", " ", "->", " ", "\"\<Preemptive\>\""}]}],
+                   "]"}], ",", " ", "\n", "\t\t           ", "\n", 
+                 "\t\t           ", 
+                 RowBox[{"ButtonBox", "[", "\n", "\t\t           ", 
+                  RowBox[{"\"\<\\\"Initialize\\\"\>\"", ",", " ", 
+                   RowBox[{"ButtonFunction", " ", ":>", " ", 
+                    RowBox[{"FrontEndExecute", "[", "\n", "\t\t\t\t\t", 
+                    RowBox[{"FrontEndToken", "[", 
+                    RowBox[{
+                    RowBox[{"EvaluationNotebook", "[", "]"}], ",", 
+                    "\"\<EvaluateInitialization\>\""}], "]"}], "\n", 
+                    "\t\t\t\t\t", "]"}]}], ",", " ", 
+                   RowBox[{
+                   "Background", " ", "->", " ", "\n", "\t\t           ", 
+                    RowBox[{"GrayLevel", "[", "0.3", "]"}]}], ",", " ", 
+                   RowBox[{"Appearance", " ", "->", " ", "Automatic"}], ",", 
+                   " ", 
+                   RowBox[{
+                   "Evaluator", " ", "->", " ", "\n", "\t\t           ", 
+                    "Automatic"}], ",", " ", 
+                   RowBox[{"Method", " ", "->", " ", "\"\<Preemptive\>\""}]}],
+                   "]"}], ",", "\n", "           ", "\n", "\t\t          ", 
+                 RowBox[{"ButtonBox", "[", "\n", "\t\t          ", 
+                  RowBox[{"\"\<\\\"Quit\\\"\>\"", ",", " ", 
+                   RowBox[{"ButtonFunction", " ", ":>", " ", 
+                    RowBox[{"FrontEndExecute", "[", "\n", "\t\t             ", 
+                    RowBox[{
+                    "FrontEndToken", "[", "\"\<EvaluatorQuit\>\"", "]"}], 
+                    "]"}]}], ",", " ", 
+                   RowBox[{
+                   "Background", " ", "->", " ", "\n", "\t\t           ", 
+                    RowBox[{"GrayLevel", "[", "0.5", "]"}]}], ",", " ", 
+                   RowBox[{"Appearance", " ", "->", " ", "Automatic"}], ",", 
+                   " ", 
+                   RowBox[{
+                   "Evaluator", " ", "->", " ", "\n", "\t\t           ", 
+                    "Automatic"}], ",", " ", 
+                   RowBox[{"Method", " ", "->", " ", "\"\<Preemptive\>\""}]}],
+                   "]"}], ",", " ", "\n", "           ", "\n", "\t\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}]}], "\n", "         ", "}"}], ",", "\n", "         ", 
+               RowBox[{"{", "\n", "\t\t\t", 
+                RowBox[{
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}], ",", "\n", "\t\t\t", 
+                 RowBox[{"TemplateBox", "[", 
+                  RowBox[{
+                   RowBox[{"{", "1", "}"}], ",", " ", "\"\<Spacer1\>\""}], 
+                  "]"}]}], "\n", "\t\t", "}"}]}], "\n", "\t", "}"}], ",", " ", 
+             RowBox[{"AutoDelete", " ", "->", " ", "False"}], ",", " ", "\n", 
+             "        ", 
+             RowBox[{"GridBoxItemSize", " ", "->", " ", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"\"\<Columns\>\"", " ", "->", " ", 
+                 RowBox[{"{", "\n", "            ", 
+                  RowBox[{
+                   RowBox[{"Scaled", "[", "0.", "]"}], ",", " ", "\n", 
+                   "            ", 
+                   RowBox[{"Scaled", "[", "0.4", "]"}], ",", "\n", 
+                   "            ", 
+                   RowBox[{"Scaled", "[", "0.25", "]"}], ",", "\n", 
+                   "             ", 
+                   RowBox[{"Scaled", "[", "0.15", "]"}], ",", "\n", 
+                   "            ", 
+                   RowBox[{"Scaled", "[", "0.1", "]"}], ",", " ", "\n", 
+                   "            ", 
+                   RowBox[{"Scaled", "[", "0.1", "]"}], ",", " ", "\n", 
+                   "            ", 
+                   RowBox[{"Scaled", "[", "0.", "]"}]}], "}"}]}], ",", "\n", 
+                "            ", 
+                RowBox[{"{", "\n", "            ", 
+                 RowBox[{
+                  RowBox[{"Scaled", "[", "0.1", "]"}], ",", " ", "\n", 
+                  "            ", 
+                  RowBox[{"Scaled", "[", "0.8", "]"}], ",", " ", "\n", 
+                  "            ", 
+                  RowBox[{"Scaled", "[", "0.2", "]"}], ",", "\n", 
+                  "            ", 
+                  RowBox[{"Scaled", "[", "0.", "]"}], ",", "\n", 
+                  "            ", 
+                  RowBox[{"Scaled", "[", "0.", "]"}], ",", " ", "\n", 
+                  "            ", 
+                  RowBox[{"Scaled", "[", "0.", "]"}]}], "\n", "            ", 
+                 "}"}]}], "}"}]}]}], "]"}], ",", " ", "\"\<Grid\>\""}], "]"}],
+          ",", " ", 
+         RowBox[{"DynamicModuleValues", " ", ":>", " ", 
+          RowBox[{"{", "}"}]}]}], "]"}], "]"}], ",", " ", "\n", "    ", 
+      "\"\<DockedCell\>\""}], "]"}]}], ";"}], "\n", "    "}], "\n", 
+ RowBox[{"    ", 
+  RowBox[{"dockedCell", "//", "DisplayForm"}]}]}], "Code",ExpressionUUID->\
+"4952d866-4561-114c-9496-1886180c10f4"],
+
+Cell[BoxData[
+ TagBox[Cell[BoxData[
+   DynamicModuleBox[{$CellContext`spacer$$ = Spacer[
+    1], $CellContext`quitButton$$ = Button["Quit Kernel", 
+     FrontEndExecute[
+      FrontEndToken["EvaluatorQuit"]], Background -> 
+     GrayLevel[0.5]], $CellContext`embedStyleDef$$ = Button[
+    "Embed StyleDefinitions", 
+     SetOptions[
+      ButtonNotebook[], StyleDefinitions -> Import[
+        CurrentValue[
+         ButtonNotebook[], DefaultStyleDefinitions], "NB"]], Background -> 
+     GrayLevel[0.3]]}, 
+    TagBox[GridBox[{
+       {
+        TemplateBox[{1},
+         "Spacer1"], 
+        ButtonBox["\<\"New Chat-Driven NB\"\>",
+         Appearance->Automatic,
+         Background->GrayLevel[0.5],
+         ButtonFunction:>CreateNotebook["ChatDriven"],
+         Evaluator->Automatic,
+         Method->"Preemptive"], 
+        TemplateBox[{1},
+         "Spacer1"], 
+        ButtonBox["\<\"Embed StyleDefinitions\"\>",
+         Appearance->Automatic,
+         Background->GrayLevel[0.3],
+         ButtonFunction:>SetOptions[
+           ButtonNotebook[], StyleDefinitions -> Import[
+             CurrentValue[
+              ButtonNotebook[], DefaultStyleDefinitions], "NB"]],
+         Evaluator->Automatic,
+         Method->"Preemptive"], 
+        ButtonBox["\<\"Initialize\"\>",
+         Appearance->Automatic,
+         Background->GrayLevel[0.3],
+         ButtonFunction:>FrontEndExecute[
+           FrontEndToken[
+            EvaluationNotebook[], "EvaluateInitialization"]],
+         Evaluator->Automatic,
+         Method->"Preemptive"], 
+        ButtonBox["\<\"Quit\"\>",
+         Appearance->Automatic,
+         Background->GrayLevel[0.5],
+         ButtonFunction:>FrontEndExecute[
+           FrontEndToken["EvaluatorQuit"]],
+         Evaluator->Automatic,
+         Method->"Preemptive"], 
+        TemplateBox[{1},
+         "Spacer1"]},
+       {
+        TemplateBox[{1},
+         "Spacer1"], 
+        TemplateBox[{1},
+         "Spacer1"], 
+        TemplateBox[{1},
+         "Spacer1"], 
+        TemplateBox[{1},
+         "Spacer1"], 
+        TemplateBox[{1},
+         "Spacer1"], 
+        TemplateBox[{1},
+         "Spacer1"], 
+        TemplateBox[{1},
+         "Spacer1"]}
+      },
+      AutoDelete->False,
+      GridBoxItemSize->{"Columns" -> {
+          Scaled[0.], 
+          Scaled[0.4], 
+          Scaled[0.25], 
+          Scaled[0.15], 
+          Scaled[0.1], 
+          Scaled[0.1], 
+          Scaled[0.]}, {
+         Scaled[0.1], 
+         Scaled[0.8], 
+         Scaled[0.2], 
+         Scaled[0.], 
+         Scaled[0.], 
+         Scaled[0.]}}],
+     "Grid"],
+    DynamicModuleValues:>{}]], "DockedCell",ExpressionUUID->
+   "a76be507-d08f-e747-b561-80a4e2a9d040"],
+  DisplayForm]], "Output",
+ CellLabel->
+  "Out[91]//DisplayForm=",ExpressionUUID->"3aa7f6d5-d523-c44a-a378-\
+7f22b81e0bfd"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"SetOptions", "[", 
+  RowBox[{
+   RowBox[{"EvaluationNotebook", "[", "]"}], ",", " ", 
+   RowBox[{"DockedCells", "->", 
+    RowBox[{"{", "dockedCell", "}"}]}]}], "]"}]], "Input",
+ CellLabel->"In[92]:=",ExpressionUUID->"d2239edb-5faf-da46-9b8e-e4532c2525c0"]
+},
+WindowSize->{922.5, 654},
+WindowMargins->{{Automatic, 441.75}, {54, Automatic}},
+DockedCells->{
+  Cell[
+   BoxData[
+    DynamicModuleBox[{$CellContext`spacer$$ = 
+      Spacer[1], $CellContext`quitButton$$ = Button["Quit Kernel", 
+        FrontEndExecute[
+         FrontEndToken["EvaluatorQuit"]], Background -> 
+        GrayLevel[0.5]], $CellContext`embedStyleDef$$ = 
+      Button["Embed StyleDefinitions", 
+        SetOptions[
+         ButtonNotebook[], StyleDefinitions -> Import[
+           CurrentValue[
+            ButtonNotebook[], DefaultStyleDefinitions], "NB"]], Background -> 
+        GrayLevel[0.3]]}, 
+     TagBox[
+      GridBox[{{
+         TemplateBox[{1}, "Spacer1"], 
+         ButtonBox[
+         "\"New Chat-Driven NB\"", ButtonFunction :> 
+          CreateNotebook["ChatDriven"], Background -> GrayLevel[0.5], 
+          Appearance -> Automatic, Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         TemplateBox[{1}, "Spacer1"], 
+         ButtonBox["\"Embed StyleDefinitions\"", ButtonFunction :> SetOptions[
+            ButtonNotebook[], StyleDefinitions -> Import[
+              CurrentValue[
+               ButtonNotebook[], DefaultStyleDefinitions], "NB"]], Background -> 
+          GrayLevel[0.3], Appearance -> Automatic, Evaluator -> Automatic, 
+          Method -> "Preemptive"], 
+         ButtonBox["\"Initialize\"", ButtonFunction :> FrontEndExecute[
+            FrontEndToken[
+             EvaluationNotebook[], "EvaluateInitialization"]], Background -> 
+          GrayLevel[0.3], Appearance -> Automatic, Evaluator -> Automatic, 
+          Method -> "Preemptive"], 
+         ButtonBox["\"Quit\"", ButtonFunction :> FrontEndExecute[
+            FrontEndToken["EvaluatorQuit"]], Background -> GrayLevel[0.5], 
+          Appearance -> Automatic, Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         TemplateBox[{1}, "Spacer1"]}, {
+         TemplateBox[{1}, "Spacer1"], 
+         TemplateBox[{1}, "Spacer1"], 
+         TemplateBox[{1}, "Spacer1"], 
+         TemplateBox[{1}, "Spacer1"], 
+         TemplateBox[{1}, "Spacer1"], 
+         TemplateBox[{1}, "Spacer1"], 
+         TemplateBox[{1}, "Spacer1"]}}, AutoDelete -> False, 
+       GridBoxItemSize -> {"Columns" -> {
+           Scaled[0.], 
+           Scaled[0.4], 
+           Scaled[0.25], 
+           Scaled[0.15], 
+           Scaled[0.1], 
+           Scaled[0.1], 
+           Scaled[0.]}, {
+          Scaled[0.1], 
+          Scaled[0.8], 
+          Scaled[0.2], 
+          Scaled[0.], 
+          Scaled[0.], 
+          Scaled[0.]}}], "Grid"], DynamicModuleValues :> {}]], "DockedCell"]},
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (November 21, 2023)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "DarkModeEverything5.nb"]]}, Visible -> 
+  False, FrontEndVersion -> 
+  "14.1 for Microsoft Windows (64-bit) (November 21, 2023)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"a09d4454-de7d-5045-8b51-41af68159a1b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 10385, 202, 1265, "Input",ExpressionUUID->"7113203f-5503-ab42-aace-b41b307ec4f1"],
+Cell[CellGroupData[{
+Cell[10968, 226, 11011, 209, 1366, "Code",ExpressionUUID->"4952d866-4561-114c-9496-1886180c10f4"],
+Cell[21982, 437, 2801, 88, 70, "Output",ExpressionUUID->"3aa7f6d5-d523-c44a-a378-7f22b81e0bfd"]
+}, Open  ]],
+Cell[24798, 528, 280, 6, 36, "Input",ExpressionUUID->"d2239edb-5faf-da46-9b8e-e4532c2525c0"]
+}
+]
+*)
+
