@@ -9,6 +9,7 @@ PacletObject[
                 {
                     "Kernel",
                     "Root" -> "Kernel",
+                    
                     "Context" ->
                         {
                             {
@@ -17,6 +18,10 @@ PacletObject[
                                 "DME.wl"
                             }
                         }
+                },
+                {
+                    "Asset",
+                    "Root" -> "Resources"
                 }
                 ,
                 {

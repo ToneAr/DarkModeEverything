@@ -8,6 +8,84 @@ ResetOptions::usage = "Sets all default options required by the DarkModeEverythi
 
 Begin["`Private`"];
 
+copyFile[from_?FileExistsQ, to_?FileExistsQ]/;$OperatingSystem === "Windows" :=
+	Module[{
+			proc, ret
+		},
+		WithCleanup[
+			proc = StartProcess[{"Start-Process","PowerShell","-Verb","runAs"}]
+			,
+			WriteLine[proc,
+				"Copy-Item -Force "<>StringRiffle[
+					AbsoluteFileName[from],
+					AbsoluteFileName[to]
+				]
+			];
+			ret = ReadString[proc];
+			,
+			Close[proc]
+		];
+		AbsoluteFileName[to]
+	];
+
+Module[{
+		
+		infoLoc,backedUpFiles,fileList,backupDir
+	},
+	(*
+		Check for non-empty .backup folder and backup all effected system files
+	*)
+	backupDir = FileNameJoin[{PacletObject["TonyAristeidou/DME"]["Location"], ".backup"}];
+	infoLoc = FileNameJoin[{backupDir, "info.wl"}];
+	If[!FileExistsQ[infoLoc],
+		Enclose[
+			(*
+				Define all system files effected by DME
+			*)
+			fileList = FileNames["*.*",
+					FileNameJoin[{PacletObject["TonyAristeidou/DME"]["Location"], "Resources"}],
+					Infinity
+				];
+			(*
+				Copy all effected files to .backup directory
+			*)
+			backedUpFiles = ({file}|->
+				With[{
+						from = StringReplace[file,
+							___~~"Resources" -> $InstallationDirectory
+						],
+						to = FileNameJoin[PacletObject["TonyAristeidou/DME"]["Location"],file]
+					},
+					If[FileExistsQ[from],
+						ConfirmQuiet[
+							CopyFile[from, to, Method->"Copy-File"]
+						];
+						from
+						,
+						Nothing
+					]
+				]
+			) /@ fileList;
+			(*
+				Export info.wl file upon successful backup
+			*)
+			Export[
+				infoLoc,
+				<|
+					"Timestamp" -> Now,
+					"BackedUpFiles" -> backedUpFiles
+				|>,
+				"WL"
+			]
+		] // ({enc} |-> (
+			If[FailureQ[enc],
+				Print["!! SystemFiles backup failed !!"];
+				Print[enc];
+			]
+		))
+	]
+];
+
 If[Not@*ValueQ @ LocalSymbol["DME:AccentColor"],
 	LocalSymbol["DME:AccentColor"] = Hue[0.47, 0.6, 0.75]
 ];
