@@ -12,6 +12,8 @@ SetInitialization::usage = "SetInitialization[True] sets the initialization of t
 ReplaceSystemFiles::usage = "ReplaceSystemFiles[] replaces the system files with the DME theme.";
 RestoreSystemFiles::usage = "RestoreSystemFiles[] restores the system files that were replaced by the DME theme.";
 
+HelpDME::usage = "HelpDME[] opens the DME theme demo notebook.";
+
 InstallDME::usage = "InstallDME[] installs the DME theme.";
 UninstallDME::usage = "UninstallDME[] uninstalls the DME theme.";
 
@@ -43,8 +45,13 @@ $resourcesDir = FileNameJoin[{
 	PacletObject["TonyAristeidou/DME"]["Location"],
 	"Resources"
 }];
-$dmeInitLoc = FileNameJoin[{$resourcesDir,"init.m"}];
+$dmeInitLoc = PacletObject["TonyAristeidou/DME"]["AssetLocation", "initFile"];
 $userInitLoc = FileNameJoin[{$UserBaseDirectory, "Kernel", "init.m"}];
+
+(* ::Section:: *)(*
+	Help functions
+*)
+HelpDME[]:=SystemOpen[ PacletObject["TonyAristeidou/DME"]["AssetLocation", "DemoNB"] ];
 
 (* ::Section:: *)(*
 	Initialization functions
