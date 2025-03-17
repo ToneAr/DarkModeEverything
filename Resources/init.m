@@ -1,8 +1,10 @@
 (*!* start:DME *!*)
+(* :!CodeAnalysis::BeginBlock:: *)
+(* :!CodeAnalysis::Disable::SuspiciousSessionSymbol:: *)
 If[$Notebooks,
 
 	(* ::Section:: *)(* Initialization *)
-	PacletInstall["user:tonya/PacletSites/DME/DME"];
+	PacletInstall[CloudObject["user:tonya/PacletSites/DME/DME"]];
 	<<TonyAristeidou`DME`;
 
 	(* ::Section:: *)(* Sugar *)
@@ -43,4 +45,5 @@ buildAndDeployPaclet[dir_, cloudLoc_, OptionsPattern[]] := Module[{
 	SetPermissions[CloudObject[cloudLoc], OptionValue[Permissions]];
 	CloudObject[cloudLoc]
 ];
+(* :!CodeAnalysis::EndBlock:: *)
 (*!* end:DME *!*)
