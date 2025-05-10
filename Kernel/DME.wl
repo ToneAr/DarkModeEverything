@@ -32,26 +32,27 @@ If[Not@*ValueQ @ LocalSymbol["DME:BackgroundColor"],
 (* ::Section:: *)(*
 	Global variables
 *)
-LocalSymbol["DME:PreInstallStyleDefinitions"] =
-	LocalSymbol["DME:PreInstallStyleDefinitions"] /. {
-		LocalSymbol["DME:PreInstallStyleDefinitions"] :> (
-			LocalSymbol["DME:PreInstallStyleDefinitions"] =
-				Options[$FrontEnd, DefaultStyleDefinitions]
-		)
-	};
+LocalSymbol["DME:PreInstallStyleDefinitions"] = Replace[
+	LocalSymbol["DME:PreInstallStyleDefinitions"],
+	_LocalSymbol :> (
+		LocalSymbol["DME:PreInstallStyleDefinitions"] =
+			Options[$FrontEnd, DefaultStyleDefinitions]
+	)
+];
 $AccentColor = LocalSymbol["DME:AccentColor"];
 $BackgroundColor = LocalSymbol["DME:BackgroundColor"];
 $resourcesDir = FileNameJoin[{
 	PacletObject["TonyAristeidou/DME"]["Location"],
 	"Resources"
 }];
-$dmeInitLoc = PacletObject["TonyAristeidou/DME"]["AssetLocation", "initFile"];
-$userInitLoc = FileNameJoin[{$UserBaseDirectory, "Kernel", "init.m"}];
+$backupDir = FileNameJoin[{$resourcesDir, ".backup"}];
+$dmeInitLoc = PacletObject["TonyAristeidou/DME"]["AssetLocation", "init.m"];
+$userInitLoc = FindFile["init.m"]
 
 (* ::Section:: *)(*
 	Help functions
 *)
-HelpDME[]:=SystemOpen[ PacletObject["TonyAristeidou/DME"]["AssetLocation", "DemoNB"] ];
+HelpDME[] := SystemOpen[ PacletObject["TonyAristeidou/DME"]["AssetLocation", "DemoNB"] ];
 
 (* ::Section:: *)(*
 	Initialization functions
@@ -60,7 +61,7 @@ InstallDME[] := (
 	SetInitialization[True];
 	ReplaceSystemFiles[];
 	ResetOptions[];
-	
+
 	"DME successfully installed. \n"<>
 	"Please restart your Mathematica session."
 );
@@ -68,50 +69,69 @@ UninstallDME[] := (
 	SetInitialization[False];
 	RestoreSystemFiles[];
 	ResetOptions[Default];
-	
+
 	"DME successfully uninstalled. \n"<>
 	"Please restart your Mathematica session."
 );
 
 SetInitialization[True] := Module[{
 		finalInit ,dmeInitCode,
-		existingInitCode =  Import[
+		existingInitCode = Import[
 			$userInitLoc,
 			"Text"
 		]
 	},
 	Enclose[
-		ConfirmAssert[
-			!StringContainsQ[
-				existingInitCode,
+		If[StringContainsQ[existingInitCode,
 				"(*!* start:DME *!*)"~~___~~"(*!* end:DME *!*)"
-			]
+			],
+			Return @ True
 		];
-		LocalSymbol["DME:PreInstallStyleDefinitions"] = (
-			Options[$FrontEnd, DefaultStyleDefinitions] /. {
+		LocalSymbol["DME:PreInstallStyleDefinitions"] = Replace[
+			Options[$FrontEnd, DefaultStyleDefinitions], {
 				"DME.nb" -> "Default.nb"
 			}
-		);
-		Confirm @ SetOptions[$FrontEnd,
-			DefaultStyleDefinitions -> "DME.nb"
 		];
-		dmeInitCode = Confirm @ Import[
-			$dmeInitLoc,
-			"Text"
+		ConfirmMatch[
+			LocalSymbol["DME:PreInstallStyleDefinitions"],
+			{DefaultStyleDefinitions -> _String},
+			"Failed to get the pre-install style definitions"
 		];
-		finalInit = Confirm @ StringRiffle[{
-				existingInitCode,
-				dmeInitCode
-			},
-			"\n"
+		Confirm[
+			SetOptions[$FrontEnd,
+				DefaultStyleDefinitions -> "DME.nb"
+			],
+			"Failed to set the DME style definitions"
 		];
-		Confirm @ Export[
-			$userInitLoc,
-			finalInit,
-			"Text",
-			OverwriteTarget->True
-		]
-	] // !FailureQ[#]&
+		dmeInitCode = ConfirmMatch[
+			Import[
+				$dmeInitLoc,
+				"Text"
+			],
+			_String,
+			"Failed to import the DME initialization code"
+		];
+		finalInit = ConfirmMatch[
+			StringRiffle[{
+					existingInitCode,
+					dmeInitCode
+				},
+				"\n"
+			],
+			_String,
+			"Failed to set the DME initialization code"
+		];
+		Confirm[
+			Export[
+				$userInitLoc,
+				finalInit,
+				"Text",
+				OverwriteTarget->True
+			],
+			"Failed to set the DME initialization code"
+		];
+		True
+	]
 ];
 SetInitialization[False] := Module[{
 		finalInit ,
@@ -121,58 +141,76 @@ SetInitialization[False] := Module[{
 		]
 	},
 	Enclose[
-		finalInit = Confirm @ StringDelete[
+		finalInit = StringDelete[
 			existingInitCode,
 			"(*!* start:DME *!*)"~~___~~"(*!* end:DME *!*)"
 		];
 		ConfirmAssert[
 			!StringContainsQ[
-				existingInitCode,
+				finalInit,
 				"(*!* start:DME *!*)"~~___~~"(*!* end:DME *!*)"
-			]
+			],
+			"Failed to remove DME initialization code from init.m"
 		];
-		Confirm @ SetOptions[$FrontEnd,
-			LocalSymbol["DME:PreInstallStyleDefinitions"]
+		Confirm[
+			SetOptions[$FrontEnd,
+				LocalSymbol["DME:PreInstallStyleDefinitions"]
+			],
+			"Failed to restore the default style definitions"
 		];
-		Confirm @ Export[
-			$userInitLoc,
-			finalInit,
-			"Text",
-			OverwriteTarget->True
-		]
-	]// !FailureQ[#]&
+		Confirm[
+			Export[
+				$userInitLoc,
+				finalInit,
+				"Text",
+				OverwriteTarget->True
+			],
+			"Failed to restore the original init.m file"
+		];
+		True
+	]
 ];
 
 ReplaceSystemFiles[] := Module[{
 		fileNames
 	},
+	Enclose[
+		(* Get all file affected file names *)
+		fileNames = StringDelete[
+			FileNames["*.*",
+				FileNameJoin[{$resourcesDir, "SystemFiles"}],
+				Infinity
+			],
+			$resourcesDir
+		];
+		(* Backup existing system files *)
+		If[Not @ FileExistsQ @ $backupDir,
+			CreateDirectory[ $backupDir ];
+			ConfirmAssert[
+				FileExistsQ[$backupDir],
+				"Failed to create backup directory"
+			]
+		];
+		CopyFile[
+			FileNameJoin[{$InstallationDirectory, #}],
+			FileNameJoin[{$backupDir, #}],
+			OverwriteTarget -> True
+		] & /@ fileNames;
+		ConfirmAssert[
+			AllTrue[
+				fileNames,
+				FileExistsQ[ FileNameJoin[{$backupDir, #}] ] &
+			],
+			"Failed to backup system files"
+		];
 
-	(* Get all file affected file names *)
-	fileNames = StringDelete[
-		FileNames[
-			"*.*",
-			FileNameJoin[{
-				$resourcesDir, "SystemFiles"
-			}],
-			Infinity
-		],
-		$resourcesDir
-	];
-
-	(* Backup existing system files *)
-	CopyFile[
-		FileNameJoin[{$InstallationDirectory, #}], 
-		FileNameJoin[{$resourcesDir, ".backup", #}],
-		OverwriteTarget -> True
-	] & /@ fileNames;
-	
-	(* Replace existing system files with DME files *)
-	CopyFile[
-		FileNameJoin[{$resourcesDir, #}],
-		FileNameJoin[{$InstallationDirectory, #}],
-		OverwriteTarget -> True
-	]& /@ fileNames
-  
+		(* Replace existing system files with DME files *)
+		CopyFile[
+			FileNameJoin[{$resourcesDir, #}],
+			FileNameJoin[{$InstallationDirectory, #}],
+			OverwriteTarget -> True
+		]& /@ fileNames
+	]
 ];
 
 RestoreSystemFiles[] := Module[{
@@ -192,14 +230,14 @@ RestoreSystemFiles[] := Module[{
 
 	(* Replace DME files with .backup files *)
 	CopyFile[
-		FileNameJoin[{$resourcesDir, ".backup", #}],
-		FileNameJoin[{$InstallationDirectory, #}], 
+		FileNameJoin[{$backupDir, #}],
+		FileNameJoin[{$InstallationDirectory, #}],
 		OverwriteTarget -> True
 	] & /@ fileNames
 
 ];
 
-ResetOptions[] := 
+ResetOptions[] :=
 	Module[{enclose =
 		Enclose[
 			Confirm @ SetOptions[ Dataset,
@@ -207,7 +245,7 @@ ResetOptions[] :=
 				HeaderBackground -> Hue[0., 0., 0.15],
 				Background -> Hue[0., 0., 0.05],
 				HeaderAlignment -> {Center, Baseline},
-				Alignment -> {Center, Baseline}, 
+				Alignment -> {Center, Baseline},
 				MaxItems -> {30, 6},
 				DatasetTheme -> {"FullDividers", Hue[0, 0, 0.2]},
 				HeaderDisplayFunction -> (Style[#, FontWeight -> "DemiBold"]& )
@@ -282,23 +320,23 @@ GetBackground[h_, s_, b_] := Module[{
 	]
 ];
 
-SetAccentColor[color_?ColorQ]:= ( 
+SetAccentColor[color_?ColorQ]:= (
 	With[{col=$AccentColor = Hue[color]},
 		LocalSymbol["DME:AccentColor"] = col;
 		$AccentColor = col
 	]
 );
-SetAccentColor[Automatic|Default]:= ( 
+SetAccentColor[Automatic|Default]:= (
 	LocalSymbol["DME:AccentColor"] = Hue[0.47, 0.6, 0.75];
 	$AccentColor = Hue[0.47, 0.6, 0.75]
 );
-SetBackgroundColor[color_?ColorQ]:= ( 
+SetBackgroundColor[color_?ColorQ]:= (
 	With[{col = Hue[color]},
 		LocalSymbol["DME:BackgroundColor"] = col;
 		$BackgroundColor = col
 	]
 );
-SetBackgroundColor[Automatic|Default]:= ( 
+SetBackgroundColor[Automatic|Default]:= (
 	LocalSymbol["DME:BackgroundColor"] = Hue[0.08, 0.05, 0.07];
 	$BackgroundColor = Hue[0.08, 0.05, 0.07]
 );
