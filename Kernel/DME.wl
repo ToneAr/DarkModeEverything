@@ -83,7 +83,7 @@ SetInitialization[True] := Module[{
 	},
 	Enclose[
 		If[StringContainsQ[existingInitCode,
-				"(*!* start:DME *!*)"~~___~~"(*!* end:DME *!*)"
+				"(*!* start:DME *!*)",___,"(*!* end:DME *!*)"
 			],
 			Return @ True
 		];
@@ -143,12 +143,12 @@ SetInitialization[False] := Module[{
 	Enclose[
 		finalInit = StringDelete[
 			existingInitCode,
-			"(*!* start:DME *!*)"~~___~~"(*!* end:DME *!*)"
+			"(*!* start:DME *!*)",___,"(*!* end:DME *!*)"
 		];
 		ConfirmAssert[
 			!StringContainsQ[
 				finalInit,
-				"(*!* start:DME *!*)"~~___~~"(*!* end:DME *!*)"
+				"(*!* start:DME *!*)",___,"(*!* end:DME *!*)"
 			],
 			"Failed to remove DME initialization code from init.m"
 		];
@@ -340,6 +340,41 @@ SetBackgroundColor[Automatic|Default]:= (
 	LocalSymbol["DME:BackgroundColor"] = Hue[0.08, 0.05, 0.07];
 	$BackgroundColor = Hue[0.08, 0.05, 0.07]
 );
+
+ExportStaticStyleSheet[] := Module[{
+		staticStyleSheetStr,str,
+		dmeStr = Import[
+			FileNameJoin[{$resourcesDir,
+				"SystemFiles", "FrontEnd", "StyleSheets", "DME.nb"
+			}],
+			"Text"
+		]
+	},
+	staticStyleSheetStr = StringReplace[
+		dmeStr,
+	     StringExpression[
+			"Dynamic[", WhitespaceCharacter...,
+			expr: StringExpression[
+				"TonyAristeidou`DME`Private`GetColor["|"TonyAristeidou`DME`Private`GetBackground[",
+				Repeated[NumberString~~(","|", "|""), {3}],
+				"]"
+			], WhitespaceCharacter...,
+			",", WhitespaceCharacter...,
+			"TrackedSymbols", WhitespaceCharacter...,
+			":>"|"->", WhitespaceCharacter...,
+			("{"|"}"|"`"|"$"|LetterCharacter)..., WhitespaceCharacter...,
+			"]"
+		] :> (ToString @ ToExpression @ expr)
+	];
+	Export[
+		FileNameJoin[{$UserBaseDirectory,
+			"SystemFiles", "FrontEnd", "StyleSheets", "DME-static.nb"
+		}],
+		staticStyleSheetStr,
+		"Text",
+		OverwriteTarget -> True
+	]
+];
 
 (* ::Section:: *)(*
 	End
