@@ -5,18 +5,6 @@
 
 (* CreatedBy='Wolfram 14.2' *)
 
-(*CacheID: 234*)
-(* Internal cache information:
-NotebookFileLineBreakTest
-NotebookFileLineBreakTest
-NotebookDataPosition[       154,          7]
-NotebookDataLength[     53923,       1255]
-NotebookOptionsPosition[     52033,       1204]
-NotebookOutlinePosition[     53905,       1255]
-CellTagsIndexPosition[     53862,       1252]
-WindowTitle->Find and Replace
-WindowFrame->ModelessDialog*)
-
 (* Beginning of Notebook Content *)
 Notebook[{
 Cell[BoxData[
@@ -1239,27 +1227,7 @@ TaggingRules->{"NotebookID" -> "FindDialog", "FoundExpression" -> True},
 CellContext->"Global`",
 AutoMultiplicationSymbol->False,
 CheckboxBoxOptions->{BaselinePosition->Axis},
-FrontEndVersion->"14.2 for Linux x86 (64-bit) (December 26, 2024)",
 StyleDefinitions->"SystemDialog.nb",
 ExpressionUUID->"03c2a7eb-0bc1-44a9-9d61-e8dcc5486bcd"
 ]
 (* End of Notebook Content *)
-
-(* Internal cache information *)
-(*CellTagsOutline
-CellTagsIndex->{}
-*)
-(*CellTagsIndex
-CellTagsIndex->{}
-*)
-(*NotebookFileOutline
-Notebook[{
-Cell[592, 21, 51437, 1181, 148, InheritFromParent,ExpressionUUID->"d03bf738-b8ee-495e-aa5f-d03e855fff39",
- PageBreakAbove->True,
- PageBreakWithin->False]
-}
-]
-*)
-
-(* End of internal cache information *)
-
