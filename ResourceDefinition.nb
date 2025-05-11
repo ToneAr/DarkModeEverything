@@ -17265,8 +17265,40 @@ Cell[BoxData[
  CellID->172764492,ExpressionUUID->"4d41d095-261d-d74d-9e6e-79fa926b7ae9"]
 }, Open  ]],
 
+Cell[CellGroupData[{
+
 Cell["Basic Examples", "Subsection",
  CellID->462042388,ExpressionUUID->"535d0ccd-ed3e-8c4c-833c-53327dbab440"],
+
+Cell["Install DME (administrator privileges required):", "Text",
+ CellChangeTimes->{{3.950943526530982*^9, 3.950943547822981*^9}, {
+  3.9509435861360683`*^9, 3.950943604405253*^9}},
+ CellID->320612438,ExpressionUUID->"f7869c75-7308-4f58-9d80-8214548b5d25"],
+
+Cell[BoxData[
+ RowBox[{"InstallDME", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.9509434920699263`*^9, 3.9509435242428923`*^9}},
+ CellID->54512703,ExpressionUUID->"336e36ae-f6b3-47c8-a1b9-d86455db9ce0"],
+
+Cell["Open the help notebook:", "Text",
+ CellChangeTimes->{{3.9509437478391953`*^9, 3.950943760441146*^9}},
+ CellID->42173245,ExpressionUUID->"7aad7d2b-b40d-471c-b5ab-adeb584bea96"],
+
+Cell[BoxData[
+ RowBox[{"HelpDME", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.950943761079083*^9, 3.95094376108045*^9}},
+ CellLabel->"In[4]:=",
+ CellID->372356350,ExpressionUUID->"3ae4f65e-8101-49b6-acdb-5d2e5e0cea64"],
+
+Cell["Uninstall DME (administrator privileges required):", "Text",
+ CellChangeTimes->{{3.950943561776803*^9, 3.9509436101640387`*^9}},
+ CellID->1676920121,ExpressionUUID->"c6270843-2e3b-4ee3-8c63-b813c69c061d"],
+
+Cell[BoxData[
+ RowBox[{"UninstallDME", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.950943574704146*^9, 3.9509435767579823`*^9}},
+ CellID->618953513,ExpressionUUID->"d055d3d1-6287-41f2-ae28-118dfe8d5622"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -19325,6 +19357,7 @@ Cell["Additional information about limitations, issues, etc.", "Text",
 WindowSize->{722.25, 683.25},
 WindowMargins->{{Automatic, -722.25}, {Automatic, 0}},
 WindowTitle->"TonyAristeidou/DME | Definition Notebook",
+LightDark->"Light",
 TaggingRules->{
  "ResourceType" -> "Paclet", "ResourceCreateNotebook" -> True, 
   "TemplateVersion" -> "2023.03.03", "CreationTimestamp" -> 
@@ -19368,7 +19401,7 @@ Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
   "AutoUpdate" -> True},
 CreateCellID->True,
 DynamicEvaluationTimeout->60,
-FrontEndVersion->"14.1 for Linux x86 (64-bit) (July 16, 2024)",
+FrontEndVersion->"14.2 for Linux x86 (64-bit) (December 26, 2024)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[StyleDefinitions -> "Default.nb"]], 
@@ -27205,7 +27238,7 @@ GRPf1sw3cDj8VSOm/5G9w5vAHXKt3IZQ/0HDoQHBFwFFwBcEHxR9zQlGcP3o
    Cell[
     StyleData["AttachedMessage"], Deletable -> True, 
     CellMargins -> {{60, 40}, {15, 5}}]}, Visible -> False, FrontEndVersion -> 
-  "14.1 for Linux x86 (64-bit) (July 16, 2024)", StyleDefinitions -> 
+  "14.2 for Linux x86 (64-bit) (December 26, 2024)", StyleDefinitions -> 
   "PrivateStylesheetFormatting.nb"],
 ExpressionUUID->"0b148723-b54f-3f4c-bb2f-a4546e8b79d0"
 ]

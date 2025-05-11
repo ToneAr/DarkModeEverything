@@ -17,6 +17,8 @@ HelpDME::usage = "HelpDME[] opens the DME theme demo notebook.";
 InstallDME::usage = "InstallDME[] installs the DME theme.";
 UninstallDME::usage = "UninstallDME[] uninstalls the DME theme.";
 
+ExportStaticStyleSheet::usage = "ExportStaticStyleSheet[dir_] exports the DME theme as a static style sheet to the specified directory.";
+
 Begin["`Private`"];
 
 (* ::Section:: *)(*
@@ -178,18 +180,17 @@ ReplaceSystemFiles[] := Module[{
 		(* Get all file affected file names *)
 		fileNames = StringDelete[
 			FileNames["*.*",
-				FileNameJoin[{$resourcesDir, "SystemFiles"}],
+				PacletObject["TonyAristeidou/DME"]["AssetLocation", "SystemFiles"],
 				Infinity
 			],
 			$resourcesDir
 		];
 		(* Backup existing system files *)
-		If[Not @ FileExistsQ @ $backupDir,
-			CreateDirectory[ $backupDir ];
-			ConfirmAssert[
-				FileExistsQ[$backupDir],
-				"Failed to create backup directory"
-			]
+		Quiet @ DeleteDirectory[$backupDir];
+		CreateDirectory[ $backupDir ];
+		ConfirmAssert[
+			FileExistsQ[$backupDir],
+			"Failed to create backup directory"
 		];
 		CopyFile[
 			FileNameJoin[{$InstallationDirectory, #}],
@@ -212,7 +213,6 @@ ReplaceSystemFiles[] := Module[{
 		]& /@ fileNames
 	]
 ];
-
 RestoreSystemFiles[] := Module[{
 		fileNames
 	},
@@ -220,9 +220,7 @@ RestoreSystemFiles[] := Module[{
 	fileNames = StringDelete[
 		FileNames[
 			"*.*",
-			FileNameJoin[{
-				$resourcesDir, "SystemFiles"
-			}],
+			PacletObject["TonyAristeidou/DME"]["AssetLocation", "SystemFiles"],
 			Infinity
 		],
 		$resourcesDir
@@ -341,13 +339,11 @@ SetBackgroundColor[Automatic|Default]:= (
 	$BackgroundColor = Hue[0.08, 0.05, 0.07]
 );
 
-ExportStaticStyleSheet[] := Module[{
-		staticStyleSheetStr,str,
+ExportStaticStyleSheet[dir_:Automatic] := Module[{
+		staticStyleSheetStr,
 		dmeStr = Import[
-			FileNameJoin[{$resourcesDir,
-				"SystemFiles", "FrontEnd", "StyleSheets", "DME.nb"
-			}],
-			"Text"
+				PacletObject["TonyAristeidou/DME"]["AssetLocation", "DME.nb"],
+				"Text"
 		]
 	},
 	staticStyleSheetStr = StringReplace[
@@ -355,20 +351,26 @@ ExportStaticStyleSheet[] := Module[{
 	     StringExpression[
 			"Dynamic[", WhitespaceCharacter...,
 			expr: StringExpression[
-				"TonyAristeidou`DME`Private`GetColor["|"TonyAristeidou`DME`Private`GetBackground[",
-				Repeated[NumberString~~(","|", "|""), {3}],
+				"TonyAristeidou`DME`Private`",
+				("GetColor"|"GetBackground"),
+				"[",
+				Repeated[NumberString~~(","|"")~~(WhitespaceCharacter...), {3}],
 				"]"
 			], WhitespaceCharacter...,
 			",", WhitespaceCharacter...,
 			"TrackedSymbols", WhitespaceCharacter...,
 			":>"|"->", WhitespaceCharacter...,
-			("{"|"}"|"`"|"$"|LetterCharacter)..., WhitespaceCharacter...,
+			("{"|"}"|"`"|"$"|LetterCharacter|WhitespaceCharacter)...,
 			"]"
 		] :> (ToString @ ToExpression @ expr)
 	];
 	Export[
-		FileNameJoin[{$UserBaseDirectory,
-			"SystemFiles", "FrontEnd", "StyleSheets", "DME-static.nb"
+		FileNameJoin[{
+			Replace[dir,
+				Automatic :> FileNameJoin[{$UserBaseDirectory,
+					"SystemFiles", "FrontEnd", "StyleSheets"}]
+				],
+				"DME-static.nb"
 		}],
 		staticStyleSheetStr,
 		"Text",

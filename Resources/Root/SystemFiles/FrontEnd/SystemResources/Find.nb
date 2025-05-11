@@ -1,0 +1,1265 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     53923,       1255]
+NotebookOptionsPosition[     52033,       1204]
+NotebookOutlinePosition[     53905,       1255]
+CellTagsIndexPosition[     53862,       1252]
+WindowTitle->Find and Replace
+WindowFrame->ModelessDialog*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ DynamicModuleBox[{$CellContext`statusText$$, $CellContext`findboxes$$, \
+$CellContext`oldfindboxes$$},
+  PaneBox[
+   DynamicWrapperBox[
+    PaneSelectorBox[{True->
+     PaneSelectorBox[{True->
+      OverlayBox[{
+       TagBox[GridBox[{
+          {
+           FrameBox[
+            DynamicBox[ToBoxes[
+              FEPrivate`FrontEndResource[
+              "FindReplaceDialog", "FindWhatLabel"], StandardForm]],
+            Background->None,
+            FrameMargins->1,
+            FrameStyle->None,
+            StripOnInput->False],
+
+           InputFieldBox[
+            Dynamic[$CellContext`findboxes$$, {
+             Automatic, ($CellContext`statusText$$ = "")& }], Boxes,
+            BoxID -> "inputfield",
+            BaseStyle->"LineWrapParts",
+            ContinuousAction->True,
+            ImageSize->{
+              FEPrivate`If[
+               FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"], 375,
+               320], {
+               FEPrivate`Switch[
+               FEPrivate`$OperatingSystem, "MacOSX", 20, "Windows", 20,
+                Blank[], 21], 200}},
+            MenuList->Dynamic[
+              BoxForm`MenuListToBoxes[
+               With[{$CellContext`c = Reverse[
+                   CurrentValue[$FrontEnd, {FindSettings, "FindHistory"}]]},
+                Thread[$CellContext`c -> Map[RawBoxes, $CellContext`c]]],
+               StandardForm]]]},
+          {"",
+           ItemBox[
+            TagBox[GridBox[{
+               {
+                DynamicBox[FEPrivate`If[
+                  FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"],
+                  CheckboxBox[
+                   Dynamic[
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"}]]],
+                  CheckboxBox[
+                   Dynamic[
+                    FEPrivate`Not[
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"}]],
+                    FEPrivate`Set[
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FEPrivate`Not[#]]& ]]]],
+                TogglerBox[Dynamic[
+
+                  CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"},
+                   True]], {True->
+                 DynamicBox[ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "FindReplaceDialog", "IgnoreCaseLabel"], StandardForm]],
+                 False->
+                 DynamicBox[ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "FindReplaceDialog", "IgnoreCaseLabel"], StandardForm]]},
+                 DynamicBox[ToBoxes[
+
+                   CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"},
+                    True], StandardForm]]],
+                CheckboxBox[Dynamic[
+
+                  CurrentValue[$FrontEnd, {FindSettings, "Wraparound"},
+                   False]]],
+                TogglerBox[Dynamic[
+
+                  CurrentValue[$FrontEnd, {FindSettings, "Wraparound"},
+                   False]], {True->
+                 DynamicBox[ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "FindReplaceDialog", "WraparoundLabel"], StandardForm]],
+                 False->
+                 DynamicBox[ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "FindReplaceDialog", "WraparoundLabel"], StandardForm]]},
+                 DynamicBox[ToBoxes[
+
+                   CurrentValue[$FrontEnd, {FindSettings, "Wraparound"},
+                    False], StandardForm]]],
+                CheckboxBox[Dynamic[
+
+                  CurrentValue[$FrontEnd, {FindSettings, "WholeWord"},
+                   True]]],
+                TogglerBox[Dynamic[
+
+                  CurrentValue[$FrontEnd, {FindSettings, "WholeWord"},
+                   True]], {True->
+                 DynamicBox[ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "FindReplaceDialog", "WholeWordLabel"], StandardForm]],
+                 False->
+                 DynamicBox[ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "FindReplaceDialog", "WholeWordLabel"], StandardForm]]},
+                 DynamicBox[ToBoxes[
+                   CurrentValue[$FrontEnd, {FindSettings, "WholeWord"}, True],
+                    StandardForm]]]}
+              },
+              AutoDelete->False,
+
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+
+              GridBoxSpacings->{
+               "Columns" -> {{0.2}},
+                "ColumnsIndexed" -> {3 -> 1.5, 5 -> 1.5}}],
+             "Grid"],
+            Alignment->Center,
+            StripOnInput->False]},
+          {"",
+           ItemBox[
+            TagBox[GridBox[{
+               {
+                ButtonBox[
+                 DynamicBox[ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "FindReplaceDialog", "FindPrevLabel"], StandardForm]],
+                 Appearance->"CancelButton",
+
+                 ButtonFunction:>(
+                  If[$CellContext`findboxes$$ =!= "",
+                   CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                  FEPrivate`FindExpression, "Previous"],
+                 Enabled->Dynamic[
+                   FEPrivate`UnsameQ[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}], ""]],
+                 Evaluator->Automatic,
+                 ImageSize->Dynamic[
+                   CurrentValue["DefaultButtonSize"]],
+                 Method->"Preemptive"],
+                ButtonBox[
+                 DynamicBox[ToBoxes[
+                   FEPrivate`FrontEndResource[
+                   "FindReplaceDialog", "FindNextLabel"], StandardForm]],
+                 Appearance->"DefaultButton",
+                 ButtonFunction:>(CurrentValue[
+                    ButtonNotebook[], {TaggingRules, "FoundExpression"}] = (
+                    If[$CellContext`findboxes$$ =!= "",
+                    CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                    FEPrivate`FindExpression, "Next"] =!=
+                   FrontEndResourceString["FailedToFindExpression"]),
+                 Evaluator->Automatic,
+                 ImageSize->Dynamic[
+                   CurrentValue["DefaultButtonSize"]],
+                 Method->"Preemptive"]}
+              },
+              AutoDelete->False,
+
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+             "Grid"],
+            Alignment->Right,
+            StripOnInput->False]}
+         },
+         AutoDelete->False,
+         GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+        "Grid"],
+       TagBox[GridBox[{
+          {
+           ItemBox[
+            StyleBox[
+             DynamicBox[ToBoxes[$CellContext`statusText$$, StandardForm]],
+             "TextStyling",
+             StripOnInput->False,
+             FontColor->GrayLevel[0.5]],
+            Alignment->Center,
+            ItemSize->{10, 3},
+            StripOnInput->False]}
+         },
+         AutoDelete->False,
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+        "Grid"]}, {1, 2}, 1,
+       Alignment->{Left, Bottom},
+       BaseStyle->"ControlStyle"], False->
+      TagBox[GridBox[{
+         {
+          TagBox[GridBox[{
+             {
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "FindReplaceDialog", "FindWhatLabel"], StandardForm]]},
+             {
+
+              InputFieldBox[
+               Dynamic[$CellContext`findboxes$$, {
+                Automatic, ($CellContext`statusText$$ = "")& }], Boxes,
+               BoxID -> "inputfield",
+               BaseStyle->"LineWrapParts",
+               ContinuousAction->True,
+               ImageSize->{
+                 FEPrivate`If[
+                  FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"], 375,
+                  320], {
+                  FEPrivate`Switch[
+                  FEPrivate`$OperatingSystem, "MacOSX", 20, "Windows", 20,
+                   Blank[], 21], 200}},
+               MenuList->Dynamic[
+                 BoxForm`MenuListToBoxes[
+                  With[{$CellContext`c = Reverse[
+                    CurrentValue[$FrontEnd, {FindSettings, "FindHistory"}]]},
+
+                   Thread[$CellContext`c -> Map[RawBoxes, $CellContext`c]]],
+                  StandardForm]]]},
+             {
+              TagBox[GridBox[{
+                 {
+                  DynamicBox[FEPrivate`If[
+                    FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"],
+                    CheckboxBox[
+                    Dynamic[
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"}]]],
+                    CheckboxBox[
+                    Dynamic[
+                    FEPrivate`Not[
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"}]],
+                    FEPrivate`Set[
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FEPrivate`Not[#]]& ]]]],
+                  TogglerBox[Dynamic[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"},
+                    True]], {True->
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "IgnoreCaseLabel"], StandardForm]],
+                   False->
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "IgnoreCaseLabel"], StandardForm]]},
+
+                   DynamicBox[ToBoxes[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"},
+                    True], StandardForm]]],
+                  CheckboxBox[Dynamic[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "WholeWord"},
+                    True]]],
+                  TogglerBox[Dynamic[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "WholeWord"},
+                    True]], {True->
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "WholeWordLabel"], StandardForm]],
+                   False->
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "WholeWordLabel"], StandardForm]]},
+                   DynamicBox[ToBoxes[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "WholeWord"},
+                    True], StandardForm]]],
+                  CheckboxBox[Dynamic[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "Wraparound"},
+                    False]]],
+                  TogglerBox[Dynamic[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "Wraparound"},
+                    False]], {True->
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "WraparoundLabel"], StandardForm]],
+                   False->
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "WraparoundLabel"], StandardForm]]},
+
+                   DynamicBox[ToBoxes[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "Wraparound"},
+                    False], StandardForm]]]}
+                },
+                AutoDelete->False,
+
+                GridBoxItemSize->{
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+
+                GridBoxSpacings->{
+                 "Columns" -> {{0.2}},
+                  "ColumnsIndexed" -> {3 -> 1.5, 5 -> 1.5}}],
+               "Grid"]},
+             {
+              TagBox[GridBox[{
+                 {
+                  DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "StatusLabel"], StandardForm]],
+                  PaneSelectorBox[{True->
+
+                   DynamicBox[
+                    ToBoxes[$CellContext`statusText$$, StandardForm]], False->
+
+
+                   DynamicBox[FEPrivate`FrontEndResourceString[
+                    "FailedToFindExpression"]]}, True,
+                   BoxID -> "FindReplaceStatusField",
+                   BaselinePosition->Baseline]}
+                },
+                AutoDelete->False,
+
+                GridBoxItemSize->{
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+               "Grid"]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+
+            GridBoxSpacings->{
+             "Columns" -> {{0}}, "Rows" -> {{0.5}},
+              "RowsIndexed" -> {3 -> 1, 5 -> 1, 6 -> 1}}],
+           "Column"],
+          TagBox[GridBox[{
+             {
+              ButtonBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FindReplaceDialog", "FindNextLabel"], StandardForm]],
+               Appearance->"DefaultButton",
+               ButtonFunction:>(CurrentValue[
+                  ButtonNotebook[], {TaggingRules, "FoundExpression"}] = (
+                  If[$CellContext`findboxes$$ =!= "",
+                   CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                  FEPrivate`FindExpression, "Next"] =!=
+                 FrontEndResourceString["FailedToFindExpression"]),
+               Evaluator->Automatic,
+               ImageSize->Dynamic[
+                 CurrentValue["DefaultButtonSize"]],
+               Method->"Preemptive"]},
+             {
+              ButtonBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FindReplaceDialog", "FindPrevLabel"], StandardForm]],
+               Appearance->"CancelButton",
+
+               ButtonFunction:>(
+                If[$CellContext`findboxes$$ =!= "",
+                 CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                FEPrivate`FindExpression, "Previous"],
+               Enabled->Dynamic[
+                 FEPrivate`UnsameQ[
+                  FrontEnd`CurrentValue[
+                  FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}], ""]],
+               Evaluator->Automatic,
+               ImageSize->Dynamic[
+                 CurrentValue["DefaultButtonSize"]],
+               Method->"Preemptive"]}
+            },
+
+            BaseStyle->{
+             ButtonBoxOptions -> {
+               ImageSize -> Full,
+                BaseStyle -> {
+                 FontSize -> FrontEnd`CurrentValue["PanelFontSize"]}}},
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{0.2}},
+              "RowsIndexed" -> {3 -> 1}}],
+           "Column"]}
+        },
+        AutoDelete->False,
+        GridBoxAlignment->{"Rows" -> {{Top}}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[
+       FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"]],
+      ImageSize->Automatic], False->
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          FrameBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FindReplaceDialog", "FindWhatLabel"],
+              StandardForm],
+            ImageSizeCache->{30., {0.12060546875, 9.6865234375}}],
+           Background->None,
+           FrameMargins->1,
+           FrameStyle->None,
+           StripOnInput->False],
+
+          InputFieldBox[
+           Dynamic[$CellContext`findboxes$$, {
+            Automatic, ($CellContext`statusText$$ = "")& }], Boxes,
+           BoxID -> "inputfield",
+           BaseStyle->"LineWrapParts",
+           ContinuousAction->True,
+           ImageSize->{
+             FEPrivate`If[
+              FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"], 375,
+              320], {
+              FEPrivate`Switch[
+              FEPrivate`$OperatingSystem, "MacOSX", 20, "Windows", 20,
+               Blank[], 21], 200}},
+           MenuList->Dynamic[
+             BoxForm`MenuListToBoxes[
+              With[{$CellContext`c = Reverse[
+                  CurrentValue[$FrontEnd, {FindSettings, "FindHistory"}]]},
+               Thread[$CellContext`c -> Map[RawBoxes, $CellContext`c]]],
+              StandardForm]]]},
+         {
+          FrameBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource[
+             "FindReplaceDialog", "ReplaceWithLabel"], StandardForm],
+            ImageSizeCache->{81., {2.28515625, 9.6865234375}}],
+           Background->None,
+           FrameMargins->1,
+           FrameStyle->None,
+           StripOnInput->False],
+          InputFieldBox[Dynamic[
+            CurrentValue[$FrontEnd, {FindSettings, "ReplaceBoxes"}]], Boxes,
+           BoxID -> "replacefield",
+           BaseStyle->"LineWrapParts",
+           ImageSize->{
+             FEPrivate`If[
+              FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"], 375,
+              320], {
+              FEPrivate`Switch[
+              FEPrivate`$OperatingSystem, "MacOSX", 20, "Windows", 20,
+               Blank[], 21], 200}},
+           MenuList->Dynamic[
+             BoxForm`MenuListToBoxes[
+              With[{$CellContext`c = Reverse[
+                  CurrentValue[$FrontEnd, {FindSettings, "ReplaceHistory"}]]},
+               Thread[$CellContext`c -> Map[RawBoxes, $CellContext`c]]],
+              StandardForm]]]},
+         {
+          ItemBox[
+           StyleBox[
+            DynamicBox[ToBoxes[$CellContext`statusText$$, StandardForm],
+             ImageSizeCache->{0., {0., 6.8427734375}}], "TextStyling",
+            StripOnInput->False,
+            FontColor->GrayLevel[0.5]],
+           Alignment->Center,
+           ItemSize->{10, 3},
+           StripOnInput->False],
+          ItemBox[
+           TagBox[GridBox[{
+              {
+               DynamicBox[FEPrivate`If[
+                 FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"],
+                 CheckboxBox[
+                  Dynamic[
+                   CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"}]]],
+                 CheckboxBox[
+                  Dynamic[
+                   FEPrivate`Not[
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"}]],
+                   FEPrivate`Set[
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FEPrivate`Not[#]]& ]]],
+                ImageSizeCache->{18., {5., 13.}}],
+               TogglerBox[Dynamic[
+
+                 CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"},
+                  True]], {True->
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "FindReplaceDialog", "IgnoreCaseLabel"], StandardForm],
+                 ImageSizeCache->{71., {2.412109375, 9.15966796875}}], False->
+
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "FindReplaceDialog", "IgnoreCaseLabel"], StandardForm],
+                 ImageSizeCache->{71., {2.412109375, 9.15966796875}}]},
+                DynamicBox[ToBoxes[
+                  CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"}, True],
+                   StandardForm],
+                 ImageSizeCache->{28., {0.12060546875, 9.15966796875}}]],
+               CheckboxBox[Dynamic[
+
+                 CurrentValue[$FrontEnd, {FindSettings, "Wraparound"},
+                  False]]],
+               TogglerBox[Dynamic[
+
+                 CurrentValue[$FrontEnd, {FindSettings, "Wraparound"},
+                  False]], {True->
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "FindReplaceDialog", "WraparoundLabel"], StandardForm],
+                 ImageSizeCache->{79., {2.28515625, 9.5595703125}}], False->
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "FindReplaceDialog", "WraparoundLabel"], StandardForm],
+                 ImageSizeCache->{79., {2.28515625, 9.5595703125}}]},
+                DynamicBox[ToBoxes[
+
+                  CurrentValue[$FrontEnd, {FindSettings, "Wraparound"},
+                   False], StandardForm],
+                 ImageSizeCache->{32., {0.12060546875, 9.5595703125}}]],
+               CheckboxBox[Dynamic[
+                 CurrentValue[$FrontEnd, {FindSettings, "WholeWord"}, True]]],
+               TogglerBox[Dynamic[
+
+                 CurrentValue[$FrontEnd, {FindSettings, "WholeWord"},
+                  True]], {True->
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "FindReplaceDialog", "WholeWordLabel"], StandardForm],
+                 ImageSizeCache->{55., {0.12060546875, 9.5595703125}}], False->
+
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "FindReplaceDialog", "WholeWordLabel"], StandardForm],
+                 ImageSizeCache->{55., {0.12060546875, 9.5595703125}}]},
+                DynamicBox[ToBoxes[
+                  CurrentValue[$FrontEnd, {FindSettings, "WholeWord"}, True],
+                  StandardForm],
+                 ImageSizeCache->{32., {0.12060546875, 9.5595703125}}]]}
+             },
+             AutoDelete->False,
+
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+
+             GridBoxSpacings->{
+              "Columns" -> {{0.2}}, "ColumnsIndexed" -> {3 -> 1.5, 5 -> 1.5}}],
+            "Grid"],
+           Alignment->Center,
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[GridBox[{
+              {
+               ButtonBox[
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "FindReplaceDialog", "ReplaceAllLabel"], StandardForm],
+                 ImageSizeCache->{67., {2.28515625, 9.5595703125}}],
+                Appearance->Automatic,
+
+                ButtonFunction:>(
+                 If[$CellContext`findboxes$$ =!= "",
+                  CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                 FEPrivate`ReplaceExpression,
+                  FrontEnd`CurrentValue[
+                  FrontEnd`$FrontEnd, {FindSettings, "ReplaceBoxes"}],
+                  "ReplaceAll"],
+                Evaluator->Automatic,
+                Method->"Queued"],
+               ButtonBox[
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "FindReplaceDialog", "ReplaceLabel"], StandardForm],
+                 ImageSizeCache->{48., {2.28515625, 9.5595703125}}],
+                Appearance->Automatic,
+
+                ButtonFunction:>(
+                 If[$CellContext`findboxes$$ =!= "",
+                  CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                 FEPrivate`ReplaceExpression,
+                  FrontEnd`CurrentValue[
+                  FrontEnd`$FrontEnd, {FindSettings, "ReplaceBoxes"}],
+                  "Replace"],
+                Evaluator->Automatic,
+                Method->"Preemptive"],
+               ButtonBox[
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "FindReplaceDialog", "ReplaceFindLabel"], StandardForm],
+                 ImageSizeCache->{91., {2.28515625, 9.6865234375}}],
+                Appearance->Automatic,
+
+                ButtonFunction:>(
+                 If[$CellContext`findboxes$$ =!= "",
+                  CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                 FEPrivate`ReplaceExpression,
+                  FrontEnd`CurrentValue[
+                  FrontEnd`$FrontEnd, {FindSettings, "ReplaceBoxes"}],
+                  "ReplaceFindNext"],
+                Evaluator->Automatic,
+                Method->"Preemptive"],
+               ButtonBox[
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "FindReplaceDialog", "FindPrevLabel"], StandardForm],
+                 ImageSizeCache->{52., {0.12060546875, 9.6865234375}}],
+                Appearance->"CancelButton",
+
+                ButtonFunction:>(
+                 If[$CellContext`findboxes$$ =!= "",
+                  CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                 FEPrivate`FindExpression, "Previous"],
+                Enabled->Dynamic[
+                  FEPrivate`UnsameQ[
+                   FrontEnd`CurrentValue[
+                   FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}], ""]],
+                Evaluator->Automatic,
+                ImageSize->Dynamic[
+                  CurrentValue["DefaultButtonSize"]],
+                Method->"Preemptive"],
+               ButtonBox[
+                DynamicBox[ToBoxes[
+                  FEPrivate`FrontEndResource[
+                  "FindReplaceDialog", "FindNextLabel"], StandardForm],
+                 ImageSizeCache->{28., {0.12060546875, 9.15966796875}}],
+                Appearance->"DefaultButton",
+                ButtonFunction:>(CurrentValue[
+                   ButtonNotebook[], {TaggingRules, "FoundExpression"}] = (
+                   If[$CellContext`findboxes$$ =!= "",
+                    CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                   FEPrivate`FindExpression, "Next"] =!=
+                  FrontEndResourceString["FailedToFindExpression"]),
+                Evaluator->Automatic,
+                ImageSize->Dynamic[
+                  CurrentValue["DefaultButtonSize"]],
+                Method->"Preemptive"]}
+             },
+             AutoDelete->False,
+
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Grid"],
+           Alignment->Right,
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        BaseStyle->"ControlStyle",
+        GridBoxAlignment->{"Columns" -> {Right, Left}, "Rows" -> {{Top}}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          TagBox[GridBox[{
+             {
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "FindReplaceDialog", "FindWhatLabel"], StandardForm],
+               ImageSizeCache->{21.140625, {0.1171875, 7.5703125}}]},
+             {
+
+              InputFieldBox[
+               Dynamic[$CellContext`findboxes$$, {
+                Automatic, ($CellContext`statusText$$ = "")& }], Boxes,
+               BoxID -> "inputfield",
+               BaseStyle->"LineWrapParts",
+               ContinuousAction->True,
+               ImageSize->{
+                 FEPrivate`If[
+                  FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"], 375,
+                  320], {
+                  FEPrivate`Switch[
+                  FEPrivate`$OperatingSystem, "MacOSX", 20, "Windows", 20,
+                   Blank[], 21], 200}},
+               MenuList->Dynamic[
+                 BoxForm`MenuListToBoxes[
+                  With[{$CellContext`c = Reverse[
+                    CurrentValue[$FrontEnd, {FindSettings, "FindHistory"}]]},
+
+                   Thread[$CellContext`c -> Map[RawBoxes, $CellContext`c]]],
+                  StandardForm]]]},
+             {
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "FindReplaceDialog", "ReplaceWithLabel"], StandardForm],
+               ImageSizeCache->{58.53515625, {1.83984375, 9.08203125}}]},
+             {
+              InputFieldBox[Dynamic[
+                CurrentValue[$FrontEnd, {FindSettings, "ReplaceBoxes"}]],
+               Boxes,
+               BoxID -> "replacefield",
+               BaseStyle->"LineWrapParts",
+               ImageSize->{
+                 FEPrivate`If[
+                  FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"], 375,
+                  320], {
+                  FEPrivate`Switch[
+                  FEPrivate`$OperatingSystem, "MacOSX", 20, "Windows", 20,
+                   Blank[], 21], 200}},
+               MenuList->Dynamic[
+                 BoxForm`MenuListToBoxes[
+                  With[{$CellContext`c = Reverse[
+
+                    CurrentValue[$FrontEnd, {
+                    FindSettings, "ReplaceHistory"}]]},
+                   Thread[$CellContext`c -> Map[RawBoxes, $CellContext`c]]],
+                  StandardForm]]]},
+             {
+              TagBox[GridBox[{
+                 {
+                  DynamicBox[FEPrivate`If[
+                    FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"],
+                    CheckboxBox[
+                    Dynamic[
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"}]]],
+                    CheckboxBox[
+                    Dynamic[
+                    FEPrivate`Not[
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"}]],
+                    FEPrivate`Set[
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FEPrivate`Not[#]]& ]]],
+                   ImageSizeCache->{10.5, {2.935546875, 7.564453125}}],
+                  TogglerBox[Dynamic[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"},
+                    True]], {True->
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "IgnoreCaseLabel"], StandardForm],
+                    ImageSizeCache->{48.75, {1.83984375, 9.08203125}}], False->
+
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "IgnoreCaseLabel"], StandardForm],
+                    ImageSizeCache->{48.75, {1.83984375, 9.08203125}}]},
+                   DynamicBox[ToBoxes[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "IgnoreCase"},
+                    True], StandardForm],
+                    ImageSizeCache->{20.05078125, {0.10546875, 6.76171875}}]],
+                  CheckboxBox[Dynamic[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "WholeWord"},
+                    True]]],
+                  TogglerBox[Dynamic[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "WholeWord"},
+                    True]], {True->
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "WholeWordLabel"], StandardForm],
+                    ImageSizeCache->{57.28125, {1.83984375, 9.08203125}}],
+                   False->
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "WholeWordLabel"], StandardForm],
+                    ImageSizeCache->{57.28125, {1.83984375, 9.08203125}}]},
+                   DynamicBox[ToBoxes[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "WholeWord"},
+                    True], StandardForm],
+                    ImageSizeCache->{22.27734375, {0.1171875, 7.5703125}}]],
+                  CheckboxBox[Dynamic[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "Wraparound"},
+                    False]]],
+                  TogglerBox[Dynamic[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "Wraparound"},
+                    False]], {True->
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "WraparoundLabel"], StandardForm],
+                    ImageSizeCache->{56.8359375, {1.83984375, 9.08203125}}],
+                   False->
+                   DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "WraparoundLabel"], StandardForm],
+                    ImageSizeCache->{56.8359375, {1.83984375, 9.08203125}}]},
+
+                   DynamicBox[ToBoxes[
+
+                    CurrentValue[$FrontEnd, {FindSettings, "Wraparound"},
+                    False], StandardForm],
+
+                    ImageSizeCache->{
+                    20.05078125, {0.10546875, 6.76171875}}]]}
+                },
+                AutoDelete->False,
+
+                GridBoxItemSize->{
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+
+                GridBoxSpacings->{
+                 "Columns" -> {{0.2}},
+                  "ColumnsIndexed" -> {3 -> 1.5, 5 -> 1.5}}],
+               "Grid"]},
+             {
+              TagBox[GridBox[{
+                 {
+                  DynamicBox[ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "FindReplaceDialog", "StatusLabel"], StandardForm],
+                   ImageSizeCache->{29.9296875, {0.140625, 6.90234375}}],
+                  PaneSelectorBox[{True->
+                   DynamicBox[ToBoxes[$CellContext`statusText$$, StandardForm],
+                    ImageSizeCache->{0., {0., 5.05078125}}], False->
+
+                   DynamicBox[FEPrivate`FrontEndResourceString[
+                    "FailedToFindExpression"],
+
+                    ImageSizeCache->{
+                    72.4402265625, {1.83984375, 9.08203125}}]}, True,
+                   BoxID -> "FindReplaceStatusField",
+                   BaselinePosition->Baseline]}
+                },
+                AutoDelete->False,
+
+                GridBoxItemSize->{
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+               "Grid"]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+
+            GridBoxSpacings->{
+             "Columns" -> {{0}}, "Rows" -> {{0.5}},
+              "RowsIndexed" -> {3 -> 1, 5 -> 1, 6 -> 1}}],
+           "Column"],
+          TagBox[GridBox[{
+             {
+              ButtonBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FindReplaceDialog", "FindNextLabel"], StandardForm],
+                ImageSizeCache->{42.05859375, {1.83984375, 9.08203125}}],
+               Appearance->"DefaultButton",
+               ButtonFunction:>(CurrentValue[
+                  ButtonNotebook[], {TaggingRules, "FoundExpression"}] = (
+                  If[$CellContext`findboxes$$ =!= "",
+                   CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                  FEPrivate`FindExpression, "Next"] =!=
+                 FrontEndResourceString["FailedToFindExpression"]),
+               Evaluator->Automatic,
+               ImageSize->Dynamic[
+                 CurrentValue["DefaultButtonSize"]],
+               Method->"Preemptive"]},
+             {
+              ButtonBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FindReplaceDialog", "FindPrevLabel"], StandardForm],
+                ImageSizeCache->{58.48828125, {1.83984375, 9.08203125}}],
+               Appearance->"CancelButton",
+
+               ButtonFunction:>(
+                If[$CellContext`findboxes$$ =!= "",
+                 CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                FEPrivate`FindExpression, "Previous"],
+               Enabled->Dynamic[
+                 FEPrivate`UnsameQ[
+                  FrontEnd`CurrentValue[
+                  FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}], ""]],
+               Evaluator->Automatic,
+               ImageSize->Dynamic[
+                 CurrentValue["DefaultButtonSize"]],
+               Method->"Preemptive"]},
+             {
+              ButtonBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FindReplaceDialog", "ReplaceLabel"], StandardForm],
+                ImageSizeCache->{34.60546875, {1.8046875, 7.5703125}}],
+               Appearance->Automatic,
+
+               ButtonFunction:>(
+                If[$CellContext`findboxes$$ =!= "",
+                 CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                FEPrivate`ReplaceExpression,
+                 FrontEnd`CurrentValue[
+                 FrontEnd`$FrontEnd, {FindSettings, "ReplaceBoxes"}],
+                 "Replace"],
+               Evaluator->Automatic,
+               Method->"Preemptive"]},
+             {
+              ButtonBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FindReplaceDialog", "ReplaceAllLabel"], StandardForm],
+                ImageSizeCache->{48.24609375, {1.83984375, 9.08203125}}],
+               Appearance->Automatic,
+
+               ButtonFunction:>(
+                If[$CellContext`findboxes$$ =!= "",
+                 CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                FEPrivate`ReplaceExpression,
+                 FrontEnd`CurrentValue[
+                 FrontEnd`$FrontEnd, {FindSettings, "ReplaceBoxes"}],
+                 "ReplaceAll"],
+               Evaluator->Automatic,
+               Method->"Queued"]},
+             {
+              ButtonBox[
+               DynamicBox[ToBoxes[
+                 FEPrivate`FrontEndResource[
+                 "FindReplaceDialog", "ReplaceFindLabel"], StandardForm],
+                ImageSizeCache->{87.4921875, {1.83984375, 9.08203125}}],
+               Appearance->Automatic,
+
+               ButtonFunction:>(
+                If[$CellContext`findboxes$$ =!= "",
+                 CurrentValue[$FrontEnd, {
+                    FindSettings,
+                    "FindBoxes"}] = $CellContext`findboxes$$; \
+$CellContext`statusText$$ = Replace[
+                    FE`Evaluate[
+                    #[
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "FindBoxes"}],
+                    SlotSequence[2],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "IgnoreCase"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {FindSettings, "Wraparound"}],
+                    FrontEnd`CurrentValue[
+                    FrontEnd`$FrontEnd, {
+                    FindSettings, "WholeWord"}]]], $Failed -> ""]]& )[
+                FEPrivate`ReplaceExpression,
+                 FrontEnd`CurrentValue[
+                 FrontEnd`$FrontEnd, {FindSettings, "ReplaceBoxes"}],
+                 "ReplaceFindNext"],
+               Evaluator->Automatic,
+               Method->"Preemptive"]}
+            },
+
+            BaseStyle->{
+             ButtonBoxOptions -> {
+               ImageSize -> Full,
+                BaseStyle -> {
+                 FontSize -> FrontEnd`CurrentValue["PanelFontSize"]}}},
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+
+            GridBoxSpacings->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{0.2}},
+              "RowsIndexed" -> {3 -> 1}}],
+           "Column"]}
+        },
+        AutoDelete->False,
+        GridBoxAlignment->{"Rows" -> {{Top}}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[
+       FEPrivate`SameQ[FEPrivate`$OperatingSystem, "MacOSX"]],
+      ImageSize->Automatic]}, Dynamic[
+      FEPrivate`SameQ[FrontEnd`$NotebookLicenseType, "Player"]],
+     ImageSize->Automatic], (If[$CellContext`oldfindboxes$$ =!= #, If[
+       Not[
+        CurrentValue["NotebookSelected"]], $CellContext`statusText$$ =
+       ""]; $CellContext`oldfindboxes$$ = ($CellContext`findboxes$$ = #)]& )[
+     CurrentValue[$FrontEnd, {FindSettings, "FindBoxes"}]],
+    ImageSizeCache->{421.4921875, {61.767578125, 66.396484375}},
+    TrackedSymbols:>{}],
+   ImageMargins->10],
+  Deinitialization:>(CurrentValue[$FrontEnd, {FindSettings, WindowMargins}] =
+   CurrentValue[
+     EvaluationNotebook[], WindowMargins]),
+  DynamicModuleValues:>{},
+  Initialization:>($CellContext`statusText$$ = "";
+   CurrentValue[$FrontEnd, {FindSettings, WindowSize}] = Inherited),
+  UnsavedVariables:>{$CellContext`statusText$$, $CellContext`findboxes$$, \
+$CellContext`oldfindboxes$$}]],
+ CellMargins->0,
+ CellBracketOptions->{"Color"->RGBColor[0.269993, 0.308507, 0.6]},
+ CellHorizontalScrolling->True,
+ PageBreakAbove->True,
+ PageBreakWithin->False,
+ InputAutoReplacements->{},
+ AutoOperatorRenderings->{},
+ ShowAutoStyles->True,
+ LineSpacing->{1.25, 0},
+ AutoItalicWords->{},
+ ScriptMinSize->9,
+ ShowStringCharacters->False,
+ FontFamily:>CurrentValue["PanelFontFamily"],
+ FontSize:>CurrentValue[
+  "PanelFontSize"],ExpressionUUID->"d03bf738-b8ee-495e-aa5f-d03e855fff39"]
+},
+Saveable->True,
+NotebookEventActions->{{"MenuCommand", "SimilarCellBelow"} :> {}, {
+   "MenuCommand", "FindNextMatch"} :> FE`Evaluate[
+    FEPrivate`FindAndClickDefaultButton[]], {
+   "MenuCommand", "FindPreviousMatch"} :> FE`Evaluate[
+    FEPrivate`FindAndClickCancelButton[]], "EscapeKeyDown" :> If[
+    Not[
+     CurrentValue["ShiftKey"]], SetSelectedNotebook[
+      FE`Evaluate[
+       FEPrivate`LastActiveUserNotebook[]]]; DialogReturn[]],
+  "ReturnKeyDown" :> (FE`Evaluate[
+     FEPrivate`FindAndClickDefaultButton[]]; If[
+     And[
+      TrueQ[
+       CurrentValue[
+        EvaluationNotebook[], {TaggingRules, "FoundExpression"}]],
+      CurrentValue[$FrontEnd, {FindSettings, "DialogCloseAfterFind"},
+        Automatic] === Automatic, $OperatingSystem === "MacOSX"],
+     SetSelectedNotebook[
+       FE`Evaluate[
+        FEPrivate`LastActiveUserNotebook[]]]; DialogReturn[]]), "WindowClose" :>
+  SetSelectedNotebook[
+    FE`Evaluate[
+     FEPrivate`LastActiveUserNotebook[]]], PassEventsDown :>
+  CurrentValue["ShiftKey"]},
+WindowSize->All,
+WindowMargins->{{Automatic, -441.75}, {Automatic, 0}},
+WindowFrame->"ModelessDialog",
+WindowFrameElements->{"CloseBox", "MinimizeBox"},
+WindowTitle->Dynamic[
+  FEPrivate`FrontEndResource["FindReplaceDialog", "WindowTitle"]],
+WindowOpacity->FrontEnd`CurrentValue[
+ FrontEnd`$FrontEnd, {FindSettings, WindowOpacity}],
+TaggingRules->{"NotebookID" -> "FindDialog", "FoundExpression" -> True},
+CellContext->"Global`",
+AutoMultiplicationSymbol->False,
+CheckboxBoxOptions->{BaselinePosition->Axis},
+FrontEndVersion->"14.2 for Linux x86 (64-bit) (December 26, 2024)",
+StyleDefinitions->"SystemDialog.nb",
+ExpressionUUID->"03c2a7eb-0bc1-44a9-9d61-e8dcc5486bcd"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[592, 21, 51437, 1181, 148, InheritFromParent,ExpressionUUID->"d03bf738-b8ee-495e-aa5f-d03e855fff39",
+ PageBreakAbove->True,
+ PageBreakWithin->False]
+}
+]
+*)
+
+(* End of internal cache information *)
+
